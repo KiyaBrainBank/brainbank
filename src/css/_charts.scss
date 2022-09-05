@@ -1,0 +1,148 @@
+
+.chart-box {
+    // background: white;
+    border-radius: 0px;
+    padding: 20px 0px;
+    // box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.1) 0px 1px 2px -1px;
+  }
+  .chart-area {
+    background: #2a2a2a;
+    padding: 0px;
+  }
+
+  .chart-area2 {
+	background: rgb(32, 41, 57);
+	padding: 0px;
+}
+
+// .chart-box {
+//     background: white;
+//     // border-radius: 16px;
+//     padding: 20px 0px 10px 0px;
+//     // box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.1) 0px 1px 2px -1px;
+//   }
+//   .chart-area {
+//     background: #fff;
+//     // padding: 15px;
+//   }
+
+  #chart {
+    max-width: 650px;
+    margin: 20px 0px 10px 0px;
+  }
+
+
+  .chart1 {
+    width: 1900px;
+    height:200px;
+	@media (max-width:767px) {	
+		width: 600px;
+    	height:400px;
+	}
+  }
+
+
+  
+/* chart section table data  */
+
+		 div.cachartdatatable {
+				text-align: center;
+				padding: 20px;
+				/*background: #eee;*/
+
+                @media (max-width:767px) {	
+                   overflow: auto;
+               }
+			 
+			}
+			div.cachartdatatable table {
+				/*width: 80%;*/
+				margin: auto;
+				color: #999;
+				/*border-top: 1px solid #444;*/
+				/*padding-top: 20px;*/
+				border-collapse: collapse;
+				background: #333;
+				&.data1{
+					width:100%; 
+					margin: auto;
+					text-align: left;
+
+					tr th em,
+					tr td em {
+						text-align: left;
+					}
+				}
+			
+			}
+			div.cachartdatatable table tr {
+			}
+			div.cachartdatatable table tr th {
+				/*border-bottom:  1px solid #444444;*/
+				background: #444;
+			}
+			div.cachartdatatable table tr td {
+				text-align: right;
+				border-bottom:  1px solid #444444;
+			}
+			div.cachartdatatable table tr:last-child td {
+				border-bottom: none;
+			}
+			div.cachartdatatable table tr th,
+			div.cachartdatatable table tr td {
+				/*border:  1px solid #343434;*/
+				/*border-bottom:  1px solid #343434;*/
+				&.bor-b{
+				   border-bottom: 1px solid #5a5a5a; 
+				}
+			}
+			div.cachartdatatable table tr td:first-child {
+				text-align: left;
+			}
+			div.cachartdatatable table tr th em {
+				font-size: 14px;
+				font-weight: normal;
+				color: #ccc;
+			}
+			div.cachartdatatable table tr th em,
+			div.cachartdatatable table tr td em {
+				font-style: normal;
+				padding: 8px 15px;
+				display: block;
+                color: #ccc;
+			}
+			div.cachartdatatable table tr td em i {
+				display: inline-block;
+				background: #555;
+				width: 16px;
+				height: 16px;
+				border-radius: 8px;
+				margin-right: 5px;
+			}
+			div.cachartdatatable table tr td em i.ind1 {
+				background: #A2B5BB;
+			}
+			div.cachartdatatable table tr td em i.ind2 {
+				background: #495C83;
+			}
+			div.cachartdatatable table tr td em i.ind3 {
+				background: #FFA500;
+			}
+			div.cachartdatatable table tr td em i.ind4 {
+				background: #277BC0;
+			}
+			div.cachartdatatable.tblperdiff table tr :not(td:first-child) em {
+				text-align: center;
+			}
+
+
+
+            #caNoChannelsUsers{
+                width:300px;
+                height:100px;
+                @media (max-width:767px) {	
+                   width:600px;
+                   height:500px;
+                }  
+            }
+

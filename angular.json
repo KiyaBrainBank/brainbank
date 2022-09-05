@@ -28,9 +28,25 @@
               "src/assets"
             ],
             "styles": [
+              "src/css/lib/bootstrap.min.css",
+              "src/css/main.css",              
+              "src/css/lib/owl.carousel.min.css",
+              "src/css/lib/jquery-ui.min.css",
               "src/styles.sass"
             ],
-            "scripts": []
+            "scripts": [
+              "src/js/lib/jquery.min.js",
+              "src/js/lib/bootstrap.min.js",
+              "src/js/lib/owl.carousel.min.js",
+              "src/js/lib/popper.min.js",
+              "src/js/lib/jquery.mousewheel.min.js",
+              "src/js/lib/jquery.mCustomScrollbar.js",
+              "src/js/lib/jquery-ui.min.js",
+              "src/js/lib/datatables.min.js",
+              "src/js/common.js",
+              "src/js/lib/datatables.min.js",
+              "src/js/lib/bootstrap-timepicker.js"           
+            ]
           },
           "configurations": {
             "production": {
@@ -96,9 +112,25 @@
               "src/assets"
             ],
             "styles": [
+              "src/css/lib/bootstrap.min.css",
+              "src/css/main.css",              
+              "src/css/lib/owl.carousel.min.css",
+              "src/css/lib/jquery-ui.min.css",
               "src/styles.sass"
             ],
-            "scripts": []
+            "scripts": [
+              "src/js/lib/jquery.min.js",
+              "src/js/lib/bootstrap.min.js",
+              "src/js/lib/owl.carousel.min.js",
+              "src/js/lib/popper.min.js",
+              "src/js/lib/jquery.mousewheel.min.js",
+              "src/js/lib/jquery.mCustomScrollbar.js",
+              "src/js/lib/jquery-ui.min.js",
+              "src/js/lib/datatables.min.js",
+              "src/js/common.js",
+              "src/js/lib/datatables.min.js",
+              "src/js/lib/bootstrap-timepicker.js"
+            ]
           }
         }
       }
