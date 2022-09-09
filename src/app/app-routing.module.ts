@@ -1,11 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './pages/auth/guards/auth.guard';
+import { NoAuthGuard } from './pages/auth/guards/noAuth.guard';
 import { LayoutsComponent } from './pages/layouts/layouts.component';
 
 const routes: Routes = [
   {path: '', pathMatch : 'full', redirectTo: 'dashboard'},
   {
     path: '',
+    canActivate: [NoAuthGuard],
+    canActivateChild: [NoAuthGuard],
     component: LayoutsComponent,
     data: {
         layout: 'empty'
@@ -16,6 +20,8 @@ const routes: Routes = [
   },
   {
     path: '',
+    canActivate: [AuthGuard],
+    canActivateChild: [AuthGuard],
     component: LayoutsComponent,
     data: {
         layout: 'classic'

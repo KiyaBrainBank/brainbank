@@ -4,6 +4,7 @@ import { NgChartsModule } from 'ng2-charts';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AuthModule } from './pages/auth/auth.module';
 import { LayoutsModule } from './pages/layouts/layouts.module';
 
 @NgModule({
@@ -14,6 +15,7 @@ import { LayoutsModule } from './pages/layouts/layouts.module';
     BrowserModule,
     AppRoutingModule,
     LayoutsModule,
+    AuthModule,
     NgChartsModule
   ],
   providers: [],
