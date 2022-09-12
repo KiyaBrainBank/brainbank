@@ -2,12 +2,12 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { catchError, Observable, of, switchMap, throwError } from 'rxjs';
 ;
-import { AuthUtils } from './auth.utils';
+import { AuthUtils } from './auth.utils';   
 
 @Injectable()
 export class AuthService
 {
-    private _authenticated: boolean = true;
+    public _authenticated: boolean = false;
 
     /**
      * Constructor

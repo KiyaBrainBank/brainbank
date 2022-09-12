@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormBuilder, FormGroup, NgForm } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/pages/auth/auth.service';
 
@@ -18,7 +18,13 @@ export class LoginComponent implements OnInit {
     private _router: Router) { }
 
   ngOnInit(): void {
+    this.signInForm = new FormGroup({
+      email     : new FormControl('vivek.rahane@kiya.ai', [Validators.required, Validators.email]),
+      password  : new FormControl('admin', [Validators.required])
+
+    });
   }
+
 
   signIn(): void
   {
@@ -30,34 +36,35 @@ export class LoginComponent implements OnInit {
 
       // Disable the form
       this.signInForm.disable();
-
+      this._authService._authenticated = true;
+      const redirectURL = this._activatedRoute.snapshot.queryParamMap.get('redirectURL') || '/login';
       
-
+      this._router.navigateByUrl(redirectURL);
       // Sign in
-      this._authService.signIn(this.signInForm.value)
-          .subscribe(
-              () => {
+      // this._authService.signIn(this.signInForm.value)
+      //     .subscribe(
+      //         () => {
 
-                  // Set the redirect url.
-                  // The '/signed-in-redirect' is a dummy url to catch the request and redirect the user
-                  // to the correct page after a successful sign in. This way, that url can be set via
-                  // routing file and we don't have to touch here.
-                  const redirectURL = this._activatedRoute.snapshot.queryParamMap.get('redirectURL') || '/login';
+      //             // Set the redirect url.
+      //             // The '/signed-in-redirect' is a dummy url to catch the request and redirect the user
+      //             // to the correct page after a successful sign in. This way, that url can be set via
+      //             // routing file and we don't have to touch here.
+                  
 
-                  // Navigate to the redirect url
-                  this._router.navigateByUrl(redirectURL);
+      //             // Navigate to the redirect url
+                 
 
-              },
-              (response) => {
+      //         },
+      //         (response) => {
 
-                  // Re-enable the form
-                  this.signInForm.enable();
+      //             // Re-enable the form
+      //             this.signInForm.enable();
 
-                  // Reset the form
-                  this.signInNgForm.resetForm();
+      //             // Reset the form
+      //             this.signInNgForm.resetForm();
 
-              }
-          );
+      //         }
+      //     );
   }
 
 }
