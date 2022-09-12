@@ -1,0 +1,29 @@
+
+.vertical-scroll::-webkit-scrollbar {
+    width: 0.2vw;
+    height: 1em;
+  }
+
+  ::-webkit-scrollbar {
+    width: 0.2vw; 
+    height: 7px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #55565a;
+    outline: 1px solid #1e202a;
+    border-radius: 50px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 4px rgba(0,0,0,0.2);
+  }
+
+  @-moz-document url-prefix() {
+    .scrollbar {
+      scrollbar-width: none;
+      scrollbar-color: #060a1f;
+    }
+  }
+ 
+ 
