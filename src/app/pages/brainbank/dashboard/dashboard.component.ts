@@ -33,6 +33,9 @@ export class DashboardComponent implements OnInit {
   caPerDifferenceCanvas: any;
   ctxcaPerDifferenceCanvas: any;
 
+  channelsUsedByCustomersCanvas: any;
+  ctxChannelsUsedByCustomersCanvas: any;
+
   ctvChartDataTitle: any = [
     {
       transactionVolumeHourly: {
@@ -70,6 +73,8 @@ export class DashboardComponent implements OnInit {
 
   ngAfterViewInit() {
 
+    /* //Chart 1 - Channel Analytics | Transaction Volume Hourly */
+
     this.ccanv = document.getElementById('caTransVolHistory');
     this.ctxctvh = this.ccanv.getContext('2d');
     var ctvhchartDataxLabel = [
@@ -86,7 +91,8 @@ export class DashboardComponent implements OnInit {
     this.generateCharts(this.ctxctvh, ctvhchartDataxLabel, ctvhchartDatayData, this.ctvChartDataTitle[0].transactionVolumeHourly, this.graphOptions[0].transactionVolumeHourly);
 
 
-    // Customer Overview graph 
+    /* //Chart 2 - Channel Analytics | Customer Overview */
+
 
     this.custOverviewCanvas = document.getElementById('caCustOverview');
     this.ctxCustOverviewCanvas = this.custOverviewCanvas.getContext('2d');
@@ -128,6 +134,37 @@ export class DashboardComponent implements OnInit {
     ];
 
     this.createChartPerDifference(this.ctxcaPerDifferenceCanvas, cpdchartDataxLabel, cpdchartDatayData);
+
+    /* //Chart 4 - Channel Analytics | No of Channels Used by Customers */
+
+    this.channelsUsedByCustomersCanvas = document.getElementById('caNoChannelsUsers');
+    this.ctxChannelsUsedByCustomersCanvas = this.channelsUsedByCustomersCanvas.getContext('2d');
+
+    var cnocchartDataxLabel = [
+      "Customer Distribution", "Transaction Value Distribution", "Transaction Volume Distribution"
+    ];
+    var cnocchartDatayData = [
+      {
+        label: "Customer Used 1 Channel",
+        backgroundColor: "#FF8FB1",
+        data: [42, 20, 20],
+        maxBarThickness: 50,
+      },
+      {
+        label: "Customer Used 2 Channels",
+        backgroundColor: "#B270A2", //36AE7C
+        data: [45, 70, 70],
+        maxBarThickness: 50,
+      },
+      {
+        label: "Customer Used 3 Channels",
+        backgroundColor: "#7A4495", //FFA500
+        data: [0, 14, 18],
+        maxBarThickness: 50,
+      }
+    ];
+
+    this.createChartNoChannelsUsers(this.ctxChannelsUsedByCustomersCanvas, cnocchartDataxLabel, cnocchartDatayData)
   }
 
   activetab(tab) {
@@ -143,10 +180,12 @@ export class DashboardComponent implements OnInit {
         ctvhchartDataxLabel = [
           "N01", "N02", "N03", "N04", "N05", "N06", "N07", "N09", "N08", "N10", "N11", "N12", "N13", "N14", "N15", "N16", "N18", "N17", "N19", "N20", "N21", "N22", "N23", "N24"
         ];
-        ctvhchartDatayData = [
-          5000, 9500, 4400, 6400, 8500, 11900, 5000, 32000, 10000, 25000, 35000, 5000, 20000, 29000, 22000, 30000, 5000, 30000, 24000, 10000, 5000, 14000, 22000, 20000
-        ];
-        // this.generateCharts(this.ctxctvh, ctvhchartDataxLabel, ctvhchartDatayData, ctvChartDataTitle);
+        ctvhchartDatayData = [{
+          label: 'Transaction Amount',
+          data: [5000, 9500, 4400, 6400, 8500, 11900, 5000, 32000, 10000, 25000, 35000, 5000, 20000, 29000, 22000, 30000, 5000, 30000, 24000, 10000, 5000, 14000, 22000, 20000],
+          backgroundColor: ["#0096FF"],
+        }];
+        this.generateCharts(this.ctxctvh, ctvhchartDataxLabel, ctvhchartDatayData, this.ctvChartDataTitle[0].transactionVolumeHourly, this.graphOptions[0].transactionVolumeHourly);
         break;
       case 'pos':
         this.ccanv = document.getElementById('caTransVolHistory2');
@@ -155,10 +194,12 @@ export class DashboardComponent implements OnInit {
         ctvhchartDataxLabel = [
           "N01", "N02", "N03", "N04", "N05", "N06", "N07", "N09", "N08", "N10", "N11", "N12", "N13", "N14", "N15", "N16", "N18", "N17", "N19", "N20", "N21", "N22", "N23", "N24"
         ];
-        ctvhchartDatayData = [
-          2000, 4500, 1400, 4400, 5500, 4900, 7000, 12000, 20000, 15000, 15000, 15000, 23000, 21000, 20000, 20000, 11000, 20000, 13000, 29000, 8000, 15000, 21000, 25000
-        ];
-        // this.generateCharts(this.ctxctvh, ctvhchartDataxLabel, ctvhchartDatayData);
+        ctvhchartDatayData = [{
+          label: 'Transaction Amount',
+          data: [2000, 4500, 1400, 4400, 5500, 4900, 7000, 12000, 20000, 15000, 15000, 15000, 23000, 21000, 20000, 20000, 11000, 20000, 13000, 29000, 8000, 15000, 21000, 25000],
+          backgroundColor: ["#0096FF"],
+        }];
+        this.generateCharts(this.ctxctvh, ctvhchartDataxLabel, ctvhchartDatayData, this.ctvChartDataTitle[0].transactionVolumeHourly, this.graphOptions[0].transactionVolumeHourly);
         break;
       case 'online':
         this.ccanv = document.getElementById('caTransVolHistory3');
@@ -167,10 +208,12 @@ export class DashboardComponent implements OnInit {
         ctvhchartDataxLabel = [
           "N01", "N02", "N03", "N04", "N05", "N06", "N07", "N09", "N08", "N10", "N11", "N12", "N13", "N14", "N15", "N16", "N18", "N17", "N19", "N20", "N21", "N22", "N23", "N24"
         ];
-        ctvhchartDatayData = [
-          5000, 9500, 4400, 6400, 8500, 11900, 5000, 32000, 10000, 25000, 35000, 5000, 20000, 29000, 22000, 30000, 5000, 30000, 24000, 10000, 5000, 14000, 22000, 20000
-        ];
-        // this.generateCharts(this.ctxctvh, ctvhchartDataxLabel, ctvhchartDatayData);
+        ctvhchartDatayData = [{
+          label: 'Transaction Amount',
+          data: [5000, 9500, 4400, 6400, 8500, 11900, 5000, 32000, 10000, 25000, 35000, 5000, 20000, 29000, 22000, 30000, 5000, 30000, 24000, 10000, 5000, 14000, 22000, 20000],
+          backgroundColor: ["#0096FF"],
+        }];
+        this.generateCharts(this.ctxctvh, ctvhchartDataxLabel, ctvhchartDatayData, this.ctvChartDataTitle[0].transactionVolumeHourly, this.graphOptions[0].transactionVolumeHourly);
         break;
       case 'mobile':
         this.ccanv = document.getElementById('caTransVolHistory4');
@@ -179,10 +222,12 @@ export class DashboardComponent implements OnInit {
         ctvhchartDataxLabel = [
           "N01", "N02", "N03", "N04", "N05", "N06", "N07", "N09", "N08", "N10", "N11", "N12", "N13", "N14", "N15", "N16", "N18", "N17", "N19", "N20", "N21", "N22", "N23", "N24"
         ];
-        ctvhchartDatayData = [
-          5000, 2500, 8400, 6400, 15500, 4000, 9000, 22000, 10000, 18000, 10000, 12000, 18000, 31000, 10000, 20000, 2000, 10000, 16000, 19000, 5000, 25000, 31000, 15000
-        ];
-        // this.generateCharts(this.ctxctvh, ctvhchartDataxLabel, ctvhchartDatayData);
+        ctvhchartDatayData = [{
+          label: 'Transaction Amount',
+          data: [5000, 9500, 4400, 6400, 8500, 11900, 5000, 32000, 10000, 25000, 35000, 5000, 20000, 29000, 22000, 30000, 5000, 30000, 24000, 10000, 5000, 14000, 22000, 20000],
+          backgroundColor: ["#0096FF"],
+        }];
+        this.generateCharts(this.ctxctvh, ctvhchartDataxLabel, ctvhchartDatayData, this.ctvChartDataTitle[0].transactionVolumeHourly, this.graphOptions[0].transactionVolumeHourly);
         break;
     }
 
@@ -332,7 +377,7 @@ export class DashboardComponent implements OnInit {
 
 
   createChartPerDifference(ctxctvh, ctvhchartDataxLabel, ctvhchartDatayData) {
-    
+
 
     var capd = new Chart(ctxctvh, {
       type: "bar",
@@ -477,6 +522,155 @@ export class DashboardComponent implements OnInit {
       }, // options
     });
   }
+
+
+  createChartNoChannelsUsers(ctxcnoc, cnocchartDataxLabel, cnocchartDatayData) {
+
+
+
+  var canoc = new Chart(ctxcnoc, {
+    type: "bar",
+    data: {
+      labels: cnocchartDataxLabel,
+      datasets: cnocchartDatayData
+    }, // data
+    options: {
+      responsive: true,
+      plugins: {
+        // beforeInit: function (cht, opts) {
+        // 	chart.legend.afterFit = function () {
+        // 		this.height = this.height + 100
+        // 	};
+        // },
+        legend: {
+          /*title: {
+            display: true,
+            text: "The Sheen",
+          },*/
+          labels: {
+            padding: 10,
+            color: this.legend_textcolor,
+            font: {
+              family: this.vrchartfont,
+            },
+          }, // labels 
+        }, // legend
+
+        annotation: {
+          annotations: {
+            line1: {
+              type: "line",
+              xMin: 0,
+              xMax: 2,
+              yMin: 45,
+              yMax: 70,
+              borderColor: "#B270A2", //e51529 - 2a5ff5
+              borderWidth: 1,
+            }, //line1
+          }, //annotations
+        }, //annotation
+
+        //datalabels 
+        datalabels: {
+          color: this.dlbls_barvalue,
+          align: "top",
+          anchor: "end",
+          font: {
+            family: this.vrchartfont,
+          },
+          formatter: function (val, ctx) {
+            // 	return "$ " + thousands_separators(val);
+            if (val == 0) return "";
+            // return thousands_separators(val);
+            return val + " %";
+          },
+        }, // datalabels
+
+        title: {
+          display: false,
+          text: "No of Channels Used by Customers",
+          color: this.title_charttitle,
+          padding: {
+            bottom: 15,
+          },
+          font: {
+            family: this.vrchartfont,
+            size: 20,
+            weight: "500",
+          },
+        }, // title
+
+        tooltip: {
+          position: "nearest",
+          xAlign: "center",
+          yAlign: "bottom",
+          bodyFont: {
+            family: this.vrchartfont,
+          },
+          padding: 10,
+          callbacks: {
+            label: function (ctxc) {
+              return ctxc.dataset.label + " " + ctxc.parsed.y + "%";
+            },
+          }, // callbacks
+        }, // tooltip
+
+      }, // plugins
+
+      scales: {
+        y: {
+          beginAtZero: true,
+          title: {
+            text: "Percentage",
+            display: true,
+            color: this.title_ylabel,
+            font: {
+              family: this.vrchartfont,
+            },
+          },
+          ticks: {
+            color: this.ytick_color,
+            font: {
+              family: this.vrchartfont,
+            },
+            callback: function (v, i, t) {
+              return v + " %";
+            },
+          },
+          grid: {
+            borderColor: this.ygrid_bordercolor,
+            color: this.ygrid_color,
+          },
+          max: 100,
+          min: 0,
+        }, // y
+        x: {
+          title: {
+            text: "Machine Type - Mobile",
+            display: true,
+            color: this.title_xlabel,
+            font: {
+              family: this.vrchartfont,
+            },
+          },
+          ticks: {
+            color: this.xtick_color,
+            font: {
+              family: this.vrchartfont,
+            },
+          },
+          grid: {
+            borderColor: this.xgrid_bordercolor,
+            color: this.xgrid_color,
+          },
+        }, // x
+      }, // scales
+      //     callback: function(v,i,t) {
+      // 	return "$ " + thousands_separators(v);
+      // },
+    }, // options 
+  });
+}
 
 }
 function thousands_separators(num) {
