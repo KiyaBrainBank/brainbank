@@ -7,7 +7,7 @@ import { AuthUtils } from './auth.utils';
 @Injectable()
 export class AuthService
 {
-    public _authenticated: boolean = true;
+    public _authenticated: boolean = false;
 
     /**
      * Constructor
