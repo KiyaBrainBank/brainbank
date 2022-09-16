@@ -6699,7 +6699,7 @@ small {
   text-align: left;
 }
 .accordion-container .card .card-link .card-header em {
-  background: url("../assets/images/icons/arrow-down-rb.png") no-repeat 97% 50%;
+  background: url("assets/images/icons/arrow-down-rb.png") no-repeat 97% 50%;
   background-size: 16px;
   transform: rotate(180deg);
   -webkit-transition: all 0.5s ease;
@@ -7155,7 +7155,7 @@ small {
   text-align: left;
 }
 .accordion-container .card .card-link .card-header2 em {
-  background: url(".../assets/images/icons/arrow-down-rb.png") no-repeat 97% 50%;
+  background: url(".assets/images/icons/arrow-down-rb.png") no-repeat 97% 50%;
   background-size: 14px;
   transform: rotate(180deg);
   -webkit-transition: all 0.5s ease;
@@ -7745,7 +7745,7 @@ small {
   text-align: left;
 }
 .accordion-container .card .card-link .card-header3 em {
-  background: url("../assets/images/icons/arrow-down-rb.png") no-repeat 97% 50%;
+  background: url("assets/images/icons/arrow-down-rb.png") no-repeat 97% 50%;
   background-size: 15px;
   transform: rotate(180deg);
   -webkit-transition: all 0.5s ease;
@@ -7807,7 +7807,7 @@ small {
   color: #ffffff;
 }
 .accordion-container .card .card-link.active .card-header em {
-  /*background: url('../assets/images/icons/arrow-white.png') no-repeat center;
+  /*background: url('assets/images/icons/arrow-white.png') no-repeat center;
   background-size: 12px;
   transform: rotate(180deg);*/
 }
@@ -7816,7 +7816,7 @@ small {
   color: #ffffff;
 }
 .accordion-container .card .card-link.active .card-header2 em {
-  /*background: url('../assets/images/icons/arrow-white.png') no-repeat center;
+  /*background: url('assets/images/icons/arrow-white.png') no-repeat center;
   background-size: 12px;
   transform: rotate(180deg);*/
 }
@@ -10359,7 +10359,7 @@ div.cachartdatatable.tblperdiff table tr :not(td:first-child) em {
   text-align: right;
   font-size: 0.75rem;
   color: #0f172a;
-  background-image: url("../assets/images/icons/arrow-top.png");
+  background-image: url("assets/images/icons/arrow-top.png");
   background-position: 50% 50%;
   background-size: 16px;
   background-repeat: no-repeat;
@@ -10562,7 +10562,7 @@ div.cachartdatatable.tblperdiff table tr :not(td:first-child) em {
   box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1);
 }
 .ux-input.search-input .show-searchicon {
-  background: url("../assets/images/svg/search-icon.svg") no-repeat center center;
+  background: url("assets/images/svg/search-icon.svg") no-repeat center center;
   background-size: 20px;
   position: absolute;
   left: 5px;
@@ -10725,7 +10725,7 @@ div.cachartdatatable.tblperdiff table tr :not(td:first-child) em {
   display: none;
 }
 .ux-input select {
-  background: url("../assets/images/icons/arrow-down-r.png") no-repeat center right;
+  background: url("assets/images/icons/arrow-down-r.png") no-repeat center right;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -10736,7 +10736,7 @@ div.cachartdatatable.tblperdiff table tr :not(td:first-child) em {
   display: none;
 }
 .ux-input select:disabled {
-  background: url("../assets/images/icons/arrow-down-rd.png") no-repeat center right;
+  background: url("assets/images/icons/arrow-down-rd.png") no-repeat center right;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -10856,7 +10856,7 @@ div.cachartdatatable.tblperdiff table tr :not(td:first-child) em {
   text-align: left;
 }
 .ux-input .show-pwd {
-  background: url("../assets/images/icons/show-pin-b.png") no-repeat center center;
+  background: url("assets/images/icons/show-pin-b.png") no-repeat center center;
   background-size: 18px;
   position: absolute;
   right: 3px;
@@ -10865,11 +10865,11 @@ div.cachartdatatable.tblperdiff table tr :not(td:first-child) em {
   top: 30px;
 }
 .ux-input .show-pwd.showing {
-  background: url("../assets/images/icons/hide.png") no-repeat center center;
+  background: url("assets/images/icons/hide.png") no-repeat center center;
   background-size: 18px;
 }
 .ux-input .show-keyboard {
-  background: url("../assets/images/icons/hardware.png") no-repeat center center;
+  background: url("assets/images/icons/hardware.png") no-repeat center center;
   background-size: 30px;
   position: absolute;
   right: 3px;
@@ -10883,7 +10883,7 @@ div.cachartdatatable.tblperdiff table tr :not(td:first-child) em {
   }
 }
 .ux-input .show-search {
-  background: url("../assets/images/svg/search.svg") no-repeat center center;
+  background: url("assets/images/svg/search.svg") no-repeat center center;
   background-size: 20px;
   position: absolute;
   right: 5px;
@@ -10892,7 +10892,7 @@ div.cachartdatatable.tblperdiff table tr :not(td:first-child) em {
   top: 30px;
 }
 .ux-input .show-match {
-  background: url("../assets/images/icons/toast-success.png") no-repeat center center;
+  background: url("assets/images/icons/toast-success.png") no-repeat center center;
   background-size: 18px;
   position: absolute;
   right: 5px;
@@ -11115,7 +11115,7 @@ div.cachartdatatable.tblperdiff table tr :not(td:first-child) em {
   cursor: not-allowed;
 }
 .ux-input .show-pwd-number {
-  background: url("../assets/images/icons/visible.png") no-repeat center center;
+  background: url("assets/images/icons/visible.png") no-repeat center center;
   background-size: 18px;
   position: absolute;
   right: 3px;
@@ -11124,7 +11124,7 @@ div.cachartdatatable.tblperdiff table tr :not(td:first-child) em {
   top: 33px;
 }
 .ux-input .show-pwd-number.showing {
-  background: url("../assets/images/icons/hide.png") no-repeat center center;
+  background: url("assets/images/icons/hide.png") no-repeat center center;
   background-size: 18px;
 }
 .ux-input .ux-dropdown {
@@ -11183,7 +11183,7 @@ div.cachartdatatable.tblperdiff table tr :not(td:first-child) em {
   fill: #ffffff;
 }
 .ux-input .calendar-disable {
-  background: url("../assets/images/svg/calendar-disabled.svg") no-repeat center center;
+  background: url("assets/images/svg/calendar-disabled.svg") no-repeat center center;
   background-size: 18px;
   position: absolute;
   right: 4px;
@@ -11195,7 +11195,7 @@ div.cachartdatatable.tblperdiff table tr :not(td:first-child) em {
   top: 12px;
 }
 .ux-input .calendar-enable {
-  background: url("../assets/images/svg/calendar.svg") no-repeat center center;
+  background: url("assets/images/svg/calendar.svg") no-repeat center center;
   background-size: 18px;
   position: absolute;
   right: 4px;
@@ -11214,7 +11214,7 @@ div.cachartdatatable.tblperdiff table tr :not(td:first-child) em {
   text-decoration: none;
 }
 .ux-input .calendar-ic {
-  background: url("../assets/images/svg/calendar-b.svg") no-repeat center center;
+  background: url("assets/images/svg/calendar-b.svg") no-repeat center center;
   background-size: 20px;
   position: absolute;
   right: 4px;
@@ -11226,7 +11226,7 @@ div.cachartdatatable.tblperdiff table tr :not(td:first-child) em {
   top: 30px;
 }
 .ux-input .clock-ic {
-  background: url("../assets/images/svg/clock.svg") no-repeat center center;
+  background: url("assets/images/svg/clock.svg") no-repeat center center;
   background-size: 20px;
   position: absolute;
   right: 4px;
@@ -11238,7 +11238,7 @@ div.cachartdatatable.tblperdiff table tr :not(td:first-child) em {
   top: 30px;
 }
 .ux-input .search-ic {
-  background: url("../assets/images/icons/search-s.png") no-repeat center center;
+  background: url("assets/images/icons/search-s.png") no-repeat center center;
   background-size: 18px;
   position: absolute;
   right: 0px;
@@ -11247,7 +11247,7 @@ div.cachartdatatable.tblperdiff table tr :not(td:first-child) em {
   top: 30px;
 }
 .ux-input .show-search2 {
-  background: url("../assets/images/svg/search.svg") no-repeat center center;
+  background: url("assets/images/svg/search.svg") no-repeat center center;
   background-size: 24px;
   position: absolute;
   left: 20px;
@@ -11346,7 +11346,7 @@ div.cachartdatatable.tblperdiff table tr :not(td:first-child) em {
   box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1);
 }
 .ux-input.ux-disabled .calendar-ic {
-  background: url("../assets/images/svg/calendar-disabled.svg") no-repeat center center;
+  background: url("assets/images/svg/calendar-disabled.svg") no-repeat center center;
   background-size: 16px;
   position: absolute;
   right: 4px;
@@ -11358,7 +11358,7 @@ div.cachartdatatable.tblperdiff table tr :not(td:first-child) em {
   top: 30px;
 }
 .ux-input.ux-disabled select {
-  background: url("../assets/images/icons/arrow-down-rd.png") no-repeat center right;
+  background: url("assets/images/icons/arrow-down-rd.png") no-repeat center right;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -11388,7 +11388,7 @@ div.cachartdatatable.tblperdiff table tr :not(td:first-child) em {
   box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1);
 }
 .ux-input.ux-readonly .calendar-ic {
-  background: url("../assets/images/svg/calendar.svg") no-repeat center center;
+  background: url("assets/images/svg/calendar.svg") no-repeat center center;
   background-size: 16px;
   position: absolute;
   right: 4px;
@@ -11400,7 +11400,7 @@ div.cachartdatatable.tblperdiff table tr :not(td:first-child) em {
   top: 30px;
 }
 .ux-input.ux-readonly select {
-  background: url("../assets/images/icons/arrow-down-rd.png") no-repeat center right;
+  background: url("assets/images/icons/arrow-down-rd.png") no-repeat center right;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -12011,7 +12011,7 @@ label.toggle.label-inactive em {
 .msg-toast.msg-close::before {
   content: "";
   position: absolute;
-  background: url("../assets/images/icons/cross-w.png") no-repeat center;
+  background: url("assets/images/icons/cross-w.png") no-repeat center;
   background-size: 14px;
   display: block;
   width: 20px;
@@ -13564,7 +13564,7 @@ div.dataTables_wrapper div.dataTables_filter input {
   font-size: 0.75rem;
   color: #0f172a;
   content: "" !important;
-  background-image: url("../assets/images/icons/arrow-top.png");
+  background-image: url("assets/images/icons/arrow-top.png");
   background-position: -10% 10%;
   background-repeat: no-repeat;
   background-color: transparent;
@@ -13684,7 +13684,7 @@ a.show-link2.disabled {
   }
 }
 .custom-selectbox .right-arrow {
-  background: url("../assets/images/icons/arrow-down-w.png") no-repeat center center;
+  background: url("assets/images/icons/arrow-down-w.png") no-repeat center center;
   position: absolute;
   content: "";
   width: 12px;
@@ -13739,7 +13739,7 @@ a.show-link2.disabled {
   }
 }
 .custom-selectbox2 .right-arrow {
-  background: url("../assets/images/icons/arrow-down-r.png") no-repeat center center;
+  background: url("assets/images/icons/arrow-down-r.png") no-repeat center center;
   position: absolute;
   content: "";
   width: 12px;
@@ -13750,7 +13750,7 @@ a.show-link2.disabled {
   cursor: pointer;
 }
 .ux-disabled .custom-selectbox2 .right-arrow {
-  background: url("../assets/images/icons/arrow-down-rd.png") no-repeat center center;
+  background: url("assets/images/icons/arrow-down-rd.png") no-repeat center center;
 }
 
 .hideDetails {
@@ -14190,7 +14190,7 @@ textarea {
 }
 .toast-messages .msg-toast.msg-info:before {
   content: "";
-  background: url("../assets/images/icons/toast-info.png") no-repeat center;
+  background: url("assets/images/icons/toast-info.png") no-repeat center;
   background-size: 16px;
 }
 .toast-messages .msg-toast.msg-success {
@@ -14201,7 +14201,7 @@ textarea {
 }
 .toast-messages .msg-toast.msg-success:before {
   content: "";
-  background: url("../assets/images/icons/toast-success.png") no-repeat center;
+  background: url("assets/images/icons/toast-success.png") no-repeat center;
   background-size: 16px;
 }
 .toast-messages .msg-toast.msg-error {
@@ -14212,7 +14212,7 @@ textarea {
 }
 .toast-messages .msg-toast.msg-error:before {
   content: "";
-  background: url("../assets/images/icons/toast-error.png") no-repeat center;
+  background: url("assets/images/icons/toast-error.png") no-repeat center;
   background-size: 16px;
 }
 .toast-messages .msg-toast.msg-warning {
@@ -14223,7 +14223,7 @@ textarea {
 }
 .toast-messages .msg-toast.msg-warning:before {
   content: "";
-  background: url("../assets/images/icons/toast-warning.png") no-repeat center;
+  background: url("assets/images/icons/toast-warning.png") no-repeat center;
   background-size: 16px;
 }
 .toast-messages .msg-toast.msg-close {
@@ -14314,22 +14314,22 @@ textarea {
   background-color: #bfbfbf;
 }
 .featured-owl .owl-nav .owl-prev {
-  background: #ffffff url("../assets/images/icons/left-arrow-r.png") no-repeat center;
+  background: #ffffff url("assets/images/icons/left-arrow-r.png") no-repeat center;
   background-size: 16px 16px;
   /* //&.disabled */
 }
 .featured-owl .owl-nav .owl-prev.disabled {
-  background: #ffffff url("../assets/images/icons/oic-prev-disabled.png") no-repeat center;
+  background: #ffffff url("assets/images/icons/oic-prev-disabled.png") no-repeat center;
   background-size: 16px 16px;
 }
 .featured-owl .owl-nav .owl-next {
   margin-right: 0;
-  background: #ffffff url("../assets/images/icons/right-arrow-r.png") no-repeat center;
+  background: #ffffff url("assets/images/icons/right-arrow-r.png") no-repeat center;
   background-size: 16px 16px;
   /* //&.disabled */
 }
 .featured-owl .owl-nav .owl-next.disabled {
-  background: #ffffff url("../assets/images/icons/oic-next-disabled.png") no-repeat center;
+  background: #ffffff url("assets/images/icons/oic-next-disabled.png") no-repeat center;
   background-size: 16px 16px;
 }
 
@@ -20332,7 +20332,7 @@ button.btn-outline:hover {
 }
 .toast-messages2 .msg-toast2.msg-info:before {
   content: "";
-  background: url("../assets/images/icons/toast-info.png") no-repeat center;
+  background: url("assets/images/icons/toast-info.png") no-repeat center;
   background-size: 16px;
 }
 .toast-messages2 .msg-toast2.msg-success {
@@ -20343,7 +20343,7 @@ button.btn-outline:hover {
 }
 .toast-messages2 .msg-toast2.msg-success:before {
   content: "";
-  background: url("../assets/images/icons/toast-success.png") no-repeat center;
+  background: url("assets/images/icons/toast-success.png") no-repeat center;
   background-size: 16px;
 }
 .toast-messages2 .msg-toast2.msg-error {
@@ -20354,7 +20354,7 @@ button.btn-outline:hover {
 }
 .toast-messages2 .msg-toast2.msg-error:before {
   content: "";
-  background: url("../assets/images/icons/toast-error.png") no-repeat center;
+  background: url("assets/images/icons/toast-error.png") no-repeat center;
   background-size: 16px;
 }
 .toast-messages2 .msg-toast2.msg-warning {
@@ -20365,7 +20365,7 @@ button.btn-outline:hover {
 }
 .toast-messages2 .msg-toast2.msg-warning:before {
   content: "";
-  background: url("../assets/images/icons/toast-warning.png") no-repeat center;
+  background: url("assets/images/icons/toast-warning.png") no-repeat center;
   background-size: 16px;
 }
 .toast-messages2 .msg-toast2.msg-close {
@@ -20488,7 +20488,7 @@ button.btn-outline:hover {
 }
 .toast-messages3 .msg-toast.msg-info:before {
   content: "";
-  background: url("../assets/images/icons/toast-info.png") no-repeat center;
+  background: url("assets/images/icons/toast-info.png") no-repeat center;
   background-size: 16px;
 }
 .toast-messages3 .msg-toast.msg-success {
@@ -20499,7 +20499,7 @@ button.btn-outline:hover {
 }
 .toast-messages3 .msg-toast.msg-success:before {
   content: "";
-  background: url("../assets/images/icons/toast-success.png") no-repeat center;
+  background: url("assets/images/icons/toast-success.png") no-repeat center;
   background-size: 16px;
 }
 .toast-messages3 .msg-toast.msg-error {
@@ -20510,7 +20510,7 @@ button.btn-outline:hover {
 }
 .toast-messages3 .msg-toast.msg-error:before {
   content: "";
-  background: url("../assets/images/icons/toast-error.png") no-repeat center;
+  background: url("assets/images/icons/toast-error.png") no-repeat center;
   background-size: 16px;
 }
 .toast-messages3 .msg-toast.msg-error.custom-bg {
@@ -20526,7 +20526,7 @@ button.btn-outline:hover {
 }
 .toast-messages3 .msg-toast.msg-error2:before {
   content: "";
-  background: url("../assets/images/icons/toast-error.png") no-repeat center;
+  background: url("assets/images/icons/toast-error.png") no-repeat center;
   background-size: 16px;
 }
 .toast-messages3 .msg-toast.msg-warning {
@@ -20537,7 +20537,7 @@ button.btn-outline:hover {
 }
 .toast-messages3 .msg-toast.msg-warning:before {
   content: "";
-  background: url("../assets/images/icons/toast-warning.png") no-repeat center;
+  background: url("assets/images/icons/toast-warning.png") no-repeat center;
   background-size: 16px;
 }
 .toast-messages3 .msg-toast.msg-close {
@@ -21023,7 +21023,7 @@ em.info {
 @media (max-width: 991px) {
   .grid-list1 li .grid-info .full-info em {
     cursor: pointer;
-    background: url("../assets/images/icons/arrow-down-rb.png") no-repeat 97% 50%;
+    background: url("assets/images/icons/arrow-down-rb.png") no-repeat 97% 50%;
     background-size: 16px;
     transform: rotate(0deg);
     -webkit-transition: all 0.5s ease;
@@ -21600,7 +21600,7 @@ em.info {
 @media (max-width: 991px) {
   .grid-list1 li.active .grid-info .full-info em {
     cursor: pointer;
-    background: url("../assets/images/icons/arrow-down-rb.png") no-repeat 97% 50%;
+    background: url("assets/images/icons/arrow-down-rb.png") no-repeat 97% 50%;
     background-size: 16px;
     transform: rotate(180deg);
     -webkit-transition: all 0.5s ease;
@@ -22877,7 +22877,7 @@ p.info-text-blue {
   opacity: 1;
   -webkit-transition: 0.2s;
   transition: 0.2s;
-  background: url("../assets/images/svg/eye-on-r.svg") no-repeat center center;
+  background: url("assets/images/svg/eye-on-r.svg") no-repeat center center;
   background-size: 24px;
 }
 .user-info-div .show-btn button.eye-btn img {
@@ -22897,7 +22897,7 @@ p.info-text-blue {
   opacity: 0.8;
 }
 .user-info-div .show-btn button.eye-btn.active {
-  background: url("../assets/images/svg/eye-off-r.svg") no-repeat center center;
+  background: url("assets/images/svg/eye-off-r.svg") no-repeat center center;
   background-size: 24px;
 }
 .user-info-div .show-btn button.eye-btn:active {

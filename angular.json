@@ -53,13 +53,13 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "5mb",
+                  "maximumError": "5mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "5mb",
+                  "maximumError": "5mb"
                 }
               ],
               "fileReplacements": [
@@ -132,8 +132,14 @@
               "src/js/lib/bootstrap-timepicker.js"
             ]
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy"   
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

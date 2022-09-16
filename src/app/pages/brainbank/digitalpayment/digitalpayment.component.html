@@ -1,0 +1,364 @@
+<div class="right-main-column">
+    <div class="right-col-container pad-b">
+
+        <div class="body-page-container">
+            <div class="container-fluid">
+
+               <div class="row">
+                    <div class="col-12">
+                        <app-userdetails></app-userdetails>
+                                <div class="row">
+                                    <div class="whitecard no-bg">
+                                        <div class="center-div">
+                                           <div class="row">
+                                               <div class="col-12 col-md-12">
+                                                 <div class="ux-nav-tabs" style="margin:0">
+                                                    <div class="responsive-tab custom-card bg-custom pad-custom2 mar-custom3">
+                                                        <div class="custom-width">
+                                                            <ul class="nav nav-tabs nav-justified bor-n" role="tablist">
+                                                                <li class="nav-item1" *ngFor="let tab of tablist" [ngClass]="activeTabName == tab ? 'active' : ''">
+                                                                    <a class="nav-link active" (click)="activetab(tab)" data-toggle="tab"><em>{{tab | uppercase}}</em></a>
+                                                                </li>
+                                                                <!-- <li class="nav-item1">
+                                                                    <a class="nav-link" data-toggle="tab" href="#imps">IMPS</a>
+                                                                </li>
+                                                                <li class="nav-item1">
+                                                                    <a class="nav-link" data-toggle="tab" href="#rtgs">RTGS</a>
+                                                                </li>
+                                                                <li class="nav-item1">
+                                                                    <a class="nav-link" data-toggle="tab" href="#neft">NEFT</a>
+                                                                </li> -->
+                                                             </ul>
+                                                        </div>
+                                                    </div>
+                                                   </div>
+                                                 </div>
+                                                 <div class="col-12 col-md-12">
+                                                    <div class="tab-content bg-transparent mb-3">
+                                                        <div id="upi" class="tab-pane active">
+                                                             <div class="row">
+                                                                <div class="col-sm-12 col-12 col-md-12">
+                                                                     <div class="bg-white1 dark-bg2">
+                                                                         <div class="row">
+                                                                              <div class="col-sm-12 col-12 col-md-12">
+                                                                                  <div class="responsive-tab">
+                                                                                    <div class="custom-width" id="tab1">
+                                                                                          <ul class="tabs tab1 info-list2" role="tablist">
+                                                                                              <li (click)="onLastYear('lastyear')" role="presentation">
+                                                                                                  <a class="nav-link">
+                                                                                                       <em>Last Year</em> 
+                                                                                                   </a>
+                                                                                              </li>
+                                                                                              <li (click)="onLastYear('thisyear')" role="presentation">
+                                                                                                  <a class="nav-link">
+                                                                                                    <em>This Year</em> 
+                                                                                                  </a>
+                                                                                              </li>
+                                                                                          </ul>
+                                                                                      </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                              </div>
+                                                                             <div class="row">  
+                                                                                <div class="col-12 col-md-12"> 	 
+                                                                                    <div class="panel entry-content tab-pane" [hidden]="!showLastYear" id="last-year">
+                                                                                        <div class="row">
+                                                                                            <div class="col-sm-12 col-12 col-md-6">
+                                                                                                <div class="chart-heading">
+                                                                                                    <h2 class="light-text">Transactions Overview</h2>
+                                                                                                     <h5 class="light-text">Number of Transactions</h5>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                         </div>
+                                                                                         <div class="row"> 
+                                                                                                 <div class="col-sm-12 col-12 col-md-12">
+                                                                                                      <div>
+                                                                                                        <div class="chart-box pt-0 pb-0">
+                                                                                                            <div class="chart-area2">
+                                                                                                                <canvas id="dpTransOverview" width="600" height="500"></canvas>
+                                                                                                            </div>
+                                                                                                         </div>
+                                                                                                    </div>
+                                                                                               </div> 
+                                                                                          </div>
+                                                                                     </div>
+                                                                                    <div class="panel entry-content tab-pane" [hidden]="!showThisYear" id="this-year">
+                                                                                        <div class="row">
+                                                                                            <div class="col-sm-12 col-12 col-md-6">
+                                                                                                <div class="chart-heading">
+                                                                                                    <h2 class="light-text">Transactions Overview</h2>
+                                                                                                     <h5 class="light-text">Number of Transactions</h5>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                          </div>
+                                                                                          <div class="row"> 
+                                                                                                 <div class="col-sm-12 col-12 col-md-12">
+                                                                                                      <div>
+                                                                                                        <div class="chart-box pt-0 pb-0">
+                                                                                                            <div class="chart-area2">
+                                                                                                                <canvas id="dpTransOverview2" width="600" height="500"></canvas>
+                                                                                                            </div>
+                                                                                                         </div>
+                                                                                                    </div>
+                                                                                               </div> 
+                                                                                          </div>
+                                                                                    </div>
+                                                                                 </div>
+                                                                              </div>
+                                                                             </div>
+                                                                         </div>
+
+                                                                         <div class="col-sm-12 col-12 col-md-12">
+                                                                            <div class="bg-white1 dark-bg">
+                                                                                <div class="row">
+                                                                                    <div class="col-sm-12 col-12 col-md-12">
+                                                                                        <div class="responsive-tab">
+                                                                                            <div class="custom-width" id="tab3">
+                                                                                                <ul class="tabs tab2 info-list1" role="tablist">
+                                                                                                    <li (click)="onBankDeclineBD('bd')" role="presentation">
+                                                                                                        <a class="nav-link" >
+                                                                                                             <em>Bank Decline BD</em> 
+                                                                                                         </a>
+                                                                                                    </li>
+                                                                                                    <li (click)="onBankDeclineBD('nonbd')" role="presentation">
+                                                                                                        <a class="nav-link" >
+                                                                                                          <em>Non-BD</em> 
+                                                                                                        </a>
+                                                                                                    </li>
+                                                                                                </ul>
+                                                                                            </div>
+                                                                                          </div>
+                                                                                      </div>
+                                                                                    </div>
+                                                                                   <div class="row">  
+                                                                                      <div class="col-12 col-md-12"> 	 
+                                                                                          <div class="panel entry-content1 tab-pane" [hidden]="!showBD" id="BDB">
+                                                                                              <div class="row">
+                                                                                                  <div class="col-sm-10 col-10 col-md-6">
+                                                                                                      <div class="mb-4">
+                                                                                                          <h2 class="light-text">Technical Decline</h2>
+                                                                                                       </div>
+                                                                                                  </div>
+                                                                                                  <div class="col-sm-2 col-2 col-md-6">
+                                                                                                    <ul class="filter-list-info mar-t">
+                                                                                                         <li>
+                                                                                                            <a href="#" class="filter-btn" title="filter">
+                                                                                                                <div class="icon">
+                                                                                                                    <img src="assets/images/svg/filter.svg" alt="filter-icon">
+                                                                                                               </div>
+                                                                                                            </a>
+                                                                                                            <div class="filter-section">
+                                                                                                                <ul class="lst-filter">
+                                                                                                                     <li>
+                                                                                                                        <a href="#" class="common-action">
+                                                                                                                          All
+                                                                                                                        </a>
+                                                                                                                    </li>
+                                                                                                                    <li>
+                                                                                                                        <a href="#" class="common-action">
+                                                                                                                            Financial
+                                                                                                                        </a>
+                                                                                                                    </li>
+                                                                                                                    <li>
+                                                                                                                        <a href="#" class="common-action">
+                                                                                                                             Non-Financial
+                                                                                                                        </a>
+                                                                                                                    </li>
+                                                                                                                 </ul>
+                                                                                                            </div>
+                                                                                                        </li>
+                                                                                                     </ul>
+                                                                                                </div>
+    
+                                                                                               </div>
+                                                                                               <div class="row"> 
+                                                                                                       <div class="col-sm-12 col-12 col-md-12">
+                                                                                                          <div>
+                                                                                                              <div class="chart-box pt-0 pb-0">
+                                                                                                                <div class="chart-area">
+                                                                                                                    <canvas id="dpTechDecline" width="600" height="350"></canvas>
+                                                                                                                    <div class="cachartdatatable">
+                                                                                                                        <table>
+                                                                                                                            <tr>
+                                                                                                                                <th></th>
+                                                                                                                                <th><em>Invalid Transaction</em></th>
+                                                                                                                                <th><em>Unable To Process Due To Remitter Side Issue</em></th>
+                                                                                                                                <th><em>Response Code Error</em></th>
+                                                                                                                                <th><em>Requath Time Out For Pay</em></th>
+                                                                                                                                <th><em>PSP Not Available</em></th>
+                                                                                                                            </tr>
+                                                                                                                            <tr>
+                                                                                                                                <td><em><i class="ind4"></i>For The Day Count</em></td>
+                                                                                                                                <td><em>30445</em></td>
+                                                                                                                                <td><em>26</em></td>
+                                                                                                                                <td><em>558</em></td>
+                                                                                                                                <td><em>129</em></td>
+                                                                                                                                <td><em>32</em></td>
+                                                                                                                            </tr>
+                                                                                                                            <tr>
+                                                                                                                                <td><em><i class="ind3"></i>Month To Date Count</em></td>
+                                                                                                                                <td><em>532460</em></td>
+                                                                                                                                <td><em>53822</em></td>
+                                                                                                                                <td><em>6377</em></td>
+                                                                                                                                <td><em>2271</em></td>
+                                                                                                                                <td><em>173</em></td>
+                                                                                                                            </tr>
+                                                                                                                        </table>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                             </div>
+                                                                                                          </div>
+                                                                                                     </div> 
+                                                                                                </div>
+                                                                                           </div>
+                                                                                          <div class="panel entry-content1 tab-pane" [hidden]="!showNonBD" id="non-bd">
+                                                                                              <div class="row">
+                                                                                                  <div class="col-sm-10 col-10 col-md-6">
+                                                                                                      <div class="mb-4">
+                                                                                                          <h2 class="light-text">Technical Decline</h2>
+                                                                                                       </div>
+                                                                                                  </div>
+                                                                                                  <div class="col-sm-2 col-2 col-md-6">
+                                                                                                    <ul class="filter-list-info mar-t">
+                                                                                                         <li>
+                                                                                                            <a href="#" class="filter-btn" title="filter">
+                                                                                                                <div class="icon">
+                                                                                                                    <img src="assets/images/svg/filter.svg" alt="filter-icon">
+                                                                                                               </div>
+                                                                                                            </a>
+                                                                                                            <div class="filter-section">
+                                                                                                                <ul class="lst-filter">
+                                                                                                                     <li>
+                                                                                                                        <a href="#" class="common-action">
+                                                                                                                          All
+                                                                                                                        </a>
+                                                                                                                    </li>
+                                                                                                                    <li>
+                                                                                                                        <a href="#" class="common-action">
+                                                                                                                            Financial
+                                                                                                                        </a>
+                                                                                                                    </li>
+                                                                                                                    <li>
+                                                                                                                        <a href="#" class="common-action">
+                                                                                                                             Non-Financial
+                                                                                                                        </a>
+                                                                                                                    </li>
+                                                                                                                 </ul>
+                                                                                                            </div>
+                                                                                                        </li>
+                                                                                                     </ul>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                                <div class="row"> 
+                                                                                                       <div class="col-sm-12 col-12 col-md-12">
+                                                                                                         <div>
+                                                                                                              <div class="chart-box pt-0 pb-0">
+                                                                                                                <canvas id="dpTechDecline2" width="600" height="350"></canvas>
+                                                                                                                <div class="cachartdatatable">
+                                                                                                                    <table>
+                                                                                                                        <tr>
+                                                                                                                            <th></th>
+                                                                                                                            <th><em>For The Day Count</em></th>
+                                                                                                                            <th><em>Month To Date Count</em></th>
+                                                                                                                         </tr>
+                                                                                                                        <tr>
+                                                                                                                            <td><em><i class="ind4"></i>No Responsce From CBS</em></td>
+                                                                                                                            <td><em>741</em></td>
+                                                                                                                            <td><em>100837</em></td>
+                                                                                                                         </tr>
+                                                                                                                        <tr>
+                                                                                                                            <td><em><i class="ind3"></i>Remitter CBS Offline</em></td>
+                                                                                                                            <td><em>83</em></td>
+                                                                                                                            <td><em>23148</em></td>
+                                                                                                                         </tr>
+                                                                                                                    </table>
+                                                                                                                </div>
+                                                                                                              </div>
+                                                                                                          </div>
+                                                                                                     </div> 
+                                                                                                </div>
+                                                                                          </div>
+                                                                                       </div>
+                                                                                    </div>
+                                                                                  </div>
+                                                                             </div>
+
+
+                                                                      <div class="col-sm-12 col-12 col-md-12">
+                                                                            <div class="bg-white1 dark-bg">
+                                                                                <div class="row mb-4">
+                                                                                    <div class="col-sm-10 col-10 col-md-6">
+                                                                                        <div>
+                                                                                            <h2 class="light-text">Business Decline</h2>
+                                                                                         </div>
+                                                                                    </div>
+                                                                                    <div class="col-sm-2 col-2 col-md-6">
+                                                                                        <ul class="filter-list-info mar-t">
+                                                                                             <li>
+                                                                                                <a href="#" class="filter-btn" title="filter">
+                                                                                                    <div class="icon">
+                                                                                                        <img src="assets/images/svg/filter.svg" alt="filter-icon">
+                                                                                                   </div>
+                                                                                                </a>
+                                                                                                <div class="filter-section">
+                                                                                                    <ul class="lst-filter">
+                                                                                                         <li>
+                                                                                                            <a href="#" class="common-action">
+                                                                                                              All
+                                                                                                            </a>
+                                                                                                        </li>
+                                                                                                        <li>
+                                                                                                            <a href="#" class="common-action">
+                                                                                                                Financial
+                                                                                                            </a>
+                                                                                                        </li>
+                                                                                                        <li>
+                                                                                                            <a href="#" class="common-action">
+                                                                                                                 Non-Financial
+                                                                                                            </a>
+                                                                                                        </li>
+                                                                                                     </ul>
+                                                                                                </div>
+                                                                                            </li>
+                                                                                         </ul>
+                                                                                    </div>
+                                                                                </div>
+                                                                                 <div class="row"> 
+                                                                                         <div class="col-sm-12 col-12 col-md-12">
+                                                                                            <div>
+                                                                                                <div class="chart-box pt-0 pb-0">
+                                                                                                    <div class="chart-area">
+                                                                                                        <canvas id="dpBusiDecline" width="600" height="500"></canvas>
+                                                                                                    </div>
+                                                                                               </div>
+                                                                                            </div>
+                                                                                       </div> 
+                                                                                  </div>
+                                                                                  </div>
+                                                                             </div>
+
+                                                                      </div>
+                                                                    </div>
+
+                                                                 <div id="imps" class="tab-pane">
+                                                                     
+                                                                   </div>
+                                                           </div>
+                                                     </div>
+                                              </div>
+                                        </div> 
+                                    </div>
+                                </div>
+                               
+                        </div>
+
+                    </div>
+                 
+            </div>
+         </div>
+      
+    </div>
+
+    <!--.right-col-container-->
+
+</div>

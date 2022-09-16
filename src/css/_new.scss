@@ -10898,7 +10898,7 @@ p {
                     opacity:1;
                     -webkit-transition: 0.2s;
                     transition: 0.2s;
-                    background: url('../assets/images/svg/eye-on-r.svg') no-repeat center center;
+                    background: url('assets/images/svg/eye-on-r.svg') no-repeat center center;
                     background-size: 24px;
                     img{
                         width:20px;
@@ -10916,7 +10916,7 @@ p {
                     }
 
                     &.active{
-                        background: url('../assets/images/svg/eye-off-r.svg') no-repeat center center;
+                        background: url('assets/images/svg/eye-off-r.svg') no-repeat center center;
                         background-size: 24px;
                     }
                    
@@ -11113,7 +11113,7 @@ p {
 //                         height: 14px;
 //                         background-size: 14px;
 //                         margin: -7px 0 0 -7px;
-//                         background: url(../assets/images/svg/icon-thick-check.svg);
+//                         background: url(assets/images/svg/icon-thick-check.svg);
 //                         background-repeat: no-repeat;
 //                         background-position: center center;
 //                     }
