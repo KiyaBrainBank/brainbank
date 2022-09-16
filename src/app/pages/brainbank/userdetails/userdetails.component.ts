@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { ThemesettingsComponent } from '../../common-ui/themesettings/themesettings.component';
 @Component({
   selector: 'app-userdetails',
   templateUrl: './userdetails.component.html',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserdetailsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route:Router) { }
 
   ngOnInit(): void {
   }
-
+  goToPage(route){
+    this.route.navigate(['/'+route])
+  }
 }
