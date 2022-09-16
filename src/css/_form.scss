@@ -290,7 +290,7 @@
 			font-size: 0.75rem;
 			color: rgba($brand-primary-color, 1);
 			// content: "Browse"!important;
-			background-image:url("../assets/images/icons/arrow-top.png"); 
+			background-image:url("assets/images/icons/arrow-top.png"); 
 			// background-position: 0% 25%;
 			background-position: 50% 50%;
 			background-size:16px;
@@ -523,7 +523,7 @@
 		}  
 
 		.show-searchicon{	
-			background: url('../assets/images/svg/search-icon.svg') no-repeat center center;	
+			background: url('assets/images/svg/search-icon.svg') no-repeat center center;	
 			background-size:20px;	
 			position: absolute;	
 			left: 5px;	
@@ -714,7 +714,7 @@
 		display: none;
 	  }
 	select {
-		background: url('../assets/images/icons/arrow-down-r.png') no-repeat center right;
+		background: url('assets/images/icons/arrow-down-r.png') no-repeat center right;
 		-webkit-appearance: none;
 		   -moz-appearance: none;
 				appearance: none;
@@ -725,7 +725,7 @@
 			display: none;
 		}
 		&:disabled{	
-			background: url('../assets/images/icons/arrow-down-rd.png') no-repeat center right;	
+			background: url('assets/images/icons/arrow-down-rd.png') no-repeat center right;	
 			-webkit-appearance: none;	
 		   -moz-appearance: none;	
 			appearance: none;	
@@ -855,7 +855,7 @@
 	}
  
 	.show-pwd {
-		background: url('../assets/images/icons/show-pin-b.png') no-repeat center center;
+		background: url('assets/images/icons/show-pin-b.png') no-repeat center center;
 		background-size: 18px;
 		position: absolute;
 		right: 3px;
@@ -863,12 +863,12 @@
 		width: 18px;
     	top:30px;
     	&.showing {
-		background: url('../assets/images/icons/hide.png') no-repeat center center;
+		background: url('assets/images/icons/hide.png') no-repeat center center;
 		background-size: 18px;
     	}
 	}
 	.show-keyboard{
-		background: url('../assets/images/icons/hardware.png') no-repeat center center;
+		background: url('assets/images/icons/hardware.png') no-repeat center center;
 		background-size:30px;
 		position: absolute;
 		right: 3px;
@@ -885,7 +885,7 @@
 		
 		}	
 		.show-search{	
-			background: url('../assets/images/svg/search.svg') no-repeat center center;
+			background: url('assets/images/svg/search.svg') no-repeat center center;
 			background-size: 20px;	
 			position: absolute;	
 			right: 5px;	
@@ -898,7 +898,7 @@
 	    // 	}	
 		}
 	.show-match{	
-			background: url('../assets/images/icons/toast-success.png') no-repeat center center;	
+			background: url('assets/images/icons/toast-success.png') no-repeat center center;	
 			background-size:18px;	
 			position: absolute;	
 			right: 5px;	
@@ -912,7 +912,7 @@
 	    // 	}	
 		}
 	.show-info{
-		// background: url('../assets/images/icons/hardware.png') no-repeat center center;
+		// background: url('assets/images/icons/hardware.png') no-repeat center center;
 		background-size:50px;
 		position: absolute;
 		right: 0px;
@@ -936,9 +936,9 @@
 	}
 
 	.show-currency {
-		// background: url('../assets/images/icons/rupee.png') no-repeat center center;
+		// background: url('assets/images/icons/rupee.png') no-repeat center center;
 		// [theme="dark"] & {
-		// 	background: url('../assets/images/icons/rupee-indian.png') no-repeat center center;    background-size: contain;
+		// 	background: url('assets/images/icons/rupee-indian.png') no-repeat center center;    background-size: contain;
 		// }
 		background-size:11px;
 		position: absolute;
@@ -954,7 +954,7 @@
     }
 
 	.rupee-icon{
-		// background: url('../assets/images/icons/hardware.png') no-repeat center center;
+		// background: url('assets/images/icons/hardware.png') no-repeat center center;
 		// background-size:50px;
 		position: absolute;
 		// background-color: rgba($grey3,1);
@@ -991,7 +991,7 @@
 	}
 
 	.show-info1{
-		// background: url('../assets/images/icons/hardware.png') no-repeat center center;
+		// background: url('assets/images/icons/hardware.png') no-repeat center center;
 		background-size:90px;
 		position: absolute;
 		right: 0px;
@@ -1017,7 +1017,7 @@
 	}
 
 	span.show-info2{
-		// background: url('../assets/images/icons/hardware.png') no-repeat center center;
+		// background: url('assets/images/icons/hardware.png') no-repeat center center;
 		background-size:50px;
 		position: absolute;
 		right: 0px;
@@ -1048,7 +1048,7 @@
 
 
 	span.show-info3{
-		// background: url('../assets/images/icons/hardware.png') no-repeat center center;
+		// background: url('assets/images/icons/hardware.png') no-repeat center center;
 		background-size:50px;
 		position: absolute;
 		right: 0px;
@@ -1080,7 +1080,7 @@
 
 
 	span.show-digit{
-		// background: url('../assets/images/icons/hardware.png') no-repeat center center;
+		// background: url('assets/images/icons/hardware.png') no-repeat center center;
 		background-size:50px;
 		position: absolute;
 		left: 0px;
@@ -1106,7 +1106,7 @@
 		 
 	}
 	span.show-digit1{
-		// background: url('../assets/images/icons/hardware.png') no-repeat center center;
+		// background: url('assets/images/icons/hardware.png') no-repeat center center;
 		background-size:50px;
 		position: absolute;
 		right: 0px;
@@ -1134,7 +1134,7 @@
 	}
 
 	span.show-digit2{
-		// background: url('../assets/images/icons/hardware.png') no-repeat center center;
+		// background: url('assets/images/icons/hardware.png') no-repeat center center;
 		background-size:50px;
 		position: absolute;
 		left:128px;
@@ -1212,7 +1212,7 @@
 
   
 	.show-pwd-number {
-		background: url('../assets/images/icons/visible.png') no-repeat center center;
+		background: url('assets/images/icons/visible.png') no-repeat center center;
 		background-size: 18px;
 		position: absolute;
 		right: 3px;
@@ -1220,7 +1220,7 @@
 		width: 18px;
     	top: 33px;
     	&.showing {
-		background: url('../assets/images/icons/hide.png') no-repeat center center;
+		background: url('assets/images/icons/hide.png') no-repeat center center;
 		background-size: 18px;
     	}
 	}
@@ -1288,7 +1288,7 @@
 	
 	
 	.calendar-disable {
-		background: url('../assets/images/svg/calendar-disabled.svg') no-repeat center center;
+		background: url('assets/images/svg/calendar-disabled.svg') no-repeat center center;
 		background-size: 18px;
 		position: absolute;
 		right: 4px;
@@ -1299,7 +1299,7 @@
 	 } 
 
 	 .calendar-enable {
-		background: url('../assets/images/svg/calendar.svg') no-repeat center center;
+		background: url('assets/images/svg/calendar.svg') no-repeat center center;
 		background-size: 18px;
 		position: absolute;
 		right: 4px;
@@ -1318,7 +1318,7 @@
 		text-decoration: none;
 	}
 	.calendar-ic {
-		background: url('../assets/images/svg/calendar-b.svg') no-repeat center center;
+		background: url('assets/images/svg/calendar-b.svg') no-repeat center center;
 		background-size: 20px;
 		position: absolute;
 		right: 4px;
@@ -1328,7 +1328,7 @@
     	&.cal-top {top:30px;}
 	}
 	.clock-ic {
-		background: url('../assets/images/svg/clock.svg') no-repeat center center;
+		background: url('assets/images/svg/clock.svg') no-repeat center center;
 		background-size: 20px;
 		position: absolute;
 		right: 4px;
@@ -1338,7 +1338,7 @@
     	&.cal-top {top:30px;}
 	}
 	// .show-phonebook {
-	// 	background: url('../assets/images/icons/phone-book.png') no-repeat center center;
+	// 	background: url('assets/images/icons/phone-book.png') no-repeat center center;
 	// 	background-size: 18px;
 	// 	position: absolute;
 	// 	right: 0px;
@@ -1347,7 +1347,7 @@
     // 	top:30px;
 	//  }
 	//  .show-phonebook1 {
-	// 	background: url('../assets/images/icons/phone-book.png') no-repeat center center;
+	// 	background: url('assets/images/icons/phone-book.png') no-repeat center center;
 	// 	background-size: 18px;
 	// 	position: absolute;
 	// 	right:10px;
@@ -1356,7 +1356,7 @@
     // 	top:30px;
 	//  }
 	//  .show-phonebook2 {
-	// 	background: url('../assets/images/icons/phone-book.png') no-repeat center center;
+	// 	background: url('assets/images/icons/phone-book.png') no-repeat center center;
 	// 	background-size: 18px;
 	// 	position: absolute;
 	// 	right:40px;
@@ -1365,7 +1365,7 @@
     // 	top:30px;
 	//  }
 	//  .show-qr {
-	// 	background: url('../assets/images/icons/scan-qr.png') no-repeat center center;
+	// 	background: url('assets/images/icons/scan-qr.png') no-repeat center center;
 	// 	background-size:44px;
 	// 	position: absolute;
 	// 	right:-11px;
@@ -1378,7 +1378,7 @@
 	// 	}
 	//  }
 	//  .show-qr2 {
-	// 	background: url('../assets/images/icons/scan-qr.png') no-repeat center center;
+	// 	background: url('assets/images/icons/scan-qr.png') no-repeat center center;
 	// 	background-size:44px;
 	// 	position: absolute;
 	// 	right:-5px;
@@ -1389,7 +1389,7 @@
 		 
 	//  }
 	 .search-ic{
-		background: url('../assets/images/icons/search-s.png') no-repeat center center;
+		background: url('assets/images/icons/search-s.png') no-repeat center center;
 		background-size: 18px;
 		position: absolute;
 		right: 0px;
@@ -1399,7 +1399,7 @@
      }
 
 	 .show-search2 {
-		background: url('../assets/images/svg/search.svg') no-repeat center center;
+		background: url('assets/images/svg/search.svg') no-repeat center center;
 		background-size:24px;
 		position: absolute;
 		left:20px;
@@ -1454,7 +1454,7 @@
 	 
 
 	//  .cross-icon {
-    //     background: url('../assets/images/icons/cross.png') no-repeat center center;
+    //     background: url('assets/images/icons/cross.png') no-repeat center center;
     //     background-size: 14px;
     //     position: absolute;
     //     right: 14px;
@@ -1535,7 +1535,7 @@
 			}
 		 }
 		 .calendar-ic {
-			background: url('../assets/images/svg/calendar-disabled.svg') no-repeat center center;
+			background: url('assets/images/svg/calendar-disabled.svg') no-repeat center center;
 			background-size: 16px;
 			position: absolute;
 			right: 4px;
@@ -1546,7 +1546,7 @@
 		} 
 		select {
 			// border: none;
-			background: url('../assets/images/icons/arrow-down-rd.png') no-repeat center right;
+			background: url('assets/images/icons/arrow-down-rd.png') no-repeat center right;
 			-webkit-appearance: none;
 		   -moz-appearance: none;
 				appearance: none;
@@ -1586,7 +1586,7 @@
 		box-shadow: 0 1px 0 0 rgba($black,0.1); 
 	}
 	   .calendar-ic {
-		background: url('../assets/images/svg/calendar.svg') no-repeat center center;
+		background: url('assets/images/svg/calendar.svg') no-repeat center center;
 		background-size: 16px;
 		position: absolute;
 		right: 4px;
@@ -1597,7 +1597,7 @@
 	} 
 	   select {
 		// border: none;
-		background: url('../assets/images/icons/arrow-down-rd.png') no-repeat center right;
+		background: url('assets/images/icons/arrow-down-rd.png') no-repeat center right;
 		-webkit-appearance: none;
 	   -moz-appearance: none;
 	    appearance: none;
@@ -2195,7 +2195,7 @@ label.toggle {
         &::before {
             content: "";
             position: absolute;
-            background: url('../assets/images/icons/cross-w.png') no-repeat center;
+            background: url('assets/images/icons/cross-w.png') no-repeat center;
             background-size: 14px;
             display: block;
             width: 20px;
@@ -4131,7 +4131,7 @@ input[type="text"]{
 	font-size: 0.75rem;
     color: rgba($brand-primary-color, 1);
 	content: ""!important;
-	background-image:url("../assets/images/icons/arrow-top.png"); 
+	background-image:url("assets/images/icons/arrow-top.png"); 
     background-position: -10% 10%;
     background-repeat: no-repeat; 
     background-color:transparent;
@@ -4183,7 +4183,7 @@ input[type="text"]{
 //     line-height: 1.5;
 //     color: #495057;
 // 	content: ""!important;
-// 	background-image:url("../assets/images/icons/arrow-top.png"); 
+// 	background-image:url("assets/images/icons/arrow-top.png"); 
 //     background-position: center right;
 //     background-repeat: no-repeat; 
 //     background-color:$white;
@@ -4305,7 +4305,7 @@ a{
 	}
 
 	.right-arrow {
-		background: url('../assets/images/icons/arrow-down-w.png') no-repeat center center;
+		background: url('assets/images/icons/arrow-down-w.png') no-repeat center center;
 	    position: absolute;
 		content:"";
 		width:12px;
@@ -4365,9 +4365,9 @@ a{
 	}
 
 	.right-arrow {
-		background: url('../assets/images/icons/arrow-down-r.png') no-repeat center center;
+		background: url('assets/images/icons/arrow-down-r.png') no-repeat center center;
 		.ux-disabled & {
-			background: url('../assets/images/icons/arrow-down-rd.png') no-repeat center center;
+			background: url('assets/images/icons/arrow-down-rd.png') no-repeat center center;
 		}
 	    position: absolute;
 

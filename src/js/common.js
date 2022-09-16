@@ -405,8 +405,8 @@ function dtSample() {
   });
   $("div.exportlinks").html('<div class="row">' +
     '<div class="col-12 text-align p-0">' +
-    '<button class="ux-linkbutton  primary"> <img src="../assets/images/svg/download.svg" alt="download-icon">Download</button>' +
-    '<button class="ux-linkbutton  ml-2 primary"> <img src="../assets/images/svg/print.svg" alt="print-icon">Print</button>' +
+    '<button class="ux-linkbutton  primary"> <img src="assets/images/svg/download.svg" alt="download-icon">Download</button>' +
+    '<button class="ux-linkbutton  ml-2 primary"> <img src="assets/images/svg/print.svg" alt="print-icon">Print</button>' +
     '</div> <!--.dt-extras-->');
   // dtsetResponsive();
   $('table#dt-sample').wrap('<div class="restable-box"></div>');
