@@ -67,11 +67,11 @@
                                 <a href="javascript:;" class="btn-selectlang"><em>Channel Analytics</em><i></i></a>
                                 <div class="language-list" style="display: none;">
                                     <ul class="lst-languages">
-                                        <li>
-                                            <a href="dashboard.html" class="language-selected">Channel Analytics</a>
+                                        <li (click)="goToPage('dashboard')">
+                                            <a class="language-selected">Channel Analytics</a>
                                         </li>
-                                        <li>
-                                            <a href="digital-payment.html">Digital Payments</a>
+                                        <li (click)="goToPage('digitalpayment')">
+                                            <a>Digital Payments</a>
                                         </li>
                                         <li class="list-nh">
                                             <a href="javascript:;">ATM <i></i></a>

@@ -28,7 +28,9 @@ const routes: Routes = [
     },
     children: [
       {path: 'dashboard', loadChildren: () => import('./pages/brainbank/dashboard/dashboard.module').then((m)=> m.DashboardModule)},
-      {path:'atm',loadChildren: () => import('./pages/brainbank/atmdetails/atmdetails.module').then(m => m.AtmdetailsModule) }
+      {path:'atm',loadChildren: () => import('./pages/brainbank/atmdetails/atmdetails.module').then(m => m.AtmdetailsModule) },
+      {path:'digitalpayment',loadChildren: () => import('./pages/brainbank/digitalpayment/digitalpayment.module').then(m => m.DigitalpaymentModule) }
+      
     ]
   },
 ];
