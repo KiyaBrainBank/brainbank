@@ -1,3 +1,4 @@
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgChartsModule } from 'ng2-charts';
@@ -18,7 +19,7 @@ import { LayoutsModule } from './pages/layouts/layouts.module';
     AuthModule,
     NgChartsModule
   ],
-  providers: [],
+  providers: [{provide:LocationStrategy,useClass:HashLocationStrategy}],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
   ],
