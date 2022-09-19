@@ -16,8 +16,22 @@
 			text-align:center;
 			align-items: center; 
 			justify-content: center;
-			}	
-		}
+			}
+		 }
+
+		 &.nav-right{
+			-ms-flex-preferred-size:0;
+			flex-basis:0;
+			-ms-flex-positive:1;
+			flex-grow:1;
+			display: flex!important;
+			text-align:center;
+			align-items:flex-end; 
+		   justify-content: flex-end;
+		   @media (max-width:500px) {
+				 display: block;
+			}
+		 }
 
 		.nav-item {
 			&.w50{
@@ -157,7 +171,7 @@
 		.nav-item2 {
 			display: inline-block;
 			position: relative;
-			
+		 
 			&.w33{
 				@media (max-width:767px) {
 					width:33.3%;
@@ -4429,6 +4443,13 @@ nav.tab-pills {
 		 }
 	}
 	.custom-width{
+		.nav{
+			@media (max-width:1920px) {
+				display:block;
+				margin-bottom: 6px;
+				// width:450px; 
+			 }  
+		   }
 		@media (max-width:1920px) {
 		   overflow: auto;
 		   padding-bottom: 5px;
@@ -4456,15 +4477,9 @@ nav.tab-pills {
 			 &::-webkit-scrollbar-thumb:hover {
 				opacity: 1; 
 			 }
-
-		   .nav{
-			@media (max-width:1920px) {
-				display: block;
-				margin-bottom: 6px;
-				// width:450px; 
-			 }  
-		   }
+ 
 		}
+
 		@media (max-width:767px) {
 			// padding-bottom: 12px;
 		}

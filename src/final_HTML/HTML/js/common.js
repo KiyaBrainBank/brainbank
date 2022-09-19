@@ -6,19 +6,20 @@ $(".datepicker1").datepicker({
 });
 
  
-function myfunction () {
+function myfunction3 () {
+
   $('body').on( 'click', function ( e ) {
-    e.stopPropagation();
-      $( this ).closest( 'div.lang-dropdown' ).removeClass( 'langlist-showing' );
-      $( this ).siblings( 'div.language-list' ).fadeOut(500);
+      // e.stopPropagation();
+      $('div.lang-dropdown').removeClass('langlist-showing');
+      $ ( 'div.language-list' ).fadeOut(500);
   } );
 
-
-
+ 
+// language selection :: open list 
 // language selection :: open list 
 
 $('body').on( 'click', 'div.language-bar div.lang-dropdown a.btn-selectlang', function ( e ) {
-      e.stopPropagation();
+  e.stopPropagation();
       // if ( !$( this ).hasClass( 'selectlang-selected' ) ) {
       if ( !$( this ).closest( 'div.lang-dropdown' ).hasClass( 'langlist-showing' ) ) {
       // $( this ).addClass( 'selectlang-selected' );
@@ -29,15 +30,15 @@ $('body').on( 'click', 'div.language-bar div.lang-dropdown a.btn-selectlang', fu
       // $( this ).removeClass( 'selectlang-selected' );
       // $( this ).closest( 'div.lang-dropdown' ).removeClass( 'langlist-showing' );
       $( this ).siblings( 'div.language-list' ).fadeOut(500);
-  }
+    }
 } );
 
- //-- language selection :: select language
+//-- language selection :: select language
 
 $('body').on( 'click', 'div.language-bar div.language-list ul.lst-languages>li>a', function ( e ) {
-    e.stopPropagation();
-    // var currentLanguage = $( this ).closest( 'ul.lst-languages' ).find( 'a.language-selected' ).text();
-    if ( !$( this ).hasClass( 'language-selected' ) ) {
+e.stopPropagation();
+// var currentLanguage = $( this ).closest( 'ul.lst-languages' ).find( 'a.language-selected' ).text();
+if ( !$( this ).hasClass( 'language-selected' ) ) {
       $( this ).closest( 'ul.lst-languages' ).find( 'a' ).removeClass( 'language-selected' );
       $( this ).addClass( 'language-selected' );
       var currentLanguage = $( this ).text();
@@ -51,50 +52,49 @@ $('body').on( 'click', 'div.language-bar div.language-list ul.lst-languages>li>a
 });
 
 $('body').on( 'click', 'div.language-bar div.language-list ul.lst-languages>li.list-nh a ', function ( e ) {
-    e.stopPropagation();
-   
-    function myfunction2 (e) {
+e.stopPropagation();
+
+function myfunction2 (e) {
       // e.stopPropagation();
       $( this ).closest( 'div.lang-dropdown' ).find('div.language-list').show();
-   }
+    }
     // var currentLanguage = $( this ).closest( 'ul.lst-languages' ).find( 'a.language-selected' ).text();
-     console.log("activate");
+    console.log("activate");
     //  $('ul.dropdown-sub').show();
-     if ($(this).hasClass('language-selected')){
-        $(this).next('ul.dropdown-sub').addClass('active-dp');
-     }else{
-       $(this).next('ul.dropdown-sub').removeClass('active-dp');
-     }
-     myfunction2 (); 
+    if ($(this).hasClass('language-selected')){
+      $(this).siblings('ul.dropdown-sub').addClass('active-dp');
+      $(this).parents().eq(2).find('a').not('.language-selected').siblings().removeClass('active-dp');
+    }
+    myfunction2 (); 
 });
 
 $('body').on( 'click', 'ul.dropdown-sub li a', function (e) {
-  // e.stopPropagation();
+// e.stopPropagation();
     console.log('works');
-  // var currentLanguage = $( this ).closest( 'ul.lst-languages' ).find( 'a.language-selected' ).text();
-     $('ul.dropdown-sub').removeClass('active-dp'); 
-    //  var currentLanguage2 = $( this ).text(); 
-     $( this ).parents('.language-bar').find( 'div.language-list' ).fadeOut(500);
-     $( this ).closest( 'div.lang-dropdown' ).removeClass( 'langlist-showing' );
-    //  $( this ).closest( 'div.lang-dropdown' ).find( 'a.btn-selectlang em' ).html( currentLanguage2 );
-   
-});
-
- 
-};
-
-myfunction();
-
-
-$('body').on( 'click', '.main', function () {
-  // e.stopPropagation();
-    console.log('works');
+    // var currentLanguage = $( this ).closest( 'ul.lst-languages' ).find( 'a.language-selected' ).text();
     $('ul.dropdown-sub').removeClass('active-dp'); 
     //  var currentLanguage2 = $( this ).text(); 
-     $('div.language-list' ).fadeOut(500);
-     $('div.lang-dropdown' ).removeClass( 'langlist-showing' );
-    
+    $( this ).parents('.language-bar').find( 'div.language-list' ).fadeOut(500);
+    $( this ).closest( 'div.lang-dropdown' ).removeClass( 'langlist-showing' );
+    //  $( this ).closest( 'div.lang-dropdown' ).find( 'a.btn-selectlang em' ).html( currentLanguage2 );
+
 });
+
+
+};
+
+myfunction3();
+
+
+// $('body').on( 'click', '.main', function () {
+//   // e.stopPropagation();
+//     console.log('works');
+//     $('ul.dropdown-sub').removeClass('active-dp'); 
+//     //  var currentLanguage2 = $( this ).text(); 
+//      $('div.language-list' ).fadeOut(500);
+//      $('div.lang-dropdown' ).removeClass( 'langlist-showing' );
+    
+// });
  
 
 
@@ -160,12 +160,12 @@ $(function () {
 //     });
 
 
-$(".nav-items").mCustomScrollbar({
-      axis:"y",
-      theme: "dark-2",
-      // autoExpandScrollbar:true,
-       advanced:{autoExpandHorizontalScroll:true}
-});
+// $(".nav-items").mCustomScrollbar({
+//       axis:"y",
+//       theme: "dark-2",
+//       // autoExpandScrollbar:true,
+//        advanced:{autoExpandHorizontalScroll:true}
+// });
 
 
 //  $("body").click(function(e){
@@ -348,21 +348,39 @@ listFilter();
 
 //  Side Menu   
 
+// $('body').on('click', '.global-nav div.nav-items ul.lst-nav-items3 li a', function (e) {
+//   e.stopPropagation();
+//   if ($(this).hasClass('active')) {
+//       $(this).parent().find('.active').removeClass('active');
+//       $(this).parent().find('.mysubnavigation-items').slideUp();
+
+//   } else {
+//       $(this).toggleClass("active");
+//       $(this).parent().siblings().find('.mysubnavigation-items').slideUp();
+//       $(this).parent().siblings().find('a.glnv-dropdown').removeClass('active');
+//       $(this).next('.mysubnavigation-items').slideToggle();
+//   }
+//   });
+
+ 
 $('body').on('click', '.global-nav div.nav-items ul.lst-nav-items3 li a', function (e) {
   e.stopPropagation();
   if ($(this).hasClass('active')) {
       $(this).parent().find('.active').removeClass('active');
       $(this).parent().find('.mysubnavigation-items').slideUp();
-
-  } else {
-      $(this).toggleClass("active");
+   } else {
+      $(this).addClass("active");
       $(this).parent().siblings().find('.mysubnavigation-items').slideUp();
+
       $(this).parent().siblings().find('a.glnv-dropdown').removeClass('active');
+      $(this).parent().siblings().find('a.glnv-dropdown2').removeClass('active');
       $(this).next('.mysubnavigation-items').slideToggle();
-  }
+  } 
   });
 
+ 
 
+ 
   //close global navigation
   $('body').on('click', 'nav.global-nav .btn-closenav, div.nav-overlay, ul.lst-nav-items3>li', function (e) {
       e.stopPropagation();
