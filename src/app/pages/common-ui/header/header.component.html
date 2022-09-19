@@ -18,10 +18,10 @@
                                 <li style="position:relative;">
                                     <a  class="flag-change-btn">
                                        <div class="icon">
-                                             <img src="assets/images/svg/united-states.svg" alt="flag-icon">
+                                             <img src="assets/images/svg/united-states.svg" alt="flag-icon" (click)="flag = !flag">
                                        </div>
                                     </a>
-                                    <div class="flag-dropdown">
+                                    <div class="flag-dropdown" [ngClass]="flag ? 'dp-showing': ' '">
                                         <ul class="lst-info">
                                             <li>
                                                 <a  class="common-action profile-btn">
@@ -77,10 +77,10 @@
                                 <li>
                                     <a  class="item-user">
                                         <div class="icon">
-                                            <img src="assets/images/svg/user2.svg" alt="user-icon">
+                                            <img src="assets/images/svg/user2.svg" alt="user-icon" (click)="userProfile = !userProfile">
                                        </div>
                                     </a>
-                                    <div class="bm-userprofile">
+                                    <div class="bm-userprofile" [ngClass]="userProfile ? 'dp-showing': ' '">
                                         <ul class="lst-userprofile">
                                             <li>
                                                 <div class="userprofile-container">

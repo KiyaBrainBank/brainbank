@@ -34,6 +34,7 @@
                                        <label> Email Address </label>
                                        <input type="text" placeholder="Enter Email Address" [formControlName]="'emailid'">
                                        <p class="error-message" *ngIf="signInForm.controls['emailid'].touched && signInForm.controls['emailid'].hasError('required')">Please enter Email ID</p>
+                                       <p class="error-message" *ngIf="signInForm.controls['emailid'].hasError('email')">Please enter valid Email ID</p>
                                    </div>
                                </div>
                                <div class="col-12">
@@ -61,7 +62,7 @@
                                </div>
                                <div class="col-12 my-4">
                                    <div class="text-center">
-                                       <button class="ux-button blue-mid full-width py-3" [disabled]="signInForm.disabled" (click)="signIn()">Sign In</button>
+                                       <button class="ux-button blue-mid full-width py-3" [disabled]="signInForm.invalid" (click)="signIn()">Sign In</button>
                                    </div>
                                </div>
                            </form>
