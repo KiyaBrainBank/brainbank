@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
   userProfile:boolean = false;
   flag:boolean = false;
+  data: boolean;
+  @Output() newItemEvent = new EventEmitter<boolean>();
   constructor() { }
 
   ngOnInit(): void {
@@ -21,4 +23,12 @@ export class HeaderComponent implements OnInit {
       elem.requestFullscreen();
     }
   }
+  notify(){
+    this.data=true;
+  }
+
+  addNewItem(value: boolean) {
+    this.newItemEvent.emit(value);
+  }
+ 
 }

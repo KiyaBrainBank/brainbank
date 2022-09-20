@@ -1,9 +1,8 @@
 <!-- Notificaion Pannel Start --> 
-
-<div class="notification-pannel">
-    <div class="nf-header">
+<div class="notification-pannel"  [ngClass]="notify ? 'nf-showing' : ''" >
+ <div class="nf-header">
         <h6>
-            <button class="close-pannel iocn-btn">
+            <button class="close-pannel iocn-btn" (click)="onClose()" >
                 <img src="assets/images/svg/cross-mark-w.svg" alt="cross-icon">
             </button>
             Notifications 
