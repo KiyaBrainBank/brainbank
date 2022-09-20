@@ -22852,12 +22852,13 @@ p.info-text-blue {
   position: relative;
   margin-bottom: -1px;
   padding: 12px 20px;
-  background: #f1f5f9;
+  background: white;
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
   border: 1px solid #e2e8f0;
   border-bottom: none;
   z-index: 92;
+  margin-right: 5px;
 }
 .language-bar .lang-dropdown {
   position: relative;
@@ -22914,8 +22915,8 @@ p.info-text-blue {
 }
 .language-bar .lang-dropdown .language-list {
   position: absolute;
-  width: 230px;
-  right: -18px;
+  width: 100%;
+  right: 0px;
   box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   background-color: white;
@@ -22995,12 +22996,17 @@ p.info-text-blue {
 .language-bar .lang-dropdown .language-list .lst-languages li ul.dropdown-sub {
   position: absolute;
   top: 0;
-  left: 230px;
+  left: 0px;
   width: 220px;
   box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   background-color: white;
   display: none;
+}
+@media (max-width: 767px) {
+  .language-bar .lang-dropdown .language-list .lst-languages li ul.dropdown-sub {
+    width: 100%;
+  }
 }
 .language-bar .lang-dropdown .language-list .lst-languages li ul.dropdown-sub.active-dp {
   display: block;
@@ -23030,6 +23036,28 @@ p.info-text-blue {
   background: none;
   font-weight: 500;
   color: #0f172a;
+}
+.language-bar.active-bar {
+  background: #f1f5f9;
+}
+@media (max-width: 1360px) {
+  .language-bar {
+    width: 170px;
+  }
+}
+@media (max-width: 767px) {
+  .language-bar {
+    width: 100%;
+    border-radius: 0;
+    z-index: unset;
+  }
+}
+
+@media (max-width: 767px) {
+  .overflowDiv {
+    display: flex;
+    overflow-x: auto;
+  }
 }
 
 .tooltip {
@@ -25865,16 +25893,4 @@ p.info-text-blue {
   .main .global-nav.active {
     left: -300px;
   }
-}
-
-.error-message {
-  width: 100%;
-  position: relative;
-  z-index: 9;
-  text-align: left;
-  clear: both;
-  font-size: .75rem;
-  margin-bottom: 0;
-  color: #c51523;
-  display: block;
-}
+}/*# sourceMappingURL=main.css.map */

@@ -26,10 +26,16 @@ $('body').on( 'click', 'div.language-bar div.lang-dropdown a.btn-selectlang', fu
       // $( this ).
       $( this ).closest( 'div.lang-dropdown' ).addClass( 'langlist-showing' );
       $( this ).siblings( 'div.language-list' ).fadeIn();
+
+         $(this).parent().find('ul.dropdown-sub').addClass('active-dp');// new js added
+         $(this).parents().eq(1).siblings().find('ul.dropdown-sub').removeClass('active-dp');// new js added
+         $( this ).parents().eq(1).siblings().find( 'div.lang-dropdown' ).removeClass( 'langlist-showing' );// new js added
+         $( this ).parents().eq(1).siblings().find( 'div.language-list' ).fadeOut(500);// new js added
       } else {
       // $( this ).removeClass( 'selectlang-selected' );
       // $( this ).closest( 'div.lang-dropdown' ).removeClass( 'langlist-showing' );
       $( this ).siblings( 'div.language-list' ).fadeOut(500);
+          $( this ).closest( 'div.lang-dropdown' ).removeClass( 'langlist-showing' ); // new js added
     }
 } );
 
@@ -61,10 +67,11 @@ function myfunction2 (e) {
     // var currentLanguage = $( this ).closest( 'ul.lst-languages' ).find( 'a.language-selected' ).text();
     console.log("activate");
     //  $('ul.dropdown-sub').show();
-    if ($(this).hasClass('language-selected')){
-      $(this).siblings('ul.dropdown-sub').addClass('active-dp');
-      $(this).parents().eq(2).find('a').not('.language-selected').siblings().removeClass('active-dp');
-    }
+    // if ($(this).hasClass('language-selected')){
+    //   $(this).siblings('ul.dropdown-sub').addClass('active-dp');
+    //   $(this).parents().eq(2).find('a').not('.language-selected').siblings().removeClass('active-dp');
+    // }
+   
     myfunction2 (); 
 });
 

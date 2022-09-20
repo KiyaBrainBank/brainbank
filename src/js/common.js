@@ -8,9 +8,9 @@ $(".datepicker1").datepicker({
  
 function myfunction () {
   $('body').on( 'click', function ( e ) {
-    e.stopPropagation();
-      $( this ).closest( 'div.lang-dropdown' ).removeClass( 'langlist-showing' );
-      $( this ).siblings( 'div.language-list' ).fadeOut(500);
+    // e.stopPropagation();
+    $('div.lang-dropdown').removeClass('langlist-showing');
+    $ ( 'div.language-list' ).fadeOut(500);
   } );
 
 
@@ -20,16 +20,22 @@ function myfunction () {
 $('body').on( 'click', 'div.language-bar div.lang-dropdown a.btn-selectlang', function ( e ) {
       e.stopPropagation();
       // if ( !$( this ).hasClass( 'selectlang-selected' ) ) {
-      if ( !$( this ).closest( 'div.lang-dropdown' ).hasClass( 'langlist-showing' ) ) {
-      // $( this ).addClass( 'selectlang-selected' );
-      // $( this ).
-      $( this ).closest( 'div.lang-dropdown' ).addClass( 'langlist-showing' );
-      $( this ).siblings( 'div.language-list' ).fadeIn();
-      } else {
-      // $( this ).removeClass( 'selectlang-selected' );
-      // $( this ).closest( 'div.lang-dropdown' ).removeClass( 'langlist-showing' );
-      $( this ).siblings( 'div.language-list' ).fadeOut(500);
-  }
+        if ( !$( this ).closest( 'div.lang-dropdown' ).hasClass( 'langlist-showing' ) ) {
+          // $( this ).addClass( 'selectlang-selected' );
+          // $( this ).
+          $( this ).closest( 'div.lang-dropdown' ).addClass( 'langlist-showing' );
+          $( this ).siblings( 'div.language-list' ).fadeIn();
+    
+             $(this).parent().find('ul.dropdown-sub').addClass('active-dp');// new js added
+             $(this).parents().eq(1).siblings().find('ul.dropdown-sub').removeClass('active-dp');// new js added
+             $( this ).parents().eq(1).siblings().find( 'div.lang-dropdown' ).removeClass( 'langlist-showing' );// new js added
+             $( this ).parents().eq(1).siblings().find( 'div.language-list' ).fadeOut(500);// new js added
+          } else {
+          // $( this ).removeClass( 'selectlang-selected' );
+          // $( this ).closest( 'div.lang-dropdown' ).removeClass( 'langlist-showing' );
+          $( this ).siblings( 'div.language-list' ).fadeOut(500);
+              $( this ).closest( 'div.lang-dropdown' ).removeClass( 'langlist-showing' ); // new js added
+        }
 } );
 
  //-- language selection :: select language
@@ -281,8 +287,23 @@ $("a.flag-change-btn").click(function(e){
 });
 
 
-$("a.notification-btn").click(function(e){
-  e.stopPropagation();
+// $("a.notification-btn").click(function(e){
+//   e.stopPropagation();
+//   console.log('Working!');
+//     $(this).parents('ul.header-list-info').find('.flag-dropdownl').removeClass('dp-showing');
+//     $(this).parents('ul.header-list-info').find('.bm-userprofile').removeClass('dp-showing');
+//       e.stopPropagation();
+//       if ($(this).hasClass('active')) {
+//           $(this).parents('.main').find('.notification-pannel').removeClass('nf-showing');
+//           $(this).removeClass("active");
+//       } else {
+//           $(this).addClass("active");
+//           $(this).parents('.main').find('.notification-pannel').addClass('nf-showing');
+//        }  
+//   });
+
+$('body').on( 'click', 'a.notification-btn', function ( e ) {
+    e.stopPropagation();
   console.log('Working!');
     $(this).parents('ul.header-list-info').find('.flag-dropdownl').removeClass('dp-showing');
     $(this).parents('ul.header-list-info').find('.bm-userprofile').removeClass('dp-showing');
@@ -294,9 +315,15 @@ $("a.notification-btn").click(function(e){
           $(this).addClass("active");
           $(this).parents('.main').find('.notification-pannel').addClass('nf-showing');
        }  
-  });
+  } );
 
-
+  $('body').on( 'click', 'button.close-pannel', function ( e ) {
+    e.stopPropagation();
+      console.log('Working!');
+      $('.notification-pannel').removeClass('nf-showing');
+      $('a.notification-btn').removeClass('active');
+  } );
+  
   $("button.close-pannel").click(function(e){
       e.stopPropagation();
       console.log('Working!');

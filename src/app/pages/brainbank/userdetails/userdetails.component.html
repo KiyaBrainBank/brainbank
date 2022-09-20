@@ -59,43 +59,57 @@
             </div>
          </div>
                 
-         <div class="center-div">
-                 <div class="row">
-                    <div class="col-12 col-md-12">
-                        <div class="language-bar">
-                            <div class="lang-dropdown">
-                                <a href="javascript:;" class="btn-selectlang"><em>Channel Analytics</em><i></i></a>
-                                <div class="language-list" style="display: none;">
-                                    <ul class="lst-languages">
-                                        <li (click)="goToPage('dashboard')">
-                                            <a class="language-selected">Channel Analytics</a>
-                                        </li>
-                                        <li (click)="goToPage('digitalpayment')">
-                                            <a>Digital Payments</a>
-                                        </li>
-                                        <li class="list-nh">
-                                            <a href="javascript:;">ATM <i></i></a>
-                                            <ul class="dropdown-sub">
-                                               <li (click)="goToPage('atm')"> <a>Main Menu</a></li>
-                                               <li> <a href="#">ATM Profile</a></li>
-                                               <li> <a href="#">ATM Placement</a></li>
-                                               <li> <a href="#">ATM Transaction Analysis</a></li>
+               <div class="center-div">
+                <div class="row">
+                   <div class="col-12 col-md-12">
+                       
+                       <div class="language-bar active-bar">
+                           <div class="lang-dropdown">
+                               <a (click)="goToPage('dashboard')" class="btn-selectlang"><em>Channel Analytics</em></a>
+                           </div> 
+                       </div> 
+                       <div class="language-bar">
+                           <div class="lang-dropdown">
+                               <a (click)="goToPage('digitalpayment')" class="btn-selectlang"><em>Digital Payments</em></a>
+                           </div> 
+                       </div> 
+                       <div class="language-bar">
+                           <div class="lang-dropdown">
+                               <a href="javascript:;" class="btn-selectlang"><em>ATM</em><i></i></a>
+                               <div class="language-list" style="display: none;">
+                                   <ul class="lst-languages">
+                                       <li class="list-nh">
+                                           <!-- <a href="javascript:;">ATM <i></i></a> -->
+                                           <ul class="dropdown-sub">
+                                               <li> <a (click)="goToPage('atm')">Main Menu</a></li>
+                                               <li> <a (click)="goToPage('atm')">ATM Profile</a></li>
+                                               <li> <a (click)="goToPage('atm')">ATM Placement</a></li>
+                                               <li> <a (click)="goToPage('atm')">ATM Transaction Analysis</a></li>
                                            </ul>
-                                        </li>
-                                        <li class="list-nh">
-                                            <a href="javascript:;">POS <i></i></a>
-                                            <ul class="dropdown-sub">
-                                                <li> <a href="#">Main Menu</a></li>
-                                                <li> <a href="#">Card Usage</a></li>
-                                                <li> <a href="#">Merchant Analysis</a></li>
-                                            </ul>
-                                        </li>
-                                     </ul> 
-                                </div> 
-                            </div> 
-                        </div> 
-                    </div>
-                 </div>
-               </div> 
+                                       </li>
+                                    </ul> 
+                               </div> 
+                           </div> 
+                       </div> 
+                       <div class="language-bar">
+                           <div class="lang-dropdown">
+                               <a href="javascript:;" class="btn-selectlang"><em>POS</em><i></i></a>
+                               <div class="language-list" style="display: none;">
+                                   <ul class="lst-languages">
+                                       <li class="list-nh">
+                                           <!-- <a href="javascript:;">POS <i></i></a> -->
+                                           <ul class="dropdown-sub">
+                                               <li> <a (click)="goToPage('pos')">Main Menu</a></li>
+                                               <li> <a (click)="goToPage('pos')">Card Usage</a></li>
+                                               <li> <a (click)="goToPage('pos')">Merchant Analysis</a></li>
+                                           </ul>
+                                       </li>
+                                    </ul> 
+                               </div> 
+                           </div> 
+                       </div> 
+                   </div>
+                </div>
+              </div> 
             </div> 
        </div> 
