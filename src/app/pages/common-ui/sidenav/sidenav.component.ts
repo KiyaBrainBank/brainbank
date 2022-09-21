@@ -241,7 +241,7 @@ export class SidenavComponent implements OnInit {
       "ID": "04",
       "icon": "right-arrow.svg",
       "type": "subsubmenu",
-      "route": "fundsInvestment "
+      "route": "fundsInvestment"
     },{
       "Status": "Active",
       "sequenceNo": "04",
@@ -249,7 +249,7 @@ export class SidenavComponent implements OnInit {
       "ID": "04",
       "icon": "right-arrow.svg",
       "type": "subsubmenu",
-      "route": "atmManagement "
+      "route": "atmManagement"
     },{
       "Status": "Active",
       "sequenceNo": "04",
@@ -257,7 +257,7 @@ export class SidenavComponent implements OnInit {
       "ID": "04",
       "icon": "right-arrow.svg",
       "type": "subsubmenu",
-      "route": "rewardPointsRecommendation "
+      "route": "rewardPointsRecommendation"
     }
   ]
 },{
