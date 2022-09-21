@@ -337,7 +337,7 @@ export class SidenavComponent implements OnInit {
     }]
   }
 
-  goToPage(routeName){debugger;
+  goToPage(routeName){
     this.isSelectedRoute = routeName;
     this.router.navigateByUrl("/"+routeName);
   }
