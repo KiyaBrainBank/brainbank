@@ -22,7 +22,7 @@
                         <a  class="glnv-dropdown2" (click)="goToPage(subMenu.route)">{{subMenu.menuName}} <span class="chevron"></span></a> 
                         <div class="mysubnavigation-items sub-menu">
                             <ul class="lst-subnavigation2">
-                                <li *ngFor="let subSubMenu of subMenu.subSubMenu;let i=index"><a title="{{subSubMenu.menuName}}" href="/{{subSubMenu.route}}" (click)="goToPage(subSubMenu.route)">{{subSubMenu.menuName}}</a></li>                                   
+                                <li *ngFor="let subSubMenu of subMenu.subSubMenu;let i=index"><a title="{{subSubMenu.menuName}}" (click)="goToPage(subSubMenu.route)">{{subSubMenu.menuName}}</a></li>                                   
                             </ul>
                         </div>
                     </li>                        
