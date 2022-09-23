@@ -56,8 +56,12 @@ const routes: Routes = [
       {path:'mobileAppTransactionMarketShare',loadChildren: () => import('./pages/brainbank/analytics/digitaltransaction/mobile-app-transaction-market-share/mobile-app-transaction-market-share.module').then(m => m.MobileAppTransactionMarketShareModule) },
       {path:'omniChannelTransactionSummary',loadChildren: () => import('./pages/brainbank/analytics/digitaltransaction/omni-channel-transaction-summary/omni-channel-transaction-summary.module').then(m => m.OmniChannelTransactionSummaryModule) },
       {path:'realTimeMobileAppTransactionAnalysis',loadChildren: () => import('./pages/brainbank/analytics/digitaltransaction/real-time-mobile-app-transaction-analysis/real-time-mobile-app-transaction-analysis.module').then(m => m.RealTimeMobileAppTransactionAnalysisModule) },
+      { path:'atmprofile', loadChildren: () => import('./pages/brainbank/ATM/atmprofile/atmprofile.module').then(m => m.AtmprofileModule) },
+      { path:'atmplacement', loadChildren: () => import('./pages/brainbank/ATM/atmplacement/atmplacement.module').then(m => m.AtmplacementModule) },
+      { path:'atmtransaction-analysis', loadChildren: () => import('./pages/brainbank/ATM/atmtransaction-analysis/atmtransaction-analysis.module').then(m => m.AtmtransactionAnalysisModule) },
     ]
   },
+  
 ];
 
 @NgModule({
