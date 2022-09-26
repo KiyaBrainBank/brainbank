@@ -334,9 +334,8 @@ $('body').on( 'click', 'a.notification-btn', function ( e ) {
 
 
 function dateFilter(){
-
-  $("a.calender-btn").click(function(e){
-      console.log('working!');
+  $('body').on('click', 'a.calender-btn', function (e) {
+    console.log('working!');
       $(this).parents('ul.filter-list-info').find('.filter-section').removeClass('f-showing');
       e.stopPropagation();
       if ($(this).hasClass('active')) {
@@ -346,7 +345,7 @@ function dateFilter(){
           $(this).addClass("active");
           $(this).parents('ul.filter-list-info').find('.slidefilter-container').addClass('slide-showing');
        }
-    });
+  });
 
 };
 
@@ -354,10 +353,9 @@ dateFilter();
 
 
 function listFilter(){
-
-$("a.filter-btn").click(function(e){
-  $(this).parents('ul.filter-list-info').find('.slidefilter-container').removeClass('slide-showing');
-  e.stopPropagation();
+  $('body').on('click', 'a.filter-btn', function (e) {
+    $(this).parents('ul.filter-list-info').find('.slidefilter-container').removeClass('slide-showing');
+    e.stopPropagation();
   console.log('working!');
       e.stopPropagation();
       if ($(this).hasClass('active')) {
@@ -368,7 +366,7 @@ $("a.filter-btn").click(function(e){
           $(this).parents('ul.filter-list-info').find('.filter-section').addClass('f-showing');
        } 
   });
-
+  
 }
 
 listFilter();

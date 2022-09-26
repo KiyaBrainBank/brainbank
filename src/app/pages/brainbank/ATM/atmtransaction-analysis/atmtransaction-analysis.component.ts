@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Chart } from 'chart.js';
-import {TreemapController, TreemapElement} from 'chartjs-chart-treemap';
 @Component({
   selector: 'app-atmtransaction-analysis',
   templateUrl: './atmtransaction-analysis.component.html',

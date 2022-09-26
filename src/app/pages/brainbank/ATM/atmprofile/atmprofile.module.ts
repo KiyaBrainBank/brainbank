@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { AtmprofileRoutingModule } from './atmprofile-routing.module';
 import { AtmprofileComponent } from './atmprofile.component';
+import { UserdetailsModule } from '../../userdetails/userdetails.module';
 
 
 @NgModule({
@@ -11,7 +12,11 @@ import { AtmprofileComponent } from './atmprofile.component';
   ],
   imports: [
     CommonModule,
-    AtmprofileRoutingModule
+    AtmprofileRoutingModule,
+    UserdetailsModule
+  ],
+  exports :[
+    AtmprofileComponent
   ]
 })
 export class AtmprofileModule { }

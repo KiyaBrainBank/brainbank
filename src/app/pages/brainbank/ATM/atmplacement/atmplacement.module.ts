@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { AtmplacementRoutingModule } from './atmplacement-routing.module';
 import { AtmplacementComponent } from './atmplacement.component';
+import { UserdetailsModule } from '../../userdetails/userdetails.module';
 
 
 @NgModule({
@@ -11,7 +12,11 @@ import { AtmplacementComponent } from './atmplacement.component';
   ],
   imports: [
     CommonModule,
-    AtmplacementRoutingModule
+    AtmplacementRoutingModule,
+    UserdetailsModule
+  ],
+  exports :[
+    AtmplacementComponent
   ]
 })
 export class AtmplacementModule { }
