@@ -62,24 +62,36 @@
                <div class="center-div">
                 <div class="row">
                    <div class="col-12 col-md-12">
-                       
-                       <div class="language-bar active-bar">
+                    <div class="language-bar"  *ngFor="let menu of mainMenuList" [ngClass]="menu.menuName==selectedMenuName?'active-bar':''">
+                        <div class="lang-dropdown" >
+                            <a (click)="goToPage(menu.route)" class="btn-selectlang"><em>{{menu.menuName}}</em><i *ngIf="menu?.subMenu.length > 0"></i></a>
+                            <div *ngIf="menu?.subMenu.length > 0" class="language-list" style="display: none;">
+                                <ul class="lst-languages">
+                                    <li class="list-nh" >
+                                        <ul class="dropdown-sub">
+                                            <li *ngFor="let subMenu of menu.subMenu;let j=index"> <a (click)="goToPage(subMenu.route)">{{subMenu.menuName}}</a></li>
+                                        </ul>
+                                    </li>
+                                 </ul> 
+                            </div> 
+                        </div> 
+                    </div> 
+                      <!--  <div class="language-bar active-bar">
                            <div class="lang-dropdown">
                                <a (click)="goToPage('dashboard')" class="btn-selectlang"><em>Channel Analytics</em></a>
                            </div> 
-                       </div> 
-                       <div class="language-bar">
+                       </div>  -->
+                      <!--  <div class="language-bar">
                            <div class="lang-dropdown">
                                <a (click)="goToPage('digitalpayment')" class="btn-selectlang"><em>Digital Payments</em></a>
                            </div> 
-                       </div> 
-                       <div class="language-bar">
+                       </div>  -->
+                       <!-- <div class="language-bar">
                            <div class="lang-dropdown">
                                <a href="javascript:;" class="btn-selectlang"><em>ATM</em><i></i></a>
                                <div class="language-list" style="display: none;">
                                    <ul class="lst-languages">
                                        <li class="list-nh">
-                                           <!-- <a href="javascript:;">ATM <i></i></a> -->
                                            <ul class="dropdown-sub">
                                                <li> <a (click)="goToPage('atm')">Main Menu</a></li>
                                                <li> <a (click)="goToPage('atmprofile')">ATM Profile</a></li>
@@ -90,14 +102,14 @@
                                     </ul> 
                                </div> 
                            </div> 
-                       </div> 
-                       <div class="language-bar">
+                       </div>  -->
+                       <!-- <div class="language-bar">
                            <div class="lang-dropdown">
                                <a href="javascript:;" class="btn-selectlang"><em>POS</em><i></i></a>
                                <div class="language-list" style="display: none;">
                                    <ul class="lst-languages">
                                        <li class="list-nh">
-                                           <!-- <a href="javascript:;">POS <i></i></a> -->
+                                           <a href="javascript:;">POS <i></i></a>
                                            <ul class="dropdown-sub">
                                                <li> <a (click)="goToPage('posmainmenu')">Main Menu</a></li>
                                                <li> <a (click)="goToPage('poscardusage')">Card Usage</a></li>
@@ -107,7 +119,7 @@
                                     </ul> 
                                </div> 
                            </div> 
-                       </div> 
+                       </div>  -->
                    </div>
                 </div>
               </div> 

@@ -671,7 +671,9 @@ export class DashboardComponent implements OnInit {
     }, // options 
   });
 }
+fromDateChange(event){
 
+}
 }
 function thousands_separators(num) {
   var num_parts = num.toString().split(".");
