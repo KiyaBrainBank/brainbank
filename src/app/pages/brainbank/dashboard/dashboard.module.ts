@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
 import { UserdetailsModule } from '../userdetails/userdetails.module';
-
+import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
 
 @NgModule({
   declarations: [
@@ -13,7 +13,9 @@ import { UserdetailsModule } from '../userdetails/userdetails.module';
   imports: [
     CommonModule,
     DashboardRoutingModule,
-    UserdetailsModule
+    UserdetailsModule,
+    OwlDateTimeModule,
+    OwlNativeDateTimeModule
   ],
   exports :[
     UserdetailsModule

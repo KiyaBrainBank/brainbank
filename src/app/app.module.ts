@@ -7,7 +7,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthModule } from './pages/auth/auth.module';
 import { LayoutsModule } from './pages/layouts/layouts.module';
-
+import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent
@@ -17,7 +18,10 @@ import { LayoutsModule } from './pages/layouts/layouts.module';
     AppRoutingModule,
     LayoutsModule,
     AuthModule,
-    NgChartsModule
+    NgChartsModule,
+    OwlDateTimeModule,
+    OwlNativeDateTimeModule,
+    BrowserAnimationsModule
   ],
   providers: [{provide:LocationStrategy,useClass:HashLocationStrategy}],
   schemas: [
