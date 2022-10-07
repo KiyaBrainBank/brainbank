@@ -11,6 +11,7 @@ import { AuthService } from 'src/app/pages/auth/auth.service';
 export class LoginComponent implements OnInit {
   @ViewChild('signInNgForm') signInNgForm: NgForm;
   signInForm: FormGroup;
+  errormassage:String;
   constructor(
     private _activatedRoute: ActivatedRoute,
     private _authService: AuthService,
@@ -19,8 +20,8 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.signInForm = new FormGroup({
-      emailid     : new FormControl('', [Validators.required, Validators.email]),
-      password  : new FormControl('', [Validators.required])
+      emailid : new FormControl('', [Validators.required, Validators.email]),
+      password : new FormControl('', [Validators.required])
 
     });
   }
@@ -32,6 +33,11 @@ export class LoginComponent implements OnInit {
       if ( this.signInForm.invalid )
       {
           return;
+      }
+      if(this.signInForm.value.password != 'Rv@0710%2022'){
+        this.errormassage = "please enter valid credentials";
+        this.signInForm.reset();
+        return
       }
 
       // Disable the form
