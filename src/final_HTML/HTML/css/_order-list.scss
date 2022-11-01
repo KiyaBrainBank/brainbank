@@ -692,8 +692,9 @@
   
   .marquee-list{	
     margin:0; 	
-    padding:10px 0px; 	
+    padding:3px 0px; 	
     width:100%; 
+    height: 28px;
     
     &.mar-b{	
         margin-bottom:25px;	
@@ -705,25 +706,25 @@
        text-decoration:none; 	
        position: relative;	
        list-style-type: none;	
-       padding:13px 15px; 	
+       padding:3px 15px; 	
     // padding-left:15px;	
        color:rgba($brand-primary-color, 1);	
-       font-size:1.1rem;
+       font-size:.9rem;
        display: inline-block;		
        text-align:left;	
-       line-height: 1.2rem;
+       line-height:unset;
        border-right: 2px solid rgba($black, 0.1);	
     em{
         color:rgba($brand-primary-color, 1);	
-        font-size:1.1rem;
+        font-size:.9rem;
         font-weight: 600;
         display: inline-block;		
         text-align:left;	
-        line-height: 1.2rem;  
+        line-height: unset;  
         img{
             position: relative;
-            width:24px;
-            height:24px;
+            width:18px;
+            height:18px;
             margin-left:6px;
             margin-top:-3px;
            } 
@@ -938,3 +939,21 @@
         border-bottom: 0px solid rgba($black, 0);
     }
 }
+
+.marquee-list li em {
+    line-height: unset;
+    padding: 2px 0;
+    height: 27px;
+     li{
+         line-height: unset;
+         padding:5px 15px;
+         font-size: 8px;
+         em{
+             font-size: .9rem;
+             line-height: unset;
+         }
+     }
+ }
+ .profile_icon_circle{
+    border-radius: 100px;
+ }

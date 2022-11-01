@@ -18,11 +18,11 @@
 
 <body>
 
-     <!-- main start -->	
-    
+    <!-- main start -->
+
     <div class="main">
 
-     <!-- Login Container Start -->	
+        <!-- Login Container Start -->
 
         <div class="login-container">
 
@@ -41,27 +41,27 @@
                         <div>
                             <div class="col-12">
                                 <div class="logo-info">
-                                      <img src="../assets/images/logo/kiya-logo-new.svg" alt="logo" class="img-fluid">
-                                 </div>
-                              </div>
-                              <div class="col-12"> 
+                                    <img src="../assets/images/logo/kiya-logo-new.svg" alt="logo" class="img-fluid">
+                                </div>
+                            </div>
+                            <div class="col-12">
                                 <h2>Sign in</h2>
                                 <h6>Don't have an account? <a href="#" class="text-primary-md"> Sign Up</a></h6>
                             </div>
                         </div>
                         <div class="mt-4">
-                            <form method="" action="dashboard.html" class="mt-3">
+                            <form method="" name="loginform" id="form" action="dashboard.html" class="mt-3">
                                 <div class="col-12">
                                     <div class="ux-input1">
                                         <label> Email Address </label>
-                                        <input type="text" placeholder="Enter Email Address" required>
+                                        <input type="text" placeholder="Enter Email Address" required name="user_name">
                                         <p class="error-message"> </p>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="ux-input1">
                                         <label>Password </label>
-                                        <input type="password" placeholder="Enter Password" required>
+                                        <input type="password" placeholder="Enter Password" required name="pass_word">
                                         <p class="error-message"> </p>
                                     </div>
                                 </div>
@@ -83,7 +83,8 @@
                                 </div>
                                 <div class="col-12 my-4">
                                     <div class="text-center">
-                                        <button class="ux-button blue-mid full-width py-3" onclick="window.location.href='dashboard.html'">Sign In</button>
+                                        <button class="ux-button blue-mid full-width py-3" type="button" value="login"
+                                            onclick="login()">Sign In</button>
                                     </div>
                                 </div>
                             </form>
@@ -108,13 +109,13 @@
 
         </div>
 
-        <!-- Login Container End -->	
+        <!-- Login Container End -->
 
     </div>
 
-  <!-- main end -->	
+    <!-- main end -->
 
-   
+
     <script src="../js/lib/jquery.min.js"></script>
     <script src="../js/lib/bootstrap.min.js"></script>
     <script src="../js/lib/jquery-ui.min.js"></script>
@@ -123,8 +124,24 @@
     <script src="../js/lib/jquery.mousewheel.min.js"></script>
     <script src="../js/lib/jquery.mCustomScrollbar.js"></script>
     <script src="../js/lib/datatables.min.js"></script>
-    <script src="../js/common.js"></script>
-    
+    <!-- <script src="../js/common.js"></script> -->
+    <script>
+
+        function login() {
+                var user = document.loginform.user_name.value;
+                var pass = document.loginform.pass_word.value;
+                if (user == "bankbrain@kiya.ai" && pass == "bb123") {
+                    console.log("123");
+                    document.loginform.submit();
+                } 
+                else{
+                    alert("Please Enter Correct Username and Passowrd");
+                    window.location.href="login.html";
+                    // console.log("hiiiii")
+                }
+            }
+        
+    </script>
 </body>
 
 </html>

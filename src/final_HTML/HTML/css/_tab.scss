@@ -101,7 +101,9 @@
 		.nav-item1 {
 			display: inline-block;
 			position: relative;
-			
+			&.nav-item-custom-block{
+				display: block;
+			}
 			&.w33{
 				@media (max-width:767px) {
 					width:33.3%;
@@ -144,6 +146,9 @@
 					display: block;
 					padding: .5rem 1.4rem;
 					margin-right:4px; 
+				}
+				&.nav-link-no-word-wrap{
+					white-space: normal;
 				}
 			 
 			//   &:hover{

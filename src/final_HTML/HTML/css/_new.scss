@@ -9851,7 +9851,7 @@ em {
     width: 100%;
     height: auto;
     display: block;
-    padding: 15px 15px 0px 15px;
+    padding: 0px 15px 0px 15px;
     // z-index: 0;
     background-color: $white;
     border-radius:0px;
@@ -13786,3 +13786,9 @@ p {
      
     }
  
+.text-white{
+    color: #fff;
+}
+.fs-12{
+    font-size: 12px;
+}
