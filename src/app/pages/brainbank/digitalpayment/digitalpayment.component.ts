@@ -90,6 +90,7 @@ export class DigitalpaymentComponent implements OnInit {
     
     switch (tab) {   
       case 'upi': 
+      console.log("upi click");
             this.ccanv = document.getElementById('dpTransOverview');
             this.ctxctvh = this.ccanv.getContext('2d');
            
@@ -105,6 +106,7 @@ export class DigitalpaymentComponent implements OnInit {
             // this.createChartdpTxnOverview();  
             break;
       case 'imps':
+        console.log("imps click");
             break;
       case 'rtgs':
         break;

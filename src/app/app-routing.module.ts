@@ -59,7 +59,28 @@ const routes: Routes = [
       { path:'atmprofile', loadChildren: () => import('./pages/brainbank/ATM/atmprofile/atmprofile.module').then(m => m.AtmprofileModule) },
       { path:'atmplacement', loadChildren: () => import('./pages/brainbank/ATM/atmplacement/atmplacement.module').then(m => m.AtmplacementModule) },
       { path:'atmtransaction-analysis', loadChildren: () => import('./pages/brainbank/ATM/atmtransaction-analysis/atmtransaction-analysis.module').then(m => m.AtmtransactionAnalysisModule) },
-    ]
+      { path:'usermaintenance', loadChildren: () => import('./pages/brainbank/admininstration/usermaintenance/usermaintenance.module').then(m => m.UsermaintenanceModule) },
+      { path:'rolemaintenance', loadChildren: () => import('./pages/brainbank/admininstration/rolemaintenance/rolemaintenance.module').then(m => m.RolemaintenanceModule) },
+      { path:'groupmaintenance', loadChildren: () => import('./pages/brainbank/admininstration/groupmaintenance/groupmaintenance-routing.module').then(m=> m.GroupmaintenanceRoutingModule)},
+      { path:'addgroupusers', loadChildren: () => import('./pages/brainbank/admininstration/addgroupusers/addgroupusers-routing.module').then(m=> m.AddgroupusersRoutingModule)},
+      { path:'hierarchymaintenance', loadChildren: () => import('./pages/brainbank/admininstration/hierarchymaintenance/hierarchymaintenance-routing.module').then(m=> m.HierarchymaintenanceRoutingModule)},
+      { path:'rolerights', loadChildren: () => import('./pages/brainbank/admininstration/rolerights/rolerights-routing.module').then(m=> m.RolerightsRoutingModule)},
+      { path:'processconfiguration', loadChildren: () => import('./pages/brainbank/masterconfiguration/processconfiguration/processconfiguration.module').then(m=> m.ProcessconfigurationModule)},
+      { path:'informativeconfiguration', loadChildren: () => import('./pages/brainbank/masterconfiguration/informativeconfiguration/informativeconfiguration.module').then(m=> m.InformativeconfigurationModule)},
+      { path:'systemparameter', loadChildren: () => import('./pages/brainbank/masterconfiguration/systemconfiguration/systemparameter/systemparameter.module').then(m=> m.SystemparameterModule)},
+      { path:'serverconfiguration', loadChildren: () => import('./pages/brainbank/masterconfiguration/systemconfiguration/serverconfiguration/serverconfiguration.module').then(m=> m.ServerconfigurationModule)},
+      { path:'eodconfiguration', loadChildren: () => import('./pages/brainbank/masterconfiguration/systemconfiguration/eodconfiguration/eodconfiguration.module').then(m=> m.EodconfigurationModule)},
+      { path:'holiday', loadChildren: () => import('./pages/brainbank/masterconfiguration/systemconfiguration/holiday/holiday.module').then(m=> m.HolidayModule)},
+      { path:'holidayweekend', loadChildren: () => import('./pages/brainbank/masterconfiguration/systemconfiguration/holidayweekend/holidayweekend.module').then(m=> m.HolidayweekendModule)},
+      { path:'onboardingriskweightageconfiguration', loadChildren: () => import('./pages/brainbank/masterconfiguration/systemconfiguration/onboardingriskweightageconfiguration/onboardingriskweightageconfiguration.module').then(m=> m.OnboardingriskweightageconfigurationModule)},
+      { path:'forecasteproductgrowth', loadChildren: () => import('./pages/brainbank/analytics/whatifanalysis/forecasteproductgrowth/forecasteproductgrowth.module').then(m=> m.ForecasteproductgrowthModule)},
+      { path:'estimationofproductgrowthdeviation', loadChildren: () => import('./pages/brainbank/analytics/whatifanalysis/estimationofproductgrowthdeviation/estimationofproductgrowthdeviation.module').then(m=> m.EstimationofproductgrowthdeviationModule)},
+      { path:'productperformancebasedontarget', loadChildren: () => import('./pages/brainbank/analytics/whatifanalysis/productperformancebasedontarget/productperformancebasedontarget.module').then(m=> m.ProductperformancebasedontargetModule)},
+      { path:'correlationofproduct', loadChildren: () => import('./pages/brainbank/analytics/whatifanalysis/correlationofproduct/correlationofproduct.module').then(m=> m.CorrelationofproductModule)},
+      { path:'estimationofproductgrowthdeviation', loadChildren: () => import('./pages/brainbank/analytics/whatifanalysis/estimationofproductgrowthdeviation/estimationofproductgrowthdeviation.module').then(m=> m.EstimationofproductgrowthdeviationModule)},
+      { path:'correlationofproduct', loadChildren: () => import('./pages/brainbank/analytics/whatifanalysis/correlationofproduct/correlationofproduct.module').then(m=> m.CorrelationofproductModule)}
+      
+        ]
   },
   
 ];

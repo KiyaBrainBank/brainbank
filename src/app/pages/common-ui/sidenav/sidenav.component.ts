@@ -57,7 +57,7 @@ export class SidenavComponent implements OnInit {
             },{
               "Status": "Active",
               "sequenceNo": "04",
-              "menuName": "Corporate 360",
+              "menuName": "Customer 360",
               "ID": "04",
               "icon": "right-arrow.svg",
               "type": "subsubmenu",
@@ -276,8 +276,49 @@ export class SidenavComponent implements OnInit {
       "ID": "04",
       "icon": "right-arrow.svg",
       "type": "subsubmenu",
-      "route": "rateofInterestDeviation"
-    }
+      "route": "rateofInterestDeviation",
+      "subSubMenu":[]
+    },
+    {
+      "Status": "Active",
+      "sequenceNo": "04",
+      "menuName": "Forecaste Product Growth",
+      "ID": "05",
+      "icon": "right-arrow.svg",
+      "type": "subsubmenu",
+      "route": "forecasteproductgrowth",
+      "subSubmenu":[]
+    },
+    {
+      "Status": "Active",
+      "sequenceNo": "04",
+      "menuName": "Estimation Of Product Growth Deviation",
+      "ID": "06",
+      "icon": "right-arrow.svg",
+      "type": "subsubmenu",
+      "route": "estimationofproductgrowthdeviation",
+      "subSubmenu":[]
+    },
+    {
+      "Status": "Active",
+      "sequenceNo": "04",
+      "menuName": "Product Performance Based On Target",
+      "ID": "06",
+      "icon": "right-arrow.svg",
+      "type": "subsubmenu",
+      "route": "productperformancebasedontarget",
+      "subSubmenu":[]
+    },
+    {
+      "Status": "Active",
+      "sequenceNo": "04",
+      "menuName": "Correlation Of Product",
+      "ID": "06",
+      "icon": "right-arrow.svg",
+      "type": "subsubmenu",
+      "route": "correlationofproduct",
+      "subSubmenu":[]
+    },
   ]
 }]
     },{
@@ -315,7 +356,68 @@ export class SidenavComponent implements OnInit {
       "type": "menu",
       "icon": "admin.svg",
       "route": "administration",
-      "subMenu": []
+      "subMenu": [{
+        "Status": "Active",
+        "sequenceNo": "04",
+        "menuName": "User Maintenance",
+        "ID": "004",
+        // "icon": "right-arrow.svg",
+        "type": "submenu",
+        "route": "usermaintenance",
+        "subSubMenu":[]
+      },
+      {
+        "Status": "Active",
+        "sequenceNo": "04",
+        "menuName": "Role Maintenance",
+        "ID": "005",
+        // "icon": "right-arrow.svg",
+        "type": "submenu",
+        "route": "rolemaintenance",
+        "subSubMenu":[]
+      },
+      {
+        "Status": "Active",
+        "sequenceNo": "04",
+        "menuName": "Group Maintenance",
+        "ID": "006",
+        // "icon": "right-arrow.svg",
+        "type": "submenu",
+        "route": "groupmaintenance",
+        "subSubMenu":[]
+      },
+      {
+        "Status": "Active",
+        "sequenceNo": "04",
+        "menuName": "Add group users",
+        "ID": "007",
+        // "icon": "right-arrow.svg",
+        "type": "submenu",
+        "route": "addgroupusers",
+        "subSubMenu":[]
+      },
+      {
+        "Status": "Active",
+        "sequenceNo": "04",
+        "menuName": "Hierarchy maintenance",
+        "ID": "007",
+        // "icon": "right-arrow.svg",
+        "type": "submenu",
+        "route": "hierarchymaintenance",
+        "subSubMenu":[]
+      },
+      {
+        "Status": "Active",
+        "sequenceNo": "04",
+        "menuName": "Role rights",
+        "ID": "008",
+        // "icon": "right-arrow.svg",
+        "type": "submenu",
+        "route": "rolerights",
+        "subSubMenu":[]
+      }
+    ],
+      
     },{
       "Status": "Active",
       "sequenceNo": "01",
@@ -323,8 +425,91 @@ export class SidenavComponent implements OnInit {
       "ID": "01",
       "type": "menu",
       "icon": "master.svg",
-      "route": "masterConfiguration",
-      "subMenu": []
+      "route": "masterconfiguration",
+      "subMenu": [{
+        "Status": "Active",
+        "sequenceNo": "04",
+        "menuName": "Process Configuration",
+        "ID": "009",
+        // "icon": "right-arrow.svg",
+        "type": "submenu",
+        "route": "processconfiguration",
+        "subSubMenu":[]
+      },
+      {
+        "Status": "Active",
+        "sequenceNo": "04",
+        "menuName": "Informative Configuration",
+        "ID": "010",
+        // "icon": "right-arrow.svg",
+        "type": "submenu",
+        "route": "informativeconfiguration",
+        "subSubMenu":[]
+      },
+      {
+        "Status": "Active",
+        "sequenceNo": "04",
+        "menuName": "System Configuration",
+        "ID": "011",
+        // "icon": "right-arrow.svg",
+        "type": "submenu",
+        "route": "systemconfiguration",
+        "subSubMenu":[ {
+          "Status": "Active",
+          "sequenceNo": "04",
+          "menuName": "System Prarameter",
+          "ID": "011",
+          // "icon": "right-arrow.svg",
+          "type": "submenu",
+          "route": "systemparameter",
+        },
+        {
+          "Status": "Active",
+          "sequenceNo": "04",
+          "menuName": "Server Configuration",
+          "ID": "012",
+          // "icon": "right-arrow.svg",
+          "type": "submenu",
+          "route": "serverconfiguration",
+        },
+        {
+          "Status": "Active",
+          "sequenceNo": "04",
+          "menuName": "EOD Configuration",
+          "ID": "013",
+          // "icon": "right-arrow.svg",
+          "type": "submenu",
+          "route": "eodconfiguration",
+        },
+        {
+          "Status": "Active",
+          "sequenceNo": "04",
+          "menuName": "Holiday",
+          "ID": "014",
+          // "icon": "right-arrow.svg",
+          "type": "submenu",
+          "route": "holiday",
+        },
+        {
+          "Status": "Active",
+          "sequenceNo": "04",
+          "menuName": "Holiday Weekend",
+          "ID": "015",
+          // "icon": "right-arrow.svg",
+          "type": "submenu",
+          "route": "holidayweekend",
+        },
+        {
+          "Status": "Active",
+          "sequenceNo": "04",
+          "menuName": "Onboarding Risk Weightage Configuration",
+          "ID": "016",
+          // "icon": "right-arrow.svg",
+          "type": "submenu",
+          "route": "onboardingriskweightageconfiguration",
+        }]
+      }
+    ]
     },{
       "Status": "Active",
       "sequenceNo": "01",

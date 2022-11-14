@@ -16,13 +16,16 @@
                     {{menu.menuName}}
                     <span class="chevron" *ngIf="menu.subMenu.length > 0"></span>
                 </a>
-                <div *ngIf="menu?.subMenu.length > 0" class="mysubnavigation-items">
+                <div *ngIf="menu?.subMenu.length > 0" class="mysubnavigation-items ">
                     <ul class="lst-subnavigation">
                     <li *ngFor="let subMenu of menu.subMenu;let i=index">
-                        <a  class="glnv-dropdown2" (click)="goToPage(subMenu.route)">{{subMenu.menuName}} <span class="chevron"></span></a> 
-                        <div class="mysubnavigation-items sub-menu">
+                        <!-- {{subMenu.subSubMenu.length}} -->
+                        <a   [ngClass]="subMenu.subSubMenu.length > 0 ? 'glnv-dropdown'  : ''"  (click)="goToPage(subMenu.route)">{{subMenu.menuName}} <span class="chevron" *ngIf="subMenu.subSubMenu.length > 0"></span></a> 
+                        <div  *ngIf="subMenu.subSubMenu.length > 0" class="mysubnavigation-items sub-menu">
                             <ul class="lst-subnavigation2">
-                                <li *ngFor="let subSubMenu of subMenu.subSubMenu;let i=index"><a title="{{subSubMenu.menuName}}" (click)="goToPage(subSubMenu.route)">{{subSubMenu.menuName}}</a></li>                                   
+                                <li *ngFor="let subSubMenu of subMenu.subSubMenu;let i=index">
+                                    <a title="{{subSubMenu.menuName}}" (click)="goToPage(subSubMenu.route)">{{subSubMenu.menuName}}</a>
+                                </li>                                   
                             </ul>
                         </div>
                     </li>                        

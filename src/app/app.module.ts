@@ -9,9 +9,47 @@ import { AuthModule } from './pages/auth/auth.module';
 import { LayoutsModule } from './pages/layouts/layouts.module';
 import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RolerightsComponent } from './pages/brainbank/admininstration/rolerights/rolerights.component';
+import { AimlmoduleComponent } from './pages/brainbank/aimlmodule/aimlmodule.component';
+import { ProcessconfigurationComponent } from './pages/brainbank/masterconfiguration/processconfiguration/processconfiguration.component';
+import { InformativeconfigurationComponent } from './pages/brainbank/masterconfiguration/informativeconfiguration/informativeconfiguration.component';
+import { SystemparameterComponent } from './pages/brainbank/masterconfiguration/systemconfiguration/systemparameter/systemparameter.component';
+import { ServerconfigurationComponent } from './pages/brainbank/masterconfiguration/systemconfiguration/serverconfiguration/serverconfiguration.component';
+import { EodconfigurationComponent } from './pages/brainbank/masterconfiguration/systemconfiguration/eodconfiguration/eodconfiguration.component';
+import { HolidayComponent } from './pages/brainbank/masterconfiguration/systemconfiguration/holiday/holiday.component';
+import { HolidayweekendComponent } from './pages/brainbank/masterconfiguration/systemconfiguration/holidayweekend/holidayweekend.component';
+import { OnboardingriskweightageconfigurationComponent } from './pages/brainbank/masterconfiguration/systemconfiguration/onboardingriskweightageconfiguration/onboardingriskweightageconfiguration.component';
+import { ForecasteproductgrowthComponent } from './pages/brainbank/analytics/whatifanalysis/forecasteproductgrowth/forecasteproductgrowth.component';
+import { EstimationofproductgrowthdeviationComponent } from './pages/brainbank/analytics/whatifanalysis/estimationofproductgrowthdeviation/estimationofproductgrowthdeviation.component';
+import { ProductperformancebasedontargetComponent } from './pages/brainbank/analytics/whatifanalysis/productperformancebasedontarget/productperformancebasedontarget.component';
+import { CorrelationofproductComponent } from './pages/brainbank/analytics/whatifanalysis/correlationofproduct/correlationofproduct.component';
+// import { RolemaintenanceComponent } from './pages/brainbank/admininstration/rolemaintenance/rolemaintenance.component';
+// import { GroupmaintenanceComponent } from './pages/brainbank/admininstration/groupmaintenance/groupmaintenance.component';
+// import { AddgroupusersComponent } from './pages/brainbank/admininstration/addgroupusers/addgroupusers.component';
+// import { HierarchymaintenanceComponent } from './hierarchymaintenance/hierarchymaintenance.component';
+// import { UsermaintenanceComponent } from './administration/usermaintenance/usermaintenance.component';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    RolerightsComponent,
+    AimlmoduleComponent,
+    ProcessconfigurationComponent,
+    InformativeconfigurationComponent,
+    SystemparameterComponent,
+    ServerconfigurationComponent,
+    EodconfigurationComponent,
+    HolidayComponent,
+    HolidayweekendComponent,
+    OnboardingriskweightageconfigurationComponent,
+    ForecasteproductgrowthComponent,
+    EstimationofproductgrowthdeviationComponent,
+    ProductperformancebasedontargetComponent,
+    CorrelationofproductComponent,
+    // RolemaintenanceComponent,
+    // GroupmaintenanceComponent,
+    // AddgroupusersComponent,
+    // HierarchymaintenanceComponent,
+    // UsermaintenanceComponent
   ],
   imports: [
     BrowserModule,
