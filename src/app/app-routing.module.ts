@@ -78,8 +78,10 @@ const routes: Routes = [
       { path:'productperformancebasedontarget', loadChildren: () => import('./pages/brainbank/analytics/whatifanalysis/productperformancebasedontarget/productperformancebasedontarget.module').then(m=> m.ProductperformancebasedontargetModule)},
       { path:'correlationofproduct', loadChildren: () => import('./pages/brainbank/analytics/whatifanalysis/correlationofproduct/correlationofproduct.module').then(m=> m.CorrelationofproductModule)},
       { path:'estimationofproductgrowthdeviation', loadChildren: () => import('./pages/brainbank/analytics/whatifanalysis/estimationofproductgrowthdeviation/estimationofproductgrowthdeviation.module').then(m=> m.EstimationofproductgrowthdeviationModule)},
-      { path:'correlationofproduct', loadChildren: () => import('./pages/brainbank/analytics/whatifanalysis/correlationofproduct/correlationofproduct.module').then(m=> m.CorrelationofproductModule)}
-      
+      { path:'socialmediaanalysis', loadChildren: () => import('./pages/brainbank/analytics/feedbackanalysis/social-media-analysis/social-media-analysis.module').then(m=> m.SocialMediaAnalysisModule)},
+      { path:'notificationengine', loadChildren: () => import('./pages/brainbank/notification-engine/notification-engine.module').then(m=> m.NotificationEngineModule)},
+      { path:'microservice', loadChildren: () => import('./pages/brainbank/micro-service/micro-service-routing.module').then(m=> m.MicroServiceRoutingModule)}
+     
         ]
   },
   

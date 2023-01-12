@@ -143,7 +143,7 @@ export class SidenavComponent implements OnInit {
         {
           "Status": "Active",
           "sequenceNo": "04",
-          "menuName": "ATM Analyasis",
+          "menuName": "ATM Analysis",
           "ID": "04",
           "icon": "right-arrow.svg",
           "type": "subsubmenu",
@@ -198,7 +198,8 @@ export class SidenavComponent implements OnInit {
           "route": "mobileAppTransactionAnalysis"
         }
       ]
-  },{
+  },
+  {
     "Status": "Active",
     "sequenceNo": "04",
     "menuName": "Feedback Analysis",
@@ -223,6 +224,15 @@ export class SidenavComponent implements OnInit {
         "icon": "right-arrow.svg",
         "type": "subsubmenu",
         "route": "surveyFeedbackAnalysis"
+      }
+      ,{
+        "Status": "Active",
+        "sequenceNo": "04",
+        "menuName": "Social media analysis",
+        "ID": "04",
+        "icon": "right-arrow.svg",
+        "type": "subsubmenu",
+        "route": "socialmediaanalysis"
       }
     ]
 },{
@@ -321,7 +331,8 @@ export class SidenavComponent implements OnInit {
     },
   ]
 }]
-    },{
+    },
+    {
       "Status": "Active",
       "sequenceNo": "01",
       "menuName": "AI / ML Module",
@@ -330,7 +341,28 @@ export class SidenavComponent implements OnInit {
       "icon": "ai-ml-module.svg",
       "route": "aiMlModule",
       "subMenu": []
-    },{
+    },
+    {
+      "Status": "Active",
+      "sequenceNo": "01",
+      "menuName": "Notification engine",
+      "ID": "01",
+      "type": "menu",
+      "icon": "bell.svg",
+      "route": "notificationengine",
+      "subMenu": []
+    },
+    {
+      "Status": "Active",
+      "sequenceNo": "01",
+      "menuName": "Micro service",
+      "ID": "01",
+      "type": "menu",
+      "icon": "setting-d.svg",
+      "route": "microservice",
+      "subMenu": []
+    },
+    {
       "Status": "Active",
       "sequenceNo": "01",
       "menuName": "Data in Motion",

@@ -128,17 +128,16 @@
                                         </ul>
                                     </div>
                                 </li>
-                                <li>
-                                    <a href="#" class="glnv-dropdown2">Feedback Analysis <span
-                                            class="chevron"></span></a>
-                                    <div class="mysubnavigation-items sub-menu">
-                                        <ul class="lst-subnavigation2">
-                                            <li><a href="bot-analysis.html" title="Bot Analysis">Bot Analysis</a></li>
-                                            <li><a href="survey-feedback-analysis.html"
-                                                    title="Survey/Feedback Analysis">Survey/Feedback Analysis</a></li>
-                                        </ul>
-                                    </div>
-                                </li>
+                             <li>
+                                 <a href="#" class="glnv-dropdown2">Feedback Analysis <span class="chevron"></span></a> 
+                                  <div class="mysubnavigation-items sub-menu">
+                                      <ul class="lst-subnavigation2">
+                                          <li><a href="bot-analysis.html" title="Bot Analysis">Bot Analysis</a></li>
+                                          <li><a href="survey-feedback-analysis.html" title="Survey/Feedback Analysis">Survey/Feedback Analysis</a></li>
+                                          <li><a href="social-media-analysis.html" title="Social Media Analysis" class="">Social Media Analysis</a></li>
+                                      </ul>
+                                   </div>
+                              </li>
                                 <li>
                                     <a href="#" class="glnv-dropdown2">Decision Analysis <span
                                             class="chevron"></span></a>
@@ -164,7 +163,8 @@
                                                     <li><a href="estimation-of-product-growth.html" title="Rate of Interest Deviation"> Estimation of product growth
                                                             Deviation</span></a> </li>
                                                             
-                                        <li><a href="product-performance-based-on-target.html" title="product performance based on target"  class="">Product performance based on target</span></a> </li>
+                                      <li><a href="product-performance-based-on-target.html" title="product performance based on target"  class="">Product performance based on target</span></a> </li>
+                                        <li><a href="correlation-of-product.html" title="Correlation of product"  class="">Correlation of product</span></a> </li>
                                         </ul>
                                     </div>
                                 </li>
@@ -184,7 +184,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="micro-service.html" class="">
+                        <a href="http://172.21.0.227:5601" class="" target="_blank">
                             <img src="../assets/images/svg/setting-d.svg" alt="ai-ml-module-icon">
                             Micro Service
                         </a>
@@ -2647,8 +2647,8 @@
                             font: {
                                 family: vrchartfont,
                             },
-                            formatter: function (val, ctx) {
-                                return thousands_separators(val);
+                            formatter: function (value) {
+                                return abbreviateNumber(value);
                             },
                         },
 
@@ -2799,8 +2799,8 @@
                             font: {
                                 family: vrchartfont,
                             },
-                            formatter: function (val, ctx) {
-                                return thousands_separators(val);
+                            formatter: function (value) {
+                                return abbreviateNumber(value);
                             },
                         },
 
@@ -2952,8 +2952,8 @@
                             font: {
                                 family: vrchartfont,
                             },
-                            formatter: function (val, ctx) {
-                                return thousands_separators(val);
+                            formatter: function (value) {
+                                return abbreviateNumber(value);
                             },
                         },
 
@@ -3104,8 +3104,8 @@
                             font: {
                                 family: vrchartfont,
                             },
-                            formatter: function (val, ctx) {
-                                return thousands_separators(val);
+                            formatter: function (value) {
+                                return abbreviateNumber(value);
                             },
                         },
 
@@ -5220,7 +5220,32 @@
                 }
             }
         });
+        // function intToString (value) {
+        //     var suffixes = ["", "k", "m", "b","t"];
+        //     var suffixNum = Math.floor((""+value).length/3);
+        //     var shortValue = parseFloat((suffixNum != 0 ? (value / Math.pow(1000,suffixNum)) : value).toPrecision(2));
+        //     if (shortValue % 1 != 0) {
+        //         shortValue = shortValue.toFixed(1);
+        //     }
+        //     return shortValue+suffixes[suffixNum];
+        // }
 
+        function abbreviateNumber(value) {
+            var newValue = value;
+            if (value >= 1000) {
+                var suffixes = ["", "k", "M", "b","t"];
+                var suffixNum = Math.floor( (""+value).length/3 );
+                var shortValue = '';
+                for (var precision = 2; precision >= 1; precision--) {
+                    shortValue = parseFloat( (suffixNum != 0 ? (value / Math.pow(1000,suffixNum) ) : value).toPrecision(precision));
+                    var dotLessShortValue = (shortValue + '').replace(/[^a-zA-Z 0-9]+/g,'');
+                    if (dotLessShortValue.length <= 2) { break; }
+                }
+                if (shortValue % 1 != 0)  shortValue = shortValue.toFixed(1);
+                newValue = shortValue+suffixes[suffixNum];
+            }
+            return newValue;
+        }
     </script>
 
 </body>

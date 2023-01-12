@@ -90,34 +90,121 @@ export class DigitalpaymentComponent implements OnInit {
     
     switch (tab) {   
       case 'upi': 
-      console.log("upi click");
-            this.ccanv = document.getElementById('dpTransOverview');
-            this.ctxctvh = this.ccanv.getContext('2d');
-           
-            cdxLabeldptxno = [
-              "Jul 21", "Aug 21", "Sep 21", "Oct 21", "Nov 21", "Dec 21",
-              "Jan 22", "Feb 22", "Mar 22", "Apr 22", "May 22", "Jun 22",
-            ];
-            cdyDatadptxno = [
-              10, 20, 30, 20, 10, 20,
-              40, 80, 90, 20, 20, 30,
-            ];
-            this.generateLineCharts( this.ctxctvh , cdxLabeldptxno , cdyDatadptxno);
-            // this.createChartdpTxnOverview();  
-            break;
+      break;
       case 'imps':
         console.log("imps click");
-            break;
+      break;
       case 'rtgs':
+        console.log("RTGS");
         break;
-      case 'neft':      
+      case 'neft':     
+      console.log("NEFT") 
         break;
     }
 
   }
 
   generateLineCharts(ctxctvh,cdxLabeldptxno, cdyDatadptxno) {
-    console.log("RRRRR");
+    console.log("UPI G1");
+    
+    var dpTxnoChart = new Chart(ctxctvh, {
+      type:  'line',
+      data: {
+        labels: cdxLabeldptxno, 
+        datasets: [{
+          label: "New Chart",
+          data: cdyDatadptxno,
+          // backgroundColor: ["red"],
+          borderColor: "rgb(106, 114, 191)",
+          // pointBackgroundColor: "red",
+          // pointBackgroundColor: "transparent",
+          pointRadius: 0,
+          tension: 0.1,
+          fill: {
+            target: "origin",
+            above: "rgba(106, 114, 191, 0.2)",
+            // below: "red",
+          },
+        }],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            display: false,
+          },
+          title: {
+            display: false,
+            text: "Transaction Overview",
+            color: this.title_charttitle,
+            align: "start",
+            padding: {
+              bottom: 5,
+            },
+            font: {
+              family: this.vrchartfont,
+              size: 20,
+              weight: "500",
+            },
+          }, // title
+          subtitle: {
+            display: false,
+            text: "Number of Transactions",
+            color: this.title_charttitle,
+            align: "start",
+            padding: {
+              bottom: 15,
+            },
+            font: {
+              family: this.vrchartfont,
+              size: 14,
+              // weight: "500",
+            },
+          }, // subtitle
+
+          datalabels: {
+            display: false,
+          }, // datalabels 
+
+        }, // plugins
+
+        scales: {
+          y: {
+            // display: false,
+            beginAtZero: true,
+            ticks: {
+              color: "transparent",
+              // stepSize: 5000,
+              font: {
+                family: this.vrchartfont,
+              },
+            },
+            grid: {
+              borderColor: "transparent",
+              color: this.ygrid_bordercolor,
+            },
+          }, // y
+          x: {
+            ticks: {
+              color: this.xtick_color,
+              font: {
+                family: this.vrchartfont,
+              },
+            },
+            grid: {
+              borderColor: this.xgrid_bordercolor,
+              color: this.xgrid_bordercolor,
+            },
+          }, // x
+        }, // scales
+
+      }, // option 
+    });
+  }
+
+  generateLineCharts2(ctxctvh,cdxLabeldptxno, cdyDatadptxno) {
+    console.log("UPI G1");
     
     var dpTxnoChart = new Chart(ctxctvh, {
       type:  'line',
