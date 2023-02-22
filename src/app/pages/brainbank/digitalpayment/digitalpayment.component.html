@@ -16,8 +16,11 @@
                                                     <div class="responsive-tab custom-card bg-custom pad-custom2 mar-custom3">
                                                         <div class="custom-width">
                                                             <ul class="nav nav-tabs nav-justified bor-n" role="tablist">
-                                                                <li class="nav-item1" *ngFor="let tab of tablist" [ngClass]="activeTabName == tab ? 'active' : ''">
+                                                                <!-- <li class="nav-item1" *ngFor="let tab of tablist" [ngClass]="activeTabName == tab ? 'active' : ''">
                                                                     <a class="nav-link active" (click)="activetab(tab)" data-toggle="tab"><em>{{tab | uppercase}}</em></a>
+                                                                </li> -->
+                                                                <li role="presentation" class="nav-item1" *ngFor="let tab of tablist" [ngClass]="activeTabName == tab ? 'active' : ''">
+                                                                <a class="nav-link" (click)="activetab(tab)"><em>{{tab | uppercase}}</em> </a>
                                                                 </li>
                                                                 <!-- <li class="nav-item1">
                                                                     <a class="nav-link" data-toggle="tab" href="#imps">IMPS</a>
@@ -35,18 +38,740 @@
                                                  </div>
                                                  <div class="col-12 col-md-12">
                                                     <div class="tab-content bg-transparent mb-3">
-                                                        <div id="upi" class="tab-pane">
-                                                            upi   </div>
+                                                        <div id="upi" class="tab-pane active" [hidden]="activeTabName != 'upi'">
+                                                            <div class="row">
+																<div class="col-sm-12 col-12 col-md-12">
+																	<div class="bg-white1 dark-bg2">
+																		<div class="row">
+																			<div class="col-sm-12 col-12 col-md-12">
+																				<div class="ux-nav-tabs"
+																					style="margin:0;">
+																					<div
+																						class="responsive-tab custom-card bg-custom pad-custom2 mar-custom3">
+																						<div class="custom-width">
+																							<ul class="nav nav-tabs nav-right bor-n"
+																								role="tablist">
+																								<li class="nav-item2">
+																									<a class="nav-link active"
+																										data-toggle="tab"
+																										href="#last-year">Last
+																										Year</a>
+																								</li>
+																								<li class="nav-item2">
+																									<a class="nav-link"
+																										data-toggle="tab"
+																										href="#this-year">This
+																										Year</a>
+																								</li>
+																							</ul>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																		<div class="row">
+																			<div class="col-12 col-md-12">
+																				<div
+																					class="tab-content bg-transparent mb-3">
+																					<div id="last-year"
+																						class="tab-pane active">
+																						<div class="row">
+																							<div
+																								class="col-sm-12 col-12 col-md-6">
+																								<div
+																									class="chart-heading">
+																									<h2
+																										class="light-text">
+																										Transactions
+																										Overview</h2>
+																									<h5
+																										class="light-text">
+																										Number of
+																										Transactions
+																									</h5>
+																								</div>
+																							</div>
+																						</div>
+																						<div class="row">
+																							<div
+																								class="col-sm-12 col-12 col-md-12">
+																								<div>
+																									<div
+																										class="chart-box pt-0 pb-0">
+																										<div
+																											class="chart-area2">
+																											<canvas
+																												id="dpTransOverview"
+																												width="600"
+																												height="500"></canvas>
+																										</div>
+																									</div>
+																								</div>
+																							</div>
+																						</div>
+																					</div>
+																					<div id="this-year"
+																						class="tab-pane fade">
+																						<div class="row">
+																							<div
+																								class="col-sm-12 col-12 col-md-6">
+																								<div
+																									class="chart-heading">
+																									<h2
+																										class="light-text">
+																										Transactions
+																										Overview</h2>
+																									<h5
+																										class="light-text">
+																										Number of
+																										Transactions
+																									</h5>
+																								</div>
+																							</div>
+																						</div>
+																						<div class="row">
+																							<div
+																								class="col-sm-12 col-12 col-md-12">
+																								<div>
+																									<div
+																										class="chart-box pt-0 pb-0">
+																										<div
+																											class="chart-area2">
+																											<canvas
+																												id="dpTransOverview2"
+																												width="600"
+																												height="500"></canvas>
+																										</div>
+																									</div>
+																								</div>
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
 
-                                                                 <div id="imps" class="tab-pane active">
-                                                                 IMPS
-                                                                   </div>
-                                                                   <div id="rtgs" class="tab-pane">
-                                                                    sfgsad 
-                                                                </div>
-                                                                <div id="neft" class="tab-pane">
+																<div class="col-sm-12 col-12 col-md-12">
+																	<div class="bg-white1 dark-bg">
+																		<div class="row">
+																			<div class="col-12 col-md-12">
+																				<div class="ux-nav-tabs"
+																					style="margin:0">
+																					<div
+																						class="responsive-tab custom-card bg-custom pad-custom2 mar-custom3">
+																						<div class="custom-width">
+																							<ul class="nav nav-tabs nav-justified bor-n"
+																								role="tablist">
+																								<li class="nav-item1">
+																									<a class="nav-link active"
+																										data-toggle="tab"
+																										href="#BOB">Bank
+																										Decline BD</a>
+																								</li>
+																								<li class="nav-item1">
+																									<a class="nav-link"
+																										data-toggle="tab"
+																										href="#non-bd">Non-BD</a>
+																								</li>
+																							</ul>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																		<div class="row">
+																			<div class="col-12 col-md-12">
+																				<div
+																					class="tab-content bg-transparent mb-3">
+																					<div id="BOB"
+																						class="tab-pane active">
+																						<div class="row">
+																							<div
+																								class="col-sm-10 col-10 col-md-6">
+																								<div class="mb-4">
+																									<h2
+																										class="light-text">
+																										Technical
+																										Decline</h2>
+																								</div>
+																							</div>
+																							<div
+																								class="col-sm-2 col-2 col-md-6">
+																								<ul
+																									class="filter-list-info mar-t">
+																									<li>
+																										<a href="#"
+																											class="filter-btn"
+																											title="filter">
+																											<div
+																												class="icon">
+																												<img src="../assets/images/svg/filter.svg"
+																													alt="filter-icon">
+																											</div>
+																										</a>
+																										<div
+																											class="filter-section">
+																											<ul
+																												class="lst-filter">
+																												<li>
+																													<a href="#"
+																														class="common-action">
+																														All
+																													</a>
+																												</li>
+																												<li>
+																													<a href="#"
+																														class="common-action">
+																														Financial
+																													</a>
+																												</li>
+																												<li>
+																													<a href="#"
+																														class="common-action">
+																														Non-Financial
+																													</a>
+																												</li>
+																											</ul>
+																										</div>
+																									</li>
+																								</ul>
+																							</div>
+
+																						</div>
+																						<div class="row">
+																							<div
+																								class="col-sm-12 col-12 col-md-10 m-auto">
+																								<div>
+																									<div
+																										class="chart-box pt-0 pb-0">
+																										<div
+																											class="chart-area">
+																											<canvas
+																												id="dpTechDecline"
+																												width="600"
+																												height="350"></canvas>
+																											<div
+																												class="cachartdatatable">
+																												<table>
+																													<tr>
+																														<th>
+																														</th>
+																														<th><em>Invalid
+																																Transaction</em>
+																														</th>
+																														<th><em>Unable
+																																To
+																																Process
+																																Due
+																																To
+																																Remitter
+																																Side
+																																Issue</em>
+																														</th>
+																														<th><em>Response
+																																Code
+																																Error</em>
+																														</th>
+																														<th><em>Requath
+																																Time
+																																Out
+																																For
+																																Pay</em>
+																														</th>
+																														<th><em>PSP
+																																Not
+																																Available</em>
+																														</th>
+																													</tr>
+																													<tr>
+																														<td><em><i
+																																	class="ind4"></i>For
+																																The
+																																Day
+																																Count</em>
+																														</td>
+																														<td><em>30445</em>
+																														</td>
+																														<td><em>26</em>
+																														</td>
+																														<td><em>558</em>
+																														</td>
+																														<td><em>129</em>
+																														</td>
+																														<td><em>32</em>
+																														</td>
+																													</tr>
+																													<tr>
+																														<td><em><i
+																																	class="ind3"></i>Month
+																																To
+																																Date
+																																Count</em>
+																														</td>
+																														<td><em>532460</em>
+																														</td>
+																														<td><em>53822</em>
+																														</td>
+																														<td><em>6377</em>
+																														</td>
+																														<td><em>2271</em>
+																														</td>
+																														<td><em>173</em>
+																														</td>
+																													</tr>
+																												</table>
+																											</div>
+																										</div>
+																									</div>
+																								</div>
+																							</div>
+																						</div>
+																					</div>
+																					<div id="non-bd"
+																						class="tab-pane fade">
+																						<div class="row">
+																							<div
+																								class="col-sm-10 col-10 col-md-6">
+																								<div class="mb-4">
+																									<h2
+																										class="light-text">
+																										Technical
+																										Decline</h2>
+																								</div>
+																							</div>
+																							<div
+																								class="col-sm-2 col-2 col-md-6">
+																								<ul
+																									class="filter-list-info mar-t">
+																									<li>
+																										<a href="#"
+																											class="filter-btn"
+																											title="filter">
+																											<div
+																												class="icon">
+																												<img src="../assets/images/svg/filter.svg"
+																													alt="filter-icon">
+																											</div>
+																										</a>
+																										<div
+																											class="filter-section">
+																											<ul
+																												class="lst-filter">
+																												<li>
+																													<a href="#"
+																														class="common-action">
+																														All
+																													</a>
+																												</li>
+																												<li>
+																													<a href="#"
+																														class="common-action">
+																														Financial
+																													</a>
+																												</li>
+																												<li>
+																													<a href="#"
+																														class="common-action">
+																														Non-Financial
+																													</a>
+																												</li>
+																											</ul>
+																										</div>
+																									</li>
+																								</ul>
+																							</div>
+																						</div>
+																						<div class="row">
+																							<div
+																								class="col-sm-12 col-12 col-md-12 m-auto">
+																								<div>
+																									<div
+																										class="chart-box pt-0 pb-0">
+																										<canvas
+																											id="dpTechDecline2"
+																											width="600"
+																											height="350"></canvas>
+																										<div
+																											class="cachartdatatable">
+																											<table>
+																												<tr>
+																													<th>
+																													</th>
+																													<th><em>For
+																															The
+																															Day
+																															Count</em>
+																													</th>
+																													<th><em>Month
+																															To
+																															Date
+																															Count</em>
+																													</th>
+																												</tr>
+																												<tr>
+																													<td><em><i
+																																class="ind4"></i>No
+																															Responsce
+																															From
+																															CBS</em>
+																													</td>
+																													<td><em>741</em>
+																													</td>
+																													<td><em>100837</em>
+																													</td>
+																												</tr>
+																												<tr>
+																													<td><em><i
+																																class="ind3"></i>Remitter
+																															CBS
+																															Offline</em>
+																													</td>
+																													<td><em>83</em>
+																													</td>
+																													<td><em>23148</em>
+																													</td>
+																												</tr>
+																											</table>
+																										</div>
+																									</div>
+																								</div>
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+
+																<div class="col-sm-12 col-12 col-md-12">
+																	<div class="bg-white1 dark-bg">
+																		<div class="row mb-4">
+																			<div class="col-sm-10 col-10 col-md-6">
+																				<div>
+																					<h2 class="light-text">Business
+																						Decline</h2>
+																				</div>
+																			</div>
+																			<div class="col-sm-2 col-2 col-md-6">
+																				<ul class="filter-list-info mar-t">
+																					<li>
+																						<a href="#" class="filter-btn"
+																							title="filter">
+																							<div class="icon">
+																								<img src="../assets/images/svg/filter.svg"
+																									alt="filter-icon">
+																							</div>
+																						</a>
+																						<div class="filter-section">
+																							<ul class="lst-filter">
+																								<li>
+																									<a href="#"
+																										class="common-action">
+																										All
+																									</a>
+																								</li>
+																								<li>
+																									<a href="#"
+																										class="common-action">
+																										Financial
+																									</a>
+																								</li>
+																								<li>
+																									<a href="#"
+																										class="common-action">
+																										Non-Financial
+																									</a>
+																								</li>
+																							</ul>
+																						</div>
+																					</li>
+																				</ul>
+																			</div>
+																		</div>
+																		<div class="row">
+																			<div
+																				class="col-sm-12 col-12 col-md-12 m-auto">
+																				<div>
+																					<div class="chart-box pt-0 pb-0">
+																						<div class="chart-area">
+																							<canvas id="dpBusiDecline"
+																								width="600"
+																								height="500"></canvas>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+
+															</div>  
+                                                        </div>
+                                                        <div id="imps" class="tab-pane" >
+                                                            <div class="row">
+																<div class="col-sm-12 col-12 col-md-12">
+																	<div class="bg-white1 dark-bg2">
+																		<div class="row">
+																			<div
+																				class="col-sm-12 col-12 col-md-12 pt-5">
+																				<div class="ux-nav-tabs"
+																					style="margin:0;">
+																					<div
+																						class="responsive-tab custom-card bg-custom pad-custom2 mar-custom3">
+																						<div class="custom-width">
+																							<!-- <ul class="nav nav-tabs nav-right bor-n"
+																								role="tablist">
+																								<li class="nav-item2">
+																									<a class="nav-link active"
+																										data-toggle="tab"
+																										href="#last-year1">Last
+																										Year</a>
+																								</li>
+																								<li class="nav-item2">
+																									<a class="nav-link"
+																										data-toggle="tab"
+																										href="#this-year1">This
+																										Year</a>
+																								</li>
+																							</ul> -->
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																		<div class="row">
+																			<div class="col-12 col-md-12">
+																				<div
+																					class="tab-content bg-transparent mb-3">
+																					<div id="last-year1"
+																						class="tab-pane active">
+																						<div class="row">
+																							<div
+																								class="col-sm-12 col-12 col-md-6">
+																								<div
+																									class="chart-heading">
+																									<h2
+																										class="light-text">
+																										Transactions
+																										Count</h2>
+																									<h5
+																										class="light-text">
+
+																									</h5>
+																								</div>
+																							</div>
+																						</div>
+																						<div class="row">
+																							<div
+																								class="col-sm-12 col-12 col-md-12">
+																								<div>
+																									<div
+																										class="chart-box pt-0 pb-0">
+																										<div
+																											class="chart-area2">
+																											<canvas
+																												id="dpTransOverview3"
+																												width="600"
+																												height="500"></canvas>
+																										</div>
+																									</div>
+																								</div>
+																							</div>
+																						</div>
+																					</div>
+																					<div id="this-year1"
+																						class="tab-pane fade">
+																						<div class="row">
+																							<div
+																								class="col-sm-12 col-12 col-md-6">
+																								<div
+																									class="chart-heading">
+																									<h2
+																										class="light-text">
+																										Transactions
+																										Overview</h2>
+																									<h5
+																										class="light-text">
+																										Number of
+																										Transactions
+																									</h5>
+																								</div>
+																							</div>
+																						</div>
+																						<div class="row">
+																							<div
+																								class="col-sm-12 col-12 col-md-12">
+																								<div>
+																									<div
+																										class="chart-box pt-0 pb-0">
+																										<div
+																											class="chart-area2">
+																											<canvas
+																												id="dpTransOverview4"
+																												width="600"
+																												height="500"></canvas>
+																										</div>
+																									</div>
+																								</div>
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+
+																<div class="col-sm-12 col-12 col-md-12">
+																	<div class="bg-white1 dark-bg">
+																		<div class="row">
+																			<div class="col-12 col-md-12">
+																				<div class="ux-nav-tabs"
+																					style="margin:0">
+																					<div
+																						class="responsive-tab custom-card bg-custom pad-custom2 mar-custom3">
+																						<div class="custom-width">
+																							<!-- <ul class="nav nav-tabs nav-justified bor-n"
+																								role="tablist">
+																								<li class="nav-item1">
+																									<a class="nav-link active"
+																										data-toggle="tab"
+																										href="#BOB2">Bank
+																										Decline BD</a>
+																								</li>
+																								<li class="nav-item1">
+																									<a class="nav-link"
+																										data-toggle="tab"
+																										href="#non-bd2">Non-BD</a>
+																								</li>
+																							</ul> -->
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																		<div class="row">
+																			<div class="col-12 col-md-12">
+																				<div
+																					class="tab-content bg-transparent mb-3">
+																					<div id="BOB2"
+																						class="tab-pane active">
+																						<div class="row">
+																							<div
+																								class="col-sm-10 col-10 col-md-6">
+																								<div class="mb-4">
+																									<h2
+																										class="light-text">
+																										Technical
+																										Decline</h2>
+																								</div>
+																							</div>
+																							<div
+																								class="col-sm-2 col-2 col-md-6">
+																								<ul
+																									class="filter-list-info mar-t">
+																									<!-- <li>
+																										<a href="#"
+																											class="filter-btn"
+																											title="filter">
+																											<div
+																												class="icon">
+																												<img src="../assets/images/svg/filter.svg"
+																													alt="filter-icon">
+																											</div>
+																										</a>
+																										<div
+																											class="filter-section">
+																											<ul
+																												class="lst-filter">
+																												<li>
+																													<a href="#"
+																														class="common-action">
+																														All
+																													</a>
+																												</li>
+																												<li>
+																													<a href="#"
+																														class="common-action">
+																														Financial
+																													</a>
+																												</li>
+																												<li>
+																													<a href="#"
+																														class="common-action">
+																														Non-Financial
+																													</a>
+																												</li>
+																											</ul>
+																										</div>
+																									</li> -->
+																								</ul>
+																							</div>
+
+																						</div>
+																						<div class="row">
+																							<div
+																								class="col-sm-12 col-12 col-md-12 m-auto">
+																								<div>
+																									<div
+																										class="chart-box pt-0 pb-0">
+																										<div
+																											class="chart-area">
+																											<canvas
+																												id="impsTD"
+																												width="600"
+																												height="350"></canvas>
+
+																										</div>
+																									</div>
+																								</div>
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+
+																<div class="col-sm-12 col-12 col-md-12">
+																	<div class="bg-white1 dark-bg">
+																		<div class="row mb-4">
+																			<div class="col-sm-10 col-10 col-md-12">
+																				<div>
+																					<h2 class="light-text">Business
+																						Decline</h2>
+																				</div>
+																			</div>
+																		</div>
+																		<div class="row">
+																			<div
+																				class="col-sm-12 col-12 col-md-12 m-auto">
+																				<div>
+																					<div class="chart-box pt-0 pb-0">
+																						<div class="chart-area">
+																							<canvas id="impsBusiDec"
+																								width="600"
+																								height="500"></canvas>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+
+															</div>
+                                                        </div>
+                                                        <div id="rtgs" class="tab-pane">
+                                                                    sfgsad           
+                                                        </div>
+                                                        <div id="neft" class="tab-pane" >
                                                                      asfdasdfasfdasf
-                                                                </div>
+                                                        </div>
                                                            </div>
                                                      </div>
                                               </div>

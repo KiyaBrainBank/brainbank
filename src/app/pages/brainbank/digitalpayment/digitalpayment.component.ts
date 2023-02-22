@@ -89,11 +89,29 @@ export class DigitalpaymentComponent implements OnInit {
     let cdyDatadptxno = [];
     
     switch (tab) {   
-      case 'upi': 
-      break;
+      case 'upi':  
+      console.log("upi click");
+            this.ccanv = document.getElementById('dpTransOverview');
+            this.ctxctvh = this.ccanv.getContext('2d');
+           
+            cdxLabeldptxno = [
+              "Jul 21", "Aug 21", "Sep 21", "Oct 21", "Nov 21", "Dec 21",
+              "Jan 22", "Feb 22", "Mar 22", "Apr 22", "May 22", "Jun 22",
+            ];
+            cdyDatadptxno = [
+              20, 20, 30, 20, 10, 20,
+              40, 80, 90, 20, 20, 30,
+            ];
+            this.generateLineCharts( this.ctxctvh , cdxLabeldptxno , cdyDatadptxno);
+            // this.createChartdpTxnOverview();  
+            break;
+
+
       case 'imps':
+        
         console.log("imps click");
-      break;
+     
+            break;
       case 'rtgs':
         console.log("RTGS");
         break;

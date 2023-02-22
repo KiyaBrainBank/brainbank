@@ -466,7 +466,7 @@ export class DashboardComponent implements OnInit {
     this.createChartNoChannelsUsers(this.ctxChannelsUsedByCustomersCanvas, cnocchartDataxLabel, cnocchartDatayData)
         break;
     }
-
+ 
   }
 
   generateCharts(ctxctvh, ctvhchartDataxLabel, ctvhchartDatayData, ctvChartDataTitle, graphOptions) {
