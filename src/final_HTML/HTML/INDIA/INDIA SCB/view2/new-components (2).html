@@ -1,0 +1,1456 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Components</title>
+
+    <link href="../css/lib/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/lib/jquery-ui.min.css" rel="stylesheet">
+    <link href="../css/lib/datatables.min.css" rel="stylesheet">
+    <link href="../css/main.css" rel="stylesheet">
+    
+
+    <!--[if IE]>
+		<link rel="stylesheet" type="text/css" href="../styles/bahmas.min.ie.css" />
+	<![endif]-->
+
+    <style type="text/css">
+        /** {font-family: 'Montserrat', sans-serif;font-size: 1rem;}*/
+        /*body {background: #f0f0f0;}*/
+        h1 {
+            background-color: #eee;
+            word-break: break-all;
+            font-weight: 100;
+            font-size: 4rem;
+        }
+
+        .lst-components {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            position: relative;
+            overflow: auto;
+        }
+
+        .lst-components li {
+            padding: 0px 0;
+            text-align: center;
+        }
+
+        .lst-components li h5 {
+            color: #444;
+            font-weight: 700;
+        }
+
+        .lst-components li h5 b {
+            color: rgb(91, 91, 95);
+            font-weight: normal;
+            font-size: 80%;
+            font-weight: 400;
+        }
+
+        .comp {
+            background: rgba(255, 255, 255, 1);
+            /*height: 200px;*/
+            padding: 20px 5px;
+            overflow: hidden;
+            margin: 20px;
+            text-align: center;
+            vertical-align: center;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+        }
+
+        .bg-white {
+            background: rgba(255, 255, 255, 0.8);
+            height: auto;
+            overflow: hidden;
+
+        }
+
+        .select2-container--default .select2-selection--multiple .select2-selection__clear {
+            cursor: pointer;
+            /* float: right; */
+            font-weight: bold;
+            margin-top: 5px;
+            margin-right: 10px;
+            position: absolute;
+            right: 0;
+            top: 6px;
+        }
+
+        .gradient-box::before {
+            position: absolute;
+            content: '';
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+            background-image: none;
+            background-repeat: no-repeat;
+            background-size: cover;
+            opacity: 0.2;
+            z-index: 0;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container-fluid bg-white">
+        <div class="row">
+
+            <div class="col-md-12">
+                <ul class="lst-components mt-2">
+                    <li>
+                        <h5>Button Medium <b>(Primary, Secondary, Disabled)</b></h5>
+                        <div class="comp">
+                            <!-- <a href="javascript:;">Hello</a> -->
+                            <button class="ux-button primary">Primary</button>
+                            <button class="ux-button secondary">Secondary</button>
+                            <button class="ux-button blue-mid">blue</button>
+                            <button class="ux-button disable">Disabled</button>
+                            <a href="javascript:;" class="ux-button primary">Anchor</a>
+                        </div>
+                    </li>
+                    <li>
+                        <h5>Button Large Size <b>(Primary, Secondary, Disabled)</b></h5>
+                        <div class="comp">
+                            <!-- <a href="javascript:;">Hello</a> -->
+                            <button class="ux-button primary md">Primary</button>
+                            <button class="ux-button secondary md">Secondary</button>
+                            <button class="ux-button blue-mid md">blue</button>
+                            <button class="ux-button disable md">Disabled</button>
+                            <a href="javascript:;" class="ux-button primary md">Anchor</a>
+                        </div>
+                    </li>
+                    <li>
+                        <h5>Button Small <b> (Primary, Secondary, Disabled)</b></h5>
+                        <div class="comp">
+                            <button class="ux-button sm primary md">Primary </button>
+                            <button class="ux-button sm secondary md">Secondary</button>
+                            <button class="ux-button sm blue-mid md">blue</button>
+                            <button class="ux-button sm disable md">Disabled</button>
+                            <a href="javascript:;" class="ux-button primary sm">Anchor</a>
+                        </div>
+                    </li>
+                    <li>
+                        <h5>Button Small2 <b> (Primary, Secondary, Disabled)</b></h5>
+                        <div class="comp">
+                            <button class="ux-button-small sm primary md">Primary </button>
+                            <button class="ux-button-small sm secondary md">Secondary</button>
+                            <button class="ux-button-small sm disable md">Disabled</button>
+                            <a href="javascript:;" class="ux-button-small primary bor-w sm">Anchor</a>
+                        </div>
+                    </li>
+                    <li>
+                        <h5>Link Button</h5>
+                        <div class="comp">
+                            <button class="ux-linkbutton">Default</button>
+                            <button class="ux-linkbutton primary">Primary</button>
+                            <button class="ux-linkbutton secondary">Secondary</button>
+                            <button class="ux-linkbutton blue-mid">Blue</button>
+                            <button class="ux-linkbutton disable">Disabled</button>
+                            <a href="javascript:;" class="ux-linkbutton primary" data-ripple>Anchor</a>
+                         </div>
+                    </li>
+                    <li>
+                        <h5>Checkbox</h5>
+                        <div class="comp">
+                            <div class="ux-selection">
+                                <label class="ux-selection1">One
+                                    <input type="checkbox" name="radioboxdemo">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <div class="ux-selection">
+                                <label class="ux-selection1">Two
+                                    <input type="checkbox" name="radioboxdemo" checked="checked">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <div class="ux-selection">
+                                <label class="ux-selection1 disabled">Three
+                                    <input type="checkbox" name="radioboxdemo" disabled="disabled">
+                                    <span class="checkmark disabled"></span>
+                                </label>
+                            </div>
+                            <div class="ux-selection">
+                                <label class="ux-selection1 disabled">Four
+                                    <input type="checkbox" name="radioboxdemo" checked="checked" disabled="disabled">
+                                    <span class="checkmark disabled"></span>
+                                </label>
+                            </div>
+                            <div class="ux-selection">
+                                <div class="ux-selection1 mar-rcustom ">
+                                    <label>I accept to the <a href="#">Terms and Conditions</a>
+                                        <input type="checkbox" name="">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <h5>Radio</h5>
+                        <div class="comp">
+                            <div class="ux-selection">
+                                <label class="ux-selection2">One
+                                    <input type="radio" checked="checked" name="radioboxdemo">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <div class="ux-selection">
+                                <label class="ux-selection2">Two
+                                    <input type="radio" name="radioboxdemo">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <div class="ux-selection">
+                                <label class="ux-selection2 disabled">Three
+                                    <input type="radio" name="radioboxdemo2" disabled="disabled">
+                                    <span class="checkmark disabled"></span>
+                                </label>
+                            </div>
+                            <div class="ux-selection">
+                                <label class="ux-selection2 disabled">Four
+                                    <input type="radio" name="radioboxdemo3" disabled="disabled" checked="checked">
+                                    <span class="checkmark disabled"></span>
+                                </label>
+                            </div>
+                         </div>
+                    </li>
+                    <li>
+                        <h5>Toggle Switch</h5>
+                        <div class="comp">
+                             <div class="custom-control3">
+                                <div class="custom-control custom-switch pad-2">
+                                    <input type="checkbox" class="custom-control-input" id="customSwitch3">
+                                    <label class="custom-control-label md" for="customSwitch3">Toggle Switch</label>
+                                </div>
+                            </div>
+                            <div class="custom-control3">
+                                <div class="custom-control custom-switch pad-2">
+                                    <input type="checkbox" class="custom-control-input" disabled id="customSwitch4">
+                                    <label class="custom-control-label md" for="customSwitch4">Toggle Switch</label>
+                                </div>
+                            </div>
+                            <div class="custom-control custom-switch mt-5">
+                                <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                                <label class="custom-control-label md" for="customSwitch1">Toggle this switch element</label>
+                            </div>
+                            <div class="custom-control custom-switch mt-2">
+                                <input type="checkbox" class="custom-control-input" disabled id="customSwitch2">
+                                <label class="custom-control-label" for="customSwitch2">Disabled switch element</label>
+                            </div>
+                            <!-- <div class="vspacer10"></div>
+                            <div class="el-switch-main">
+                                <em class="margin-r">switch</spanem>
+                                    <label class="el-switch  el-switch-sm">
+                                        <input type="checkbox" name="switch">
+                                        <span class="el-switch-style"></span>
+                                    </label>
+                            </div>
+
+                            <div class="el-switch-main">
+                                <em class="margin-r">switch</em>
+                                <label class="el-switch">
+                                    <input type="checkbox" name="switch" checked>
+                                    <span class="el-switch-style"></span>
+                                </label>
+                            </div>
+
+                            <div class="el-switch-main">
+                                <em class="margin-r">Disabled</em>
+                                <label class="el-switch">
+                                    <input type="checkbox" name="switch" disabled>
+                                    <span class="el-switch-style"></span>
+                                </label>
+                            </div>
+                            <div class="el-switch-main">
+                                <em class="margin-r">Checked && Disabled</em>
+                                <label class="el-switch">
+                                    <input type="checkbox" name="switch" checked disabled>
+                                    <span class="el-switch-style"></span>
+                                </label>
+                            </div> -->
+                            <div class="vspacer10"></div>
+                            <!-- <label class="toggle">
+								<em>Inactive</em>
+								<input type="checkbox" checked="checked">
+								<b>Active</b>
+							</label>
+							<label class="toggle">
+								<input type="checkbox" name=""  disabled="disabled">
+							</label>
+							<label class="toggle label-inactive">
+								<em>Inactive</em>
+								<input type="checkbox" name="">
+								<b>Active</b>
+							</label>
+							<label class="toggle">
+								<input type="checkbox" checked="checked">
+							</label>
+							<label class="toggle">
+								<input type="checkbox" name="" disabled="disabled">
+							</label>
+							<label class="toggle">
+								<input type="checkbox" name="" checked="checked" disabled="disabled">
+							</label> -->
+                            <!-- <div class="btn-group btn-toggle ml-1">
+								<button class="btn btn-xs btn-info1 active">Yes</button>
+								<button class="btn btn-xs btn-default">No</button>
+							</div> -->
+                        </div>
+                    </li>
+                    <!-- <li>
+						<h5>Breadcrumbs</h5>
+						<div class="comp">
+							<div class="breadcrumb">
+								<ul class="lst-breadcrumb">
+									<li>
+										<a href="javascript:;">Dashboard</a>
+									</li>
+									<li>
+										<a href="javascript:;">My Accounts</a>
+									</li>
+									<li>
+										Own Account
+									</li>
+								</ul>
+							</div>
+						</div>
+					</li> -->
+
+                    <li>
+                        <h5>Web Header</h5>
+                        <div class="comp">
+                            <div class="row">
+                                 
+
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <h5>Text Input Field & Upload File</h5>
+                        <div class="comp">
+                            <div class="row">
+                                <div Class="col-12 col-xl-3 col-lg-4 col-sm-6 col-md-6">
+                                    <div class="ux-input">
+                                        <label>First Name</label>
+                                        <input type="text" placeholder="Enter your Label">
+                                        <p class="error-message">Error</p>
+                                    </div>
+                                </div>
+                                <div Class="col-12 col-xl-3 col-lg-4 col-sm-6 col-md-6">
+                                    <div class="ux-input input-error">
+                                        <label>First Name</label>
+                                        <input type="text" placeholder="Enter your Label">
+                                        <p class="info-message">Please enter correct input</p>
+                                    </div>
+                                </div>
+                                <div Class="col-12 col-xl-3 col-lg-4 col-sm-6 col-md-6">
+                                    <div class="ux-input input-success">
+                                        <label>First Name</label>
+                                        <input type="text" placeholder="Enter your Label">
+                                        <p class="success-message">Data matched</p>
+                                    </div>
+                                </div>
+                                <div Class="col-12 col-xl-3 col-lg-4 col-sm-6 col-md-6">
+                                    <div class="ux-input input-info">
+                                        <label>First Name</label>
+                                        <input type="text" placeholder="Enter your Label">
+                                        <p class="info-message">Informative Text</p>
+                                    </div>
+                                </div>
+                                <div Class="col-12 col-xl-3 col-lg-4 col-sm-6 col-md-6">
+                                    <div class="ux-input ">
+                                        <label>First Name</label>
+                                        <input type="text" placeholder="Enter your Label" value="My Name">
+                                    </div>
+                                </div>
+                                <div Class="col-12 col-xl-3 col-lg-4 col-sm-6 col-md-6">
+                                    <div class="ux-input ux-disabled">
+                                        <label>First Name</label>
+                                        <input type="text" placeholder="Enter your Label" disabled value="My Name">
+                                        <p class="error-message"> </p>
+                                    </div>
+                                </div>
+                            </div><!-- row -->
+                            
+                            <div class="row mt-4">
+                                <div Class="col-12 col-xl-3 col-lg-4 col-sm-6 col-md-6">
+                                    <div class="ux-input">
+                                        <label>From Date</label>
+                                        <input type="text" class="datepicker1" placeholder="DD/MM/YYYY">
+                                        <em class=" calendar-ic cal-top"></em>
+                                        <p class="error-message"> </p>
+                                    </div>
+                                </div>
+                                <div Class="col-12 col-xl-3 col-lg-4 col-sm-6 col-md-6">
+                                    <div class="ux-input">
+                                        <label>For Month/Year</label>
+                                        <input type="text" class="datepicker2" placeholder="MM/YYYY">
+                                        <em class=" calendar-ic cal-top"></em>
+                                        <p class="error-message"> </p>
+                                    </div>
+                                </div>
+                                <div Class="col-12 col-xl-3 col-lg-4 col-sm-6 col-md-6">
+                                    <div class="ux-input ux-disabled">
+                                        <label>From Date</label>
+                                        <input type="text" class="datepicker1" placeholder="10/07/2020" disabled>
+                                        <em class=" calendar-ic cal-top"></em>
+                                        <p class="error-message"> </p>
+                                    </div>
+                                </div>
+
+                                <div Class="col-12 col-xl-3 col-lg-4 col-sm-6 col-md-6">
+                                    <div class="ux-input">
+                                        <label>From Date</label>
+                                        <input type="text" id="datepicker1" data-theme="green" placeholder="DD/MM/YYYY">
+                                        <em class=" calendar-ic cal-top"></em>
+                                        <p class="error-message"> </p>
+                                    </div>
+                                </div>
+                                <div Class="col-12 col-xl-3 col-lg-4 col-sm-6 col-md-6">
+                                    <div class="ux-input">
+                                        <label>For Month/Year</label>
+                                        <input type="text" id="datepicker2" data-theme="green" placeholder="MM/YYYY">
+                                        <em class=" calendar-ic cal-top"></em>
+                                        <p class="error-message"> </p>
+                                    </div>
+                                </div>
+                                <div Class="col-12 col-xl-3 col-lg-4 col-sm-6 col-md-6">
+                                    <div class="ux-input">
+                                        <label>Expiry Date</label>
+                                        <div class="row">
+                                            <div class="col-6 pr-1">
+                                                <select required>
+                                                    <option value="">MM</option>
+                                                    <option value="01">01</option>
+                                                    <option value="02">02</option>
+                                                    <option value="03">03</option>
+                                                    <option value="04">04</option>
+                                                    <option value="05">05</option>
+                                                    <option value="06">06</option>
+                                                    <option value="07">07</option>
+                                                    <option value="08">08</option>
+                                                    <option value="09">09</option>
+                                                    <option value="10">10</option>
+                                                    <option value="11">11</option>
+                                                    <option value="12">12</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-6 pl-1">
+                                                <select required>
+                                                    <option value="">YYYY</option>
+                                                    <option value="2019">2019</option>
+                                                    <option value="2020">2020</option>
+                                                    <option value="2021">2021</option>
+                                                    <option value="2022">2022</option>
+                                                    <option value="2023">2023</option>
+                                                    <option value="2024">2024</option>
+                                                    <option value="2025">2025</option>
+                                                    <option value="2026">2026</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <p class="error-message"></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-4">
+                                <div Class="col-12 col-xl-3 col-lg-4 col-sm-6 col-md-6">
+                                    <div class="ux-input">
+                                        <label>Label</label>
+                                        <select required>
+                                            <option value="">Select</option>
+                                            <option value="Abc">Abc</option>
+                                            <option value="Def">Def</option>
+                                            <option value="Ghi">Ghi</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div Class="col-12 col-xl-3 col-lg-4 col-sm-6 col-md-6">
+                                    <div class="ux-input input-error">
+                                        <label>Label</label>
+                                        <select required>
+                                            <option value="">Select</option>
+                                            <option value="Abc">Abc</option>
+                                            <option value="Def">Def</option>
+                                            <option value="Ghi">Ghi</option>
+                                        </select>
+                                        <p class="info-message">Please select</p>
+                                    </div>
+                                </div>
+                                <!-- <div Class="col-12 col-xl-3 col-lg-4 col-sm-6 col-md-6">
+								<div class="ux-input input-success">
+									<label>Label</label>
+									<select required>
+										<option value="">Select</option>
+										<option value="Abc">Abc</option>
+										<option value="Def">Def</option>
+										<option value="Ghi">Ghi</option>
+									</select>
+									<p>Data matched</p>
+								</div>
+							   </div> -->
+                                <div Class="col-12 col-xl-3 col-lg-4 col-sm-6 col-md-6">
+                                    <div class="ux-input ">
+                                        <label>Label</label>
+                                        <select required>
+                                            <option value="">Select</option>
+                                            <option value="Abc" selected>Abc</option>
+                                            <option value="Def">Def</option>
+                                            <option value="Ghi">Ghi</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div Class="col-12 col-xl-3 col-lg-4 col-sm-6 col-md-6">
+                                    <div class="ux-input ux-disabled">
+                                        <label>Label</label>
+                                        <select required disabled>
+                                            <option value="">Select</option>
+                                            <option value="Abc" selected>Abc</option>
+                                            <option value="Def">Def</option>
+                                            <option value="Ghi">Ghi</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-4">
+                                <div Class="col-12 col-xl-3 col-lg-4 col-sm-6 col-md-6">
+                                    <div class="ux-input ">
+                                        <label>Message</label>
+                                        <textarea rows="3"></textarea>
+                                    </div>
+                                </div>
+                                <div Class="col-12 col-xl-3 col-lg-4 col-sm-6 col-md-6">
+                                    <div class="ux-input ">
+                                        <label>Message</label>
+                                        <textarea rows="3">Some Message</textarea>
+                                    </div>
+                                </div>
+                                <div Class="col-12 col-xl-3 col-lg-4 col-sm-6 col-md-6">
+                                    <div class="ux-input ux-disabled">
+                                        <label>Message</label>
+                                        <textarea rows="3" disabled>Some Message</textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-4">
+                                <div Class="col-12 col-xl-3 col-lg-4 col-sm-6 col-md-6">
+                                    <div class="ux-input file-upload">
+                                        <label>Upload </label>
+                                        <div class="custom-file mt-2 mb-2">
+                                            <input type="file" class="custom-file-input" id="customFile">
+                                            <label class="custom-file-label" for="customFile">Upload document</label>
+                                        </div>
+                                        <p class="info-message "> Upload .CSV or .XLS file to create send request</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+
+                    <!-- Horizontal Round Content scrollable section start -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="component-title">
+                                <h4>Image Scrollable Carousel</h4>
+                                <p>Use this component for scroll</p>
+                            </div>
+                            <!--.component-title-->
+                        </div>
+                        <!--.col-12-->
+                        <div class="col-sm-12 col-12 col-md-12 p-0">
+                            <div class="scroll-box mt-0">
+                                <div class="owl-carousel box-owl-slide" role="list">
+                                    <div class="item ux-slide-scroll" role="listitem">
+                                        <a href="javascript:;">
+                                            <span>
+                                                <img src="../assets/images/slides/banner-01.png" alt="banner1">
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="item ux-slide-scroll" role="listitem">
+                                        <a href="javascript:;">
+                                            <span>
+                                                <img src="../assets/images/slides/banner-02.png" alt="banner1">
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="item ux-slide-scroll" role="listitem">
+                                        <a href="javascript:;">
+                                            <span>
+                                                <img src="../assets/images/slides/banner-01.png" alt="banner1">
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="item ux-slide-scroll" role="listitem">
+                                        <a href="javascript:;">
+                                            <span>
+                                                <img src="../assets/images/slides/banner-02.png" alt="banner1">
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="item ux-slide-scroll" role="listitem">
+                                        <a href="javascript:;">
+                                            <span>
+                                                <img src="../assets/images/slides/banner-01.png" alt="banner1">
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="item ux-slide-scroll" role="listitem">
+                                        <a href="javascript:;">
+                                            <span>
+                                                <img src="../assets/images/slides/banner-02.png" alt="banner1">
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="item ux-slide-scroll" role="listitem">
+                                        <a href="javascript:;">
+                                            <span>
+                                                <img src="../assets/images/slides/banner-01.png" alt="banner1">
+                                            </span>
+                                        </a>
+                                    </div>
+                                  </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--.row-->
+
+                    <div class="vspacer20"></div>
+                    <!--.vspacer20-->
+
+                    <!-- Horizontal Card Content scrollable section start -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="component-title">
+                                <h4>Card Content Scrollable</h4>
+                                <p>Use this component for horizontal scroll</p>
+                            </div>
+                            <!--.component-title-->
+                        </div>
+                        <!--.col-12-->
+                        <div class="col-12">
+                            <div class="owl-accounts-component latest-offers-content">
+                                <div class="owl-carousel owl-theme owl-offers">
+                                    <div class="item">
+                                        <a href="javascript:;">
+                                            <img src="assets/images/offers/offer1.jpg">
+                                        </a>
+                                    </div>
+                                    <div class="item">
+                                        <a href="javascript:;">
+                                            <img src="assets/images/offers/offer2.jpg">
+                                        </a>
+                                    </div>
+                                    <div class="item">
+                                        <a href="javascript:;">
+                                            <img src="assets/images/offers/offer1.jpg">
+                                        </a>
+                                    </div>
+                                    <div class="item">
+                                        <a href="javascript:;">
+                                            <img src="assets/images/offers/offer2.jpg">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--.col-12-->
+                    </div>
+                    <!--.row-->
+                    <!-- Horizontal Card Content scrollable section end -->
+                     
+                    <li>
+						<h5>Breadcrumbs</h5>
+						<div class="comp">
+							<div class="breadcrumb">
+								<ul class="lst-breadcrumb">
+									<li>
+										<a href="javascript:;">Dashboard</a>
+									</li>
+									<li>
+										<a href="javascript:;">My Accounts</a>
+									</li>
+									<li>
+										Own Account
+									</li>
+								</ul><!--.lst-breadcrumb-->
+							</div> <!-- .breadcrumb -->
+						</div>
+					</li>
+					<li>
+						<h5>Web Popup </h5>
+						<div class="comp">
+                          <div class="row">
+  
+						   <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+								<div class="row" style="position: relative; height:350px; background-color:rgba(0, 0, 0,0.05); border:1px solid rgba(0, 0, 0,0.1); overflow: hidden;margin-bottom:10px;">
+                                 <!--  Popup Start -->
+                                   <div class="popup-bottom popup3 sm-popup popup-active">
+                                    <div class="row bor-b">
+                                     <div class="col-12">
+                                         <h4 class="text-center">Logout</h4>
+                                         </div>
+                                       </div>
+                                        <div class="row mt-3">
+                                            <div class="col-12">
+                                                  <p>Lorem ipsum dolor sit amet</p>	 
+                                               </div>
+                                           </div>
+                                           <div class="row mt-2">
+                                             <div class="col-6 text-center">
+                                                 <button class="ux-button  outline-primary close-btn" onclick="window.location.href = '#'">No</button>
+                                             </div> 
+                                             <div class="col-6 text-center">
+                                                 <button class="ux-button primary " onclick="window.location.href = '#'">Yes</button>
+                                             </div> 
+                                         </div>
+                                    </div> 
+								   <!--  Popup End -->
+								   <div class="ios-nav-overlay" style="display: block;"></div>
+								  </div>
+							 </div>
+
+							   <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+								  <div class="row" style="position: relative; height:350px; background-color:rgba(0, 0, 0,0.05); border:1px solid rgba(0, 0, 0,0.1); overflow: hidden;margin-bottom:10px;">
+								       <!--  Popup Start -->
+									   <div class="popup-bottom  popup2 md-popup popup-active">
+										<div class="row bor-b">
+										   <div class="col-10">
+											   <h4>Heading</h4>
+										   </div>
+										   <div class="col-2">
+											   <button class="ux-button-icon close-btn">
+												   <img src="../assets/images/svg/close-b.svg" alt="cross-icon" class="img-vsmall">
+											   </button> 
+										   </div>
+										   </div>
+											<div class="row mt-3">
+												<div class="col-12">
+													  <p class="text-left">Lorem ipsum dolor sit amet</p>	 
+												   </div>
+											   </div>
+											 <div class="row  mt-2">
+												<div class="col-6 sm text-center">
+													<button class="ux-button outline-primary close-btn" onclick="window.location.href = '#'">No</button>
+												</div> 
+												<div class="col-6 text-center">
+													<button class="ux-button primary " onclick="window.location.href = '#'">Yes</button>
+												</div> 
+											   </div>
+										</div> 
+									   <!-- Popup End -->
+									   <div class="ios-nav-overlay"></div>
+								 </div>
+							 </div>
+
+							   <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                                   <div class="row" style="position: relative; height:350px; background-color:rgba(0, 0, 0,0.05); border:1px solid rgba(0, 0, 0,0.1); overflow: hidden;margin-bottom:10px;">
+									 <!-- Popup Start -->
+                                     <div class="popup-bottom  popup1 lg-popup popup-active">
+                                        <div class="row bor-b">
+                                           <div class="col-10">
+                                               <h4>Heading</h4>
+                                           </div>
+                                           <div class="col-2">
+                                               <button class="ux-button-icon close-btn">
+                                                   <img src="../assets/images/svg/close-b.svg" alt="cross-icon" class="img-vsmall">
+                                               </button> 
+                                           </div>
+                                           </div>
+                                            <div class="row mt-3">
+                                                <div class="col-12">
+                                                      <p class="text-left">Lorem ipsum dolor sit amet</p>	 
+                                                   </div>
+                                               </div>
+                                             <div class="row  mt-2">
+                                                   <div class="col-12 text-center">
+                                                       <button   class="ux-button primary md submit-btn" onclick="window.location.href = '#'">OK</button>
+                                                   </div>
+                                               </div>
+                                        </div>
+                                        <!-- Popup End -->
+										<div class="ios-nav-overlay"></div>
+								    </div>
+                                </div>
+
+  
+						  </div>
+						</div>
+					</li>
+
+					<li>
+						<h5>Mobile Alerts ( Invoke from the bottom)</h5>
+						<div class="comp">
+                          <div class="row">
+   
+							   <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
+								  <div class="row" style="position: relative; height:350px; background-color:rgba(0, 0, 0,0.05); border:1px solid rgba(0, 0, 0,0.1); overflow: hidden;margin-bottom:10px;">
+								       <!-- Popup Start -->
+									   <div class="popup-bottom info-popup popup-active">
+										<div class="row mt-3">
+										    <div class="col-12">
+												<h4 class="text-center">Heading</h4>
+											 </div>
+										   </div>
+											<div class="row">
+												<div class="col-12">
+													  <p>Warning! Better check yourself, <br/> you're not looking too good.</p>	 
+												   </div>
+											   </div>
+											 <div class="row mt-2">
+												<div class="col-12 text-center">
+													<button   class="ux-button primary md submit-btn" onclick="window.location.href = '#'">OK</button>
+												</div>
+											 </div>
+										</div> 
+									   <!-- Popup End -->
+									   <div class="ios-nav-overlay"></div>
+								 </div>
+							 </div>
+
+							 <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
+								  <div class="row" style="position: relative; height:350px; background-color:rgba(0, 0, 0,0.05); border:1px solid rgba(0, 0, 0,0.1); overflow: hidden; margin-bottom:10px;">
+								       <!-- Popup Start -->
+									   <div class="popup-bottom information-popup popup-active">
+										<div class="row  mt-3">
+											<div class="col-12">
+												<h4 class="text-center"> <img src="../assets/images/svg/information.svg" alt="information-icon"> Information</h4>
+											 </div>
+										   </div>
+											<div class="row">
+												<div class="col-12">
+													  <p>Head up! This alerts needs your <br/> attention, but it's not super important.</p>	 
+												   </div>
+											   </div>
+											 <div class="row mt-2">
+												<div class="col-12 text-center">
+													<button  class="ux-button primary md submit-btn" onclick="window.location.href = '#'">OK</button>
+												</div>
+											 </div>
+										</div> 
+									   <!-- Popup End -->
+									   <div class="ios-nav-overlay"></div>
+								 </div>
+							 </div>
+							 <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
+								   <div class="row" style="position: relative; height:350px; background-color:rgba(0, 0, 0,0.05); border:1px solid rgba(0, 0, 0,0.1); overflow: hidden; margin-bottom:10px;">
+									 	<!-- Popup Start -->
+										 <div class="popup-bottom success-popup popup-active">
+													<div class="row  mt-3">
+														<div class="col-12">
+															<h4 class="text-center"> <img src="../assets/images/svg/success-circle.svg" alt="success-icon"> Success</h4>
+														</div>
+														</div>
+														<div class="row">
+															<div class="col-12">
+																	<p>Well done! You successfully <br/> read this important alert message.</p>	 
+																</div>
+															</div>
+														<div class="row mt-2">
+															<div class="col-12 text-center">
+																<button  class="ux-button primary md submit-btn" onclick="window.location.href = '#'">OK</button>
+															</div>
+														</div>
+													</div> 
+													<!-- Popup End -->
+													<div class="ios-nav-overlay"></div>
+											</div>
+										</div>
+										<div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
+											<div class="row" style="position: relative; height:350px; background-color:rgba(0, 0, 0,0.05); border:1px solid rgba(0, 0, 0,0.1); overflow: hidden; margin-bottom:10px;">
+												<!-- Popup Start -->
+												<div class="popup-bottom error-popup popup-active">
+												<div class="row  mt-3">
+													<div class="col-12">
+														<h4 class="text-center"> <img src="../assets/images/svg/error.svg" alt="error-icon"> Error</h4>
+													</div>
+													</div>
+													<div class="row">
+														<div class="col-12 mb-4">
+																<p>Please try again later</p>	 
+															</div>
+														</div>
+													<div class="row mt-2">
+														<div class="col-12 text-center">
+															<button  class="ux-button primary md submit-btn" onclick="window.location.href = '#'">OK</button>
+														</div>
+													</div>
+												</div> 
+												<!-- Popup End -->
+												<div class="ios-nav-overlay"></div>
+										</div>
+									</div>
+									<div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
+										<div class="row" style="position: relative; height:350px; background-color:rgba(0, 0, 0,0.05); border:1px solid rgba(0, 0, 0,0.1); overflow: hidden; margin-bottom:10px;">
+											<!-- Popup Start -->
+											<div class="popup-bottom warning-popup popup-active">
+											<div class="row  mt-3">
+												<div class="col-12">
+													<h4 class="text-center"> <img src="../assets/images/svg/warning1.svg" alt="warning-icon"> Warning</h4>
+												</div>
+												</div>
+												<div class="row">
+													<div class="col-12">
+															<p>Warning! Better check yourself, <br/>you're not looking too good.</p>	 
+														</div>
+													</div>
+												<div class="row  mt-2">
+													<div class="col-12 text-center">
+														<button class="ux-button primary md submit-btn" onclick="window.location.href = '#'">OK</button>
+													</div>
+												</div>
+											</div> 
+											<!-- Popup End -->
+											<div class="ios-nav-overlay"></div>
+									</div>
+								</div>
+
+                            </div>
+						</div>
+					</li>
+
+
+                    <li>
+                        <h5>Tab Components</h5>
+                        <div class="comp">
+                            <div class="row">
+                                <div class="col-12 col-sm-12 col-md-12 col-lg-6">
+                                    <div class="ux-nav-tabs" style="margin:0">
+                                        <div class="responsive3">
+                                            <ul class="nav nav-tabs nav-justified bor-n" role="tablist">
+                                                <li class="nav-item">
+                                                    <a class="nav-link active" data-toggle="tab" href="#tab1">Tab 01</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" data-toggle="tab" href="#tab2">Tab 02</a>
+                                                </li>
+                                            </ul>
+
+                                            <!-- Tab panes -->
+                                            <div class="tab-content custom-tab-content">
+                                                <div id="tab1" class=" tab-pane active">
+                                                    <div class="row">
+                                                        <div class="col-sm-12 col-12 col-md-12">
+                                                            <p>Content1</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div id="tab2" class="tab-pane fade">
+                                                    <div class="row">
+                                                        <div class="col-sm-12 col-12 col-md-12">
+                                                            <p>Content2</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-12 col-md-12 col-lg-6">
+                                    <div class="ux-nav-tabs" style="margin:0">
+                                        <div class="responsive5">
+                                            <ul class="nav nav-tabs nav-justified bor-n" role="tablist">
+                                                <li class="nav-item">
+                                                    <a class="nav-link active" data-toggle="tab" href="#tab01">Tab 01</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" data-toggle="tab" href="#tab02">Tab 02</a>
+                                                </li>
+                                            </ul>
+
+                                            <!-- Tab panes -->
+                                            <div class="tab-content custom-tab-content">
+                                                <div id="tab01" class=" tab-pane active">
+                                                    <div class="row">
+                                                        <div class="col-sm-12 col-12 col-md-12">
+                                                            <p>Content1</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div id="tab02" class="tab-pane fade">
+                                                    <div class="row">
+                                                        <div class="col-sm-12 col-12 col-md-12">
+                                                            <p>Content2</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </li>  
+                    <li>
+                        <h5>Tab Components</h5>
+                        <div class="comp">
+                            <div class="row">
+
+                                <div class="col-12 col-sm-12 col-md-12 col-lg-6 mt-5">
+                                    <!-- Nav tabs -->
+                                    <div class="ux-nav-tabs" style="margin: 0">
+                                        <ul class="nav nav-tabs nav-justified" role="tablist">
+                                            <li class="nav-item">
+                                                <a class="nav-link active account-details" data-toggle="tab" href="#home">Account Details</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link recent-trans" data-toggle="tab" href="#menu">Recent Transactions</a>
+                                            </li>
+                                        </ul>
+
+                                        <!-- Tab panes -->
+                                        <div class="tab-content">
+                                            <div id="home" class=" tab-pane active">
+                                                <ul class="lst-acc-details">
+                                                    <li>
+                                                        <div class="ux-input">
+                                                            <label>Name</label>
+                                                            <h6>Ganesh Thakur</h6>
+                                                        </div>
+                                                        <!--.ux-input-->
+                                                    </li>
+                                                    <li>
+                                                        <div class="ux-input">
+                                                            <label>Wallet Account Number</label>
+                                                            <h6>05235258447</h6>
+                                                        </div>
+                                                        <!--.ux-input-->
+                                                    </li>
+                                                    <li>
+                                                        <div class="ux-input">
+                                                            <label>Wallet Type</label>
+                                                            <h6>MJBL</h6>
+                                                        </div>
+                                                        <!--.ux-input-->
+                                                    </li>
+                                                </ul>
+                                                <!--.lst-acc-details-->
+                                            </div>
+                                            <div id="menu" class="tab-pane fade">
+                                                <ul class="lst-recent-transact">
+                                                    <li>
+                                                        <div class="row">
+                                                            <div class="col-6">
+                                                                <div class="transact-details text-left">
+                                                                    <h5>20 Apr'18</h5>
+                                                                    <em>VPS/NMMT/2018042114610/00</em>
+                                                                </div>
+                                                                <!--.transact-details-->
+                                                            </div>
+                                                            <!--.col-6-->
+                                                            <div class="col-6">
+                                                                <div class="transact-amt text-right">
+                                                                    <h5>110.00 <b class="debit">Dr</b> </h5>
+                                                                </div>
+                                                                <!--.transact-amt-->
+                                                            </div>
+                                                            <!--.col-6-->
+                                                        </div>
+                                                        <!--.row-->
+                                                    </li>
+                                                    <li>
+                                                        <div class="row">
+                                                            <div class="col-6">
+                                                                <div class="transact-details text-left">
+                                                                    <h5>20 Apr'18</h5>
+                                                                    <em>VPS/NMMT/2018042114610/00</em>
+                                                                </div>
+                                                                <!--.transact-details-->
+                                                            </div>
+                                                            <!--.col-6-->
+                                                            <div class="col-6">
+                                                                <div class="transact-amt text-right">
+                                                                    <h5>110.00 <b class="credit">Cr</b> </h5>
+                                                                </div>
+                                                                <!--.transact-amt-->
+                                                            </div>
+                                                            <!--.col-6-->
+                                                        </div>
+                                                        <!--.row-->
+                                                    </li>
+                                                    <li>
+                                                        <div class="row">
+                                                            <div class="col-6">
+                                                                <div class="transact-details text-left">
+                                                                    <h5>20 Apr'18</h5>
+                                                                    <em>VPS/NMMT/2018042114610/00</em>
+                                                                </div>
+                                                                <!--.transact-details-->
+                                                            </div>
+                                                            <!--.col-6-->
+                                                            <div class="col-6">
+                                                                <div class="transact-amt text-right">
+                                                                    <h5>110.00 <b class="debit">Dr</b> </h5>
+                                                                </div>
+                                                                <!--.transact-amt-->
+                                                            </div>
+                                                            <!--.col-6-->
+                                                        </div>
+                                                        <!--.row-->
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-12 col-md-12 col-lg-6 mt-5">
+                                    <!-- Nav tabs -->
+                                    <div class="ux-nav-tabs" style="margin: 0">
+                                        <ul class="nav nav-tabs" role="tablist">
+                                            <li class="nav-item">
+                                                <a class="nav-link active account-details" data-toggle="tab" href="#home1">Account Details</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link recent-trans" data-toggle="tab" href="#menu1">Recent Transactions</a>
+                                            </li>
+                                        </ul>
+
+                                        <!-- Tab panes -->
+                                        <div class="tab-content">
+                                            <div id="home1" class=" tab-pane active">
+                                                <ul class="lst-acc-details">
+                                                    <li>
+                                                        <div class="ux-input">
+                                                            <label>Name</label>
+                                                            <h6>Ganesh Thakur</h6>
+                                                        </div>
+                                                        <!--.ux-input-->
+                                                    </li>
+                                                    <li>
+                                                        <div class="ux-input">
+                                                            <label>Wallet Account Number</label>
+                                                            <h6>05235258447</h6>
+                                                        </div>
+                                                        <!--.ux-input-->
+                                                    </li>
+                                                    <li>
+                                                        <div class="ux-input">
+                                                            <label>Wallet Type</label>
+                                                            <h6>MJBL</h6>
+                                                        </div>
+                                                        <!--.ux-input-->
+                                                    </li>
+                                                </ul>
+                                                <!--.lst-acc-details-->
+                                            </div>
+                                            <div id="menu1" class="tab-pane fade">
+                                                <ul class="lst-recent-transact">
+                                                    <li>
+                                                        <div class="row">
+                                                            <div class="col-6">
+                                                                <div class="transact-details text-left">
+                                                                    <h5>20 Apr'18</h5>
+                                                                    <em>VPS/NMMT/2018042114610/00</em>
+                                                                </div>
+                                                                <!--.transact-details-->
+                                                            </div>
+                                                            <!--.col-6-->
+                                                            <div class="col-6">
+                                                                <div class="transact-amt text-right">
+                                                                    <h5>110.00 <b class="debit">Dr</b> </h5>
+                                                                </div>
+                                                                <!--.transact-amt-->
+                                                            </div>
+                                                            <!--.col-6-->
+                                                        </div>
+                                                        <!--.row-->
+                                                    </li>
+                                                    <li>
+                                                        <div class="row">
+                                                            <div class="col-6">
+                                                                <div class="transact-details text-left">
+                                                                    <h5>20 Apr'18</h5>
+                                                                    <em>VPS/NMMT/2018042114610/00</em>
+                                                                </div>
+                                                                <!--.transact-details-->
+                                                            </div>
+                                                            <!--.col-6-->
+                                                            <div class="col-6">
+                                                                <div class="transact-amt text-right">
+                                                                    <h5>110.00 <b class="credit">Cr</b> </h5>
+                                                                </div>
+                                                                <!--.transact-amt-->
+                                                            </div>
+                                                            <!--.col-6-->
+                                                        </div>
+                                                        <!--.row-->
+                                                    </li>
+                                                    <li>
+                                                        <div class="row">
+                                                            <div class="col-6">
+                                                                <div class="transact-details text-left">
+                                                                    <h5>20 Apr'18</h5>
+                                                                    <em>VPS/NMMT/2018042114610/00</em>
+                                                                </div>
+                                                                <!--.transact-details-->
+                                                            </div>
+                                                            <!--.col-6-->
+                                                            <div class="col-6">
+                                                                <div class="transact-amt text-right">
+                                                                    <h5>110.00 <b class="debit">Dr</b> </h5>
+                                                                </div>
+                                                                <!--.transact-amt-->
+                                                            </div>
+                                                            <!--.col-6-->
+                                                        </div>
+                                                        <!--.row-->
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <h5>Accordian Sample <b>( Accordian with content show and hide )</b> </h5>
+                          <div class="comp">
+                             <div class="row">
+                                <div class="col-12 col-md-6">
+                                    <div id="accordion" class="accordion-container" >
+                                           <div class="card">
+                                               <a class="card-link collapsed" data-toggle="collapse" href="#collapse1">
+                                                   <div class="card-header">
+                                                       <h5>Heading</h5>
+                                                       <em></em>
+                                                   </div> 
+                                               </a> 
+                                               <div id="collapse1" class="collapse" data-parent="#accordion">
+                                                   <div class="card-body lgrey-bg">
+                                                       <div class="row">
+                                                           <div class="col-12 col-md-12">
+                                                               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                                                   tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                                                   quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                                               </p>
+                                                           </div>
+                                                       </div>
+                                                   </div>
+                                               </div>
+                                           </div><!--card-->
+       
+                                           <div class="card">
+                                               <a class="card-link collapsed" data-toggle="collapse" href="#collapse2">
+                                                   <div class="card-header">
+                                                       <h5>Heading</h5>
+                                                       <em></em>
+                                                   </div> 
+                                               </a>
+                                               <div id="collapse2" class="collapse" data-parent="#accordion">
+                                                   <div class="card-body lgrey-bg">
+                                                       <div class="row">
+                                                           <div class="col-12 col-md-12">
+                                                               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                                                   tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                                                   quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                                               </p>        
+                                                           </div>
+                                                       </div>
+                                                   </div>
+                                               </div>
+                                           </div><!--card-->
+    
+                                       </div><!-- #accordion -->
+                                 </div>
+                            </div>     
+                        </div>
+                    </li>
+                    <li>	
+						<h5>Table Grid</h5>
+						<div class="comp">
+						 
+							<div class="vspacer50"></div>
+							 
+						</div><!--  comp -->
+					</li>
+
+                </ul>
+                <!--.lst-components-->
+            </div>
+            <!--.col-9-->
+        </div>
+        <!--.row-->
+    </div>
+    <!--.container-->
+
+
+
+
+    <div class="toast-messages"></div>
+    <!--.toast-messages-->
+
+
+
+    <script src="../js/lib/jquery.min.js"></script>
+    <script src="../js/lib/bootstrap.min.js"></script>
+    <script src="../js/lib/jquery-ui.min.js"></script>
+    <!-- <script src="../js/lib/custom-dropdown.js"></script> -->
+    <script src="../js/lib/owl.carousel.min.js"></script>
+    <script src="../js/lib/popper.min.js"></script>
+    <script src="../js/lib/jquery.mousewheel.min.js"></script>
+    <script src="../js/lib/jquery.mCustomScrollbar.js"></script>
+    <script src="../js/lib/datatables.min.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/lib/bootstrap-timepicker.js"></script>
+    <script src="../js/lib/chart.min.js"></script>
+    <script src="../js/lib/chartjs-plugin-annotation.min.js"></script>
+    <script src="../js/lib/chartjs-plugin-datalabels.min.js"></script>
+   
+     
+
+    <script type="text/javascript">
+        //    mycardCarousel();
+        //    dashboardCarousel ()
+        //    showToastMessage( '<b>Heads Up!</b> This alert needs your attention</b>', 'info', true );
+        imgCarousel();
+
+        function imgCarousel() {
+            $('.box-owl-slide').owlCarousel({
+                autoplay: true,
+                autoplayTimeout: 3000,
+                loop: false,
+                rewind: true,
+                nav: true,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 1
+                    },
+                    768: {
+                        items: 2,
+                        nav: false,
+                        // loop:false
+                    },
+                    1024: {
+                        items: 3,
+                        nav: false,
+                        // loop:false
+                    },
+                    1200: {
+                        items: 3,
+                        nav: false,
+                        // loop:false
+                    },
+                    1366: {
+                        items: 4,
+                        nav: false,
+                        // loop:false
+                    },
+                    1400: {
+                        items: 4,
+                        nav: false,
+                        // loop:false
+                    },
+                    1600: {
+                        items: 4,
+                        nav: false,
+                        // loop:false
+                    }
+                }
+            })
+        }
+
+
+        // duDatepicker('#datepicker1', {
+        // 			format: 'dd/mm/yyyy',
+        // 			range: false,
+        // 			clearBtn: true,
+        // 			// disabledDays: ['Sat', 'Sun'],
+        // 			inline: true,
+        // 			theme: 'green',
+
+        // 		})
+
+        //  duDatepicker('#datepicker2', {
+        // 			format: 'mm/yyyy',
+        // 			range: false,
+        // 			clearBtn: true,
+        // 			// disabledDays: ['Sat', 'Sun'],
+        // 			inline: true,
+        // 			theme: 'green',
+
+        // 		})
+
+        $(".datepicker2").datepicker({
+            dateFormat: 'mm-yy',
+        });
+        $(".datepicker1").datepicker({
+            dateFormat: 'dd-mm-yy',
+        });
+
+        $(".calendar-ic").on("click", function() {
+            $('#datepicker2').duDatepicker("show");
+        });
+
+        //  $('#timepicker').mdtimepicker({
+        // 	  // format of the input value
+
+        // 	  format: 'h:mm tt',
+
+        // 	  // theme of the timepicker
+        // 	  // 'red', 'purple', 'indigo', 'teal', 'green', 'dark'
+        // 	  theme: 'green',
+
+        // 	  // determines if input is readonly
+        // 	  readOnly: true,
+
+        // 	  // determines if display value has zero padding for hour value less than 10 (i.e. 05:30 PM); 24-hour format has padding by default
+        // 	  hourPadding: false,
+
+        // 	  // determines if clear button is visible
+        // 	  clearBtn: false,
+
+        // 	  inline: true,
+        //    });
+
+
+
+        $("div.popup-bottom button.close-btn").click(function() {
+            console.log('working');
+            $('div.popup-bottom.popup1').removeClass('popup-active');
+            //  $('div.popup-bottom.popup2').removeClass('popup-active');
+            //  $('div.popup-bottom.popup3').removeClass('popup-active');
+            $('div.ios-nav-overlay').fadeOut();
+        });
+
+
+        $("div.ios-nav-overlay").click(function(e) {
+            event.stopPropagation();
+            // console.log('working');
+            $('div.popup-bottom.popup1').removeClass('popup-active');
+            $('div.ios-nav-overlay').fadeOut(400);
+        });
+
+        $(document).on('change', '.custom-file-input', function(e) {
+            //e.stopPropagation();
+            var fileName = $(this).val().split("\\").pop();
+            $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+        });
+
+        //script for arrow toggle accrodian start
+ 
+    </script>
+
+
+</body>
+
+</html>

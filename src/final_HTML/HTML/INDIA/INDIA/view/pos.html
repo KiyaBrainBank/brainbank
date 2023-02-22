@@ -185,6 +185,71 @@
                                         </ul>
                                     </div>
                                 </li>
+								<li>
+									<a href="#" class="glnv-dropdown2">System Performance Analysis	<span class="chevron"></span></a>
+									<div class="mysubnavigation-items sub-menu">
+										<ul class="lst-subnavigation2">
+											<li><a href="system-performance-analytics.html" title="System Performance Dashboard
+												" class="">System Performance Dashboard
+											</span></a> </li>
+											<li><a href="node-details-dashboard.html" title="Node details dashboard" class="">Node details dashboard</span></a> </li>
+											<li><a href="cluster-details-dashboard.html" title="Cluster details dashboard" class="">Cluster details dashboard</span></a> </li>
+											<li><a href="compute-resource-node-dashboard.html" title="Compute resource node dashboard" class="">Compute resource node dashboard</span></a> </li>  
+										 
+										</ul>
+									</div>
+								</li>
+								<li>
+									<a href="#" class="glnv-dropdown2">Channel Analytics<span class="chevron"></span></a>
+									<div class="mysubnavigation-items sub-menu">
+										<ul class="lst-subnavigation2">
+										  <li><a href="ATM-user-interaction.html" title="ATM user interaction
+												" class="">ATM user interaction
+											</span></a> </li>
+											<li><a href="customer-practicipation-summary.html" title="Customer Participation Summary
+												" class="">Customer Participation Summary
+											</span></a> </li>
+											<li><a href="indian-payment-ecosystem.html" title="Card Payment Ecosystem
+												" class="">Card Payment Ecosystem
+											</span></a> </li>
+											<li><a href="transactions-trend-details-by-channel.html" title="Transactions Trend Details by Channel
+												" class="">Transactions Trend Details by Channel
+											</span></a> </li>  
+											<li><a href="user-audit-log.html" title="User Audit Log
+	
+												" class="">User Audit Log
+											</span></a> </li>  
+											<li><a href="digital-transactions-overview.html" title="Digital transaction overwiew
+	
+												" class="">Digital transaction overwiew
+											</span></a> </li>  
+										</ul>
+									</div>
+								</li>
+								<li>
+									<a href="#" class="glnv-dropdown2">Integrated Payment Hub<span class="chevron"></span></a>
+									<div class="mysubnavigation-items sub-menu">
+										<ul class="lst-subnavigation2">
+											<li><a href="liquidity-management.html" title="Liquidity Management
+												" class="">Liquidity Management
+											</span></a> </li>
+											<li><a href="financial-KPI-dashboard.html" title="Financial KPI Dashboard
+												" class="">Financial KPI Dashboard
+											</span></a> </li>
+											<li><a href="liquidity-predictions.html" title="Liquidity Predictions
+												" class="">Liquidity Predictions
+											</span></a> </li>
+											<li><a href="liquidity-risk-analysis.html" title="Liquidity Risk Analysis
+												" class="">Liquidity Risk Analysis
+											</span></a> </li>  
+											<li><a href="reconciliation-analysis.html" title="Reconciliation Analysis
+	
+												" class="">Reconciliation Analysis
+											</span></a> </li>  
+											
+										</ul>
+									</div>
+								</li>
 							</ul>
 						</div>
 					</li>
@@ -1987,7 +2052,7 @@
 						y: {
 							beginAtZero: true,
 							title: {
-								text: "Transactions",
+								text: "Transactions Volume",
 								display: true,
 								color: title_ylabel,
 								font: {
@@ -2961,11 +3026,11 @@
 				datasets: [{
 				label: 'Master Card',
 				data: [8000000,7000000,5000000,12000000,14000000,5000000,6000000,15000000,7000000,6000000,13000000,12000000],
-				backgroundColor: "#F6F6C9"
+				backgroundColor: "#f1f174"
 				},
 				{
 				label: 'Visa',
-				data: [18000000,20000000,14000000,15000000,15000000,28000000,13000000,7000000,5000000,25000000,16000000,12000000],
+				data: [18000000,20000000,14000000,15000000,15000000,2800000,13000000,7000000,5000000,25000000,16000000,12000000],
 				backgroundColor: "#B3FFAE"
 				},
 				{
@@ -2989,7 +3054,26 @@
 									family: vrchartfont,
 								},
 							}, // labels 
-						}
+						},
+						tooltip: {
+							position: "nearest",
+							xAlign: "center",
+							yAlign: "bottom",
+							mode: "index",
+							bodyFont: {
+								family: vrchartfont,
+							},
+							callbacks: {
+								label: function (cntx) {
+									// return cntx.dataset.label + " - " + cntx.parsed.y;
+									return cntx.dataset.label + " - ₹" + thousands_separators(81 * parseInt(cntx.parsed.y));
+								},
+								title: function (cntx) {
+									return cntx[0].label;
+								},
+							},
+							padding: 10,
+						}, // tooltip
 						
 
 					}, // plugins
@@ -3011,7 +3095,7 @@
 										family: vrchartfont,
 									},
 									callback: function (v, i, t) {
-										return "$ " + thousands_separators(v);
+										return "₹" + thousands_separators(81 * parseInt(v));
 									},
 								},
 								grid: {
@@ -3084,7 +3168,26 @@
 									family: vrchartfont,
 								},
 							}, // labels 
-						}
+						},
+						tooltip: {
+							position: "nearest",
+							xAlign: "center",
+							yAlign: "bottom",
+							mode: "index",
+							bodyFont: {
+								family: vrchartfont,
+							},
+							callbacks: {
+								label: function (cntx) {
+									// return cntx.dataset.label + " - " + cntx.parsed.y;
+									return cntx.dataset.label + " - ₹" + thousands_separators(81 * parseInt(cntx.parsed.y));
+								},
+								title: function (cntx) {
+									return cntx[0].label;
+								},
+							},
+							padding: 10,
+						}, // tooltip
 						
 
 					}, // plugins
@@ -3106,7 +3209,7 @@
 										family: vrchartfont,
 									},
 									callback: function (v, i, t) {
-										return "$ " + thousands_separators(v);
+										return "₹" + thousands_separators(81 * parseInt(v));
 									},
 								},
 								grid: {
