@@ -30,15 +30,15 @@ export class LoginComponent implements OnInit {
   signIn(): void
   {
       // Return if the form is invalid
-      if ( this.signInForm.invalid )
-      {
-          return;
-      }
-      if(this.signInForm.value.password != 'Rv@0710%2022' || this.signInForm.value.emailid.toLowerCase() != 'pravin.prajapati@kiya.ai'){
-        this.errormassage = "please enter valid credentials";
-        this.signInForm.reset();
-        return
-      }
+      // if ( this.signInForm.invalid )
+      // {
+      //     return;
+      // }
+      // if(this.signInForm.value.password != 'Rv@0710%2022' || this.signInForm.value.emailid.toLowerCase() != 'pravin.prajapati@kiya.ai'){
+      //   this.errormassage = "please enter valid credentials";
+      //   this.signInForm.reset();
+      //   return
+      // }
 
       // Disable the form
       this.signInForm.disable();

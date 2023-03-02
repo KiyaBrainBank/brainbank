@@ -6,6 +6,9 @@ import { UserdetailsModule } from '../../userdetails/userdetails.module';
 import { PosMainMenuComponent } from './pos-main-menu.component';
 
 import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
+import 'chartjs-chart-treemap';
+import { NgChartsModule } from 'ng2-charts';
+
 @NgModule({
   declarations: [PosMainMenuComponent],
   imports: [
@@ -13,10 +16,11 @@ import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
     PosMainMenuRoutingModule,
     UserdetailsModule,
     OwlDateTimeModule,
-    OwlNativeDateTimeModule
+    OwlNativeDateTimeModule,
+    NgChartsModule
   ],
   exports: [
-    UserdetailsModule
+    UserdetailsModule,
   ]
 })
 export class PosMainMenuModule { }

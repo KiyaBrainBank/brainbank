@@ -18,30 +18,11 @@
                                                 <div
                                                     class="responsive-tab custom-card bg-custom pad-custom2 mar-custom3">
                                                     <div class="custom-width">
-                                                        <ul class="nav nav-tabs nav-justified bor-n" role="tablist">
-                                                            <li class="nav-item1">
-                                                                <a class="nav-link active" data-toggle="tab"
-                                                                    href="#posPerformance">POS Performance</a>
-                                                            </li>
-                                                            <li class="nav-item1">
-                                                                <a class="nav-link" data-toggle="tab" href="#pos">POS
-                                                                    Failures</a>
-                                                            </li>
-                                                            <li class="nav-item1">
-                                                                <a class="nav-link" data-toggle="tab"
-                                                                    href="#merchant">Merchants & Categories</a>
-                                                            </li>
-                                                            <li class="nav-item1">
-                                                                <a class="nav-link" data-toggle="tab"
-                                                                    href="#custTrans">Customer Transcations</a>
-                                                            </li>
-                                                            <li class="nav-item1">
-                                                                <a class="nav-link" data-toggle="tab" href="#lost">Lost
-                                                                    Revenue</a>
-                                                            </li>
-                                                            <li class="nav-item1">
-                                                                <a class="nav-link" data-toggle="tab"
-                                                                    href="#config">Configuration</a>
+                                                        <ul  class="tabs tab2 info-list1" role="tablist">
+                                                            <li role="presentation" class="nav-item1" *ngFor="let tab of tablist"
+                                                                        [ngClass]="activeTabName == tab ? 'active' : ''">
+                                                                        <a class="nav-link" (click)="activetab(tab)">
+                                                                            <em>{{tab }}</em> </a>
                                                             </li>
                                                         </ul>
                                                     </div>
@@ -50,13 +31,16 @@
                                         </div>
                                         <div class="col-12 col-md-12">
                                             <div class="tab-content bg-transparent mb-3">
-                                                <div id="posPerformance" class="tab-pane active">
+                                                
+
+                                                <div id="posperformance" class="tab-pane active" [hidden]="activeTabName != 'posperformance'">
                                                     <div class="row">
 
                                                         <div class="col-sm-12 col-12 col-md-12">
                                                             <div class="bg-white1 dark-bg">
                                                                 <div class="row">
-                                                                    <div class="col-12 col-xl-3 col-md-3 col-sm-6">
+                                                                    <div
+                                                                        class="col-12 col-xl-3 col-md-3 col-sm-6">
                                                                         <div class="white-input ux-input">
                                                                             <label>Displayed POS on Map</label>
                                                                             <select>
@@ -65,7 +49,8 @@
                                                                             </select>
                                                                         </div>
                                                                     </div>
-                                                                    <div class="col-12 col-xl-3 col-md-3 col-sm-6">
+                                                                    <div
+                                                                        class="col-12 col-xl-3 col-md-3 col-sm-6">
                                                                         <div class="white-input ux-input">
                                                                             <label>Merchant Categories</label>
                                                                             <select>
@@ -74,30 +59,34 @@
                                                                             </select>
                                                                         </div>
                                                                     </div>
-                                                                    <div class="col-12 col-xl-3 col-md-3 col-sm-6">
+                                                                    <div
+                                                                        class="col-12 col-xl-3 col-md-3 col-sm-6">
                                                                         <div class="white-input ux-input">
                                                                             <label>From</label>
-                                                                            <input type="text" [owlDateTime]="dt1" [owlDateTimeTrigger]="dt1" placeholder="DD/MM/YYYY"  >
-                                                                                                        <!-- <span [owlDateTimeTrigger]="dt1"><i class="fa fa-calendar"></i></span> -->
-                                                                                                        <owl-date-time [pickerType]="'calendar'" #dt1 ></owl-date-time><em class=" calendar-ic cal-top" [owlDateTimeTrigger]="dt1"></em>
-                                                                            <!-- <input type="text" class="datepicker1"
+                                                                            <input type="text"
+                                                                                class="datepicker1"
                                                                                 placeholder="DD/MM/YYYY"
                                                                                 value="12/04/2015">
-                                                                            <em class=" calendar-ic cal-top "></em> -->
+                                                                            <em
+                                                                                class=" calendar-ic cal-top "></em>
                                                                         </div>
                                                                     </div>
-                                                                    <div class="col-12 col-xl-3 col-md-3 col-sm-6">
+                                                                    <div
+                                                                        class="col-12 col-xl-3 col-md-3 col-sm-6">
                                                                         <div class="white-input ux-input">
                                                                             <label>To</label>
-                                                                            <input type="text" class="datepicker1"
+                                                                            <input type="text"
+                                                                                class="datepicker1"
                                                                                 placeholder="DD/MM/YYYY"
                                                                                 value="03/10/2017">
-                                                                            <em class=" calendar-ic cal-top "></em>
+                                                                            <em
+                                                                                class=" calendar-ic cal-top "></em>
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                                 <div class="row">
-                                                                    <div class="col-12 col-xl-3 col-md-3 col-sm-6">
+                                                                    <div
+                                                                        class="col-12 col-xl-3 col-md-3 col-sm-6">
                                                                         <div class="white-input ux-input">
                                                                             <label>Hours Selection</label>
                                                                             <select>
@@ -106,7 +95,8 @@
                                                                             </select>
                                                                         </div>
                                                                     </div>
-                                                                    <div class="col-12 col-xl-3 col-md-3 col-sm-6">
+                                                                    <div
+                                                                        class="col-12 col-xl-3 col-md-3 col-sm-6">
                                                                         <div class="white-input ux-input">
                                                                             <label>Transcation Type</label>
                                                                             <select>
@@ -116,7 +106,8 @@
                                                                             </select>
                                                                         </div>
                                                                     </div>
-                                                                    <div class="col-12 col-xl-3 col-md-3 col-sm-6">
+                                                                    <div
+                                                                        class="col-12 col-xl-3 col-md-3 col-sm-6">
                                                                         <div class="white-input ux-input">
                                                                             <label>Date view By</label>
                                                                             <select>
@@ -126,7 +117,8 @@
                                                                             </select>
                                                                         </div>
                                                                     </div>
-                                                                    <div class="col-12 col-xl-3 col-md-3 col-sm-6">
+                                                                    <div
+                                                                        class="col-12 col-xl-3 col-md-3 col-sm-6">
                                                                         <div class="white-input ux-input">
                                                                             <label>Show By</label>
                                                                             <select>
@@ -135,21 +127,6 @@
                                                                                 </option>
                                                                             </select>
                                                                         </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-sm-12 col-12 col-md-12">
-                                                            <div class="bg-white1 dark-bg">
-                                                                <div class="row mb-4">
-                                                                    <div class="col-12">
-                                                                        <!-- <h2 class="light-text">Transactions for selected POS Terminals</h2> -->
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row">
-                                                                    <div class="col-12">
-                                                                        Geo Map
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -171,8 +148,10 @@
                                                                     <div class="col-12">
                                                                         <div class="chart-box">
                                                                             <div class="chart-area">
-                                                                                <canvas id="cposTxnSelPOSTerminal"
-                                                                                    width="600" height="300"></canvas>
+                                                                                <canvas
+                                                                                    id="cposTxnSelPOSTerminal"
+                                                                                    width="600"
+                                                                                    height="300"  plugins="barChartPlugins"></canvas>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -192,7 +171,8 @@
                                                                     <div class="col-12">
                                                                         <div class="chart-box">
                                                                             <div class="chart-area">
-                                                                                <canvas id="cposAvgTxnPOS" width="600"
+                                                                                <canvas id="cposAvgTxnPOS"
+                                                                                    width="600"
                                                                                     height="400"></canvas>
                                                                             </div>
                                                                         </div>
@@ -200,51 +180,17 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-
-                                                        <div class="col-sm-12 col-12 col-md-12">
-                                                            <div class="bg-white1 dark-bg">
-                                                                <div class="row mb-4">
-                                                                    <div class="col-12">
-                                                                        <h2 class="light-text">POS Sales Value
-                                                                        </h2>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row">
-                                                                    <div class="col-12">
-                                                                        <div class="chart-box">
-                                                                            <div class="chart-area">
-                                                                                <canvas id="cposSalesValue" width="600"
-                                                                                    height="400"></canvas>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-
-
                                                     </div>
                                                 </div>
 
-                                                <div id="pos" class="tab-pane">
+                                                <div id="posfailures" class="tab-pane active"  [hidden]="activeTabName != 'posfailures'" >
                                                     <div class="row">
-
                                                         <div class="col-sm-12 col-12 col-md-12">
                                                             <div class="bg-white1 dark-bg">
                                                                 <div class="row">
                                                                     <div class="col-12 col-xl-3 col-md-3 col-sm-6">
                                                                         <div class="white-input ux-input">
-                                                                            <label>Displayed POS on Map</label>
-                                                                            <select>
-                                                                                <option>select</option>
-                                                                                <option selected="">All</option>
-                                                                            </select>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-12 col-xl-3 col-md-3 col-sm-6">
-                                                                        <div class="white-input ux-input">
-                                                                            <label>Merchant Categories</label>
+                                                                            <label>Displayed ATMs on Map</label>
                                                                             <select>
                                                                                 <option>select</option>
                                                                                 <option selected="">All</option>
@@ -254,23 +200,17 @@
                                                                     <div class="col-12 col-xl-3 col-md-3 col-sm-6">
                                                                         <div class="white-input ux-input">
                                                                             <label>From</label>
-                                                                            <input type="text" class="datepicker1"
-                                                                                placeholder="DD/MM/YYYY"
-                                                                                value="12/04/2015">
+                                                                            <input type="text" class="datepicker1 hasDatepicker" placeholder="DD/MM/YYYY" value="12/04/2015" id="dp1666853678094">
                                                                             <em class=" calendar-ic cal-top "></em>
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-12 col-xl-3 col-md-3 col-sm-6">
                                                                         <div class="white-input ux-input">
                                                                             <label>To</label>
-                                                                            <input type="text" class="datepicker1"
-                                                                                placeholder="DD/MM/YYYY"
-                                                                                value="03/10/2017">
+                                                                            <input type="text" class="datepicker1 hasDatepicker" placeholder="DD/MM/YYYY" value="03/10/2017" id="dp1666853678095">
                                                                             <em class=" calendar-ic cal-top "></em>
                                                                         </div>
                                                                     </div>
-                                                                </div>
-                                                                <div class="row">
                                                                     <div class="col-12 col-xl-3 col-md-3 col-sm-6">
                                                                         <div class="white-input ux-input">
                                                                             <label>Hours Selection</label>
@@ -280,9 +220,11 @@
                                                                             </select>
                                                                         </div>
                                                                     </div>
+                                                                </div>
+                                                                <div class="row">
                                                                     <div class="col-12 col-xl-3 col-md-3 col-sm-6">
                                                                         <div class="white-input ux-input">
-                                                                            <label>Transcation Type</label>
+                                                                            <label>Show featured by</label>
                                                                             <select>
                                                                                 <option>select</option>
                                                                                 <option selected="">Multiple
@@ -290,812 +232,734 @@
                                                                             </select>
                                                                         </div>
                                                                     </div>
-                                                                    <div class="col-12 col-xl-3 col-md-3 col-sm-6">
-                                                                        <div class="white-input ux-input">
-                                                                            <label>Date view By</label>
-                                                                            <select>
-                                                                                <option>select</option>
-                                                                                <option selected="">Month
-                                                                                </option>
-                                                                            </select>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-12 col-xl-3 col-md-3 col-sm-6">
-                                                                        <div class="white-input ux-input">
-                                                                            <label>Show By</label>
-                                                                            <select>
-                                                                                <option>select</option>
-                                                                                <option selected="">Operations
-                                                                                </option>
-                                                                            </select>
-                                                                        </div>
-                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
-
-                                                        <div class="col-sm-12 col-12 col-md-12">
-                                                            <div class="bg-white1 dark-bg">
-                                                                <div class="row mb-4">
-                                                                    <div class="col-12">
-                                                                        <!-- <h2 class="light-text">Transactions for selected POS Terminals</h2> -->
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row">
-                                                                    <div class="col-12">
-                                                                        Geo Map
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-sm-12 col-12 col-md-12">
-                                                            <div class="bg-white1 dark-bg">
-                                                                <div class="row mb-4">
-                                                                    <div class="col-6">
-                                                                        <h2 class="light-text">Transactions for
-                                                                            selected POS Terminals</h2>
-                                                                    </div>
-                                                                    <div class="col-6 ">
-                                                                        <h2 class="light-text text-right">
-                                                                            Approval Rate - 93.06%</h2>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row">
-                                                                    <div class="col-12">
-                                                                        <div class="chart-box">
-                                                                            <div class="chart-area">
-                                                                                <canvas id="cposTxnSelPOSTerminal1"
-                                                                                    width="600" height="300"></canvas>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-sm-12 col-12 col-md-12">
-                                                            <div class="bg-white1 dark-bg">
-                                                                <div class="row mb-4">
-                                                                    <div class="col-12">
-                                                                        <h2 class="light-text">Average
-                                                                            Transactions/POS</h2>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row">
-                                                                    <div class="col-12">
-                                                                        <div class="chart-box">
-                                                                            <div class="chart-area">
-                                                                                <canvas id="cposAvgTxnPOS1" width="600"
-                                                                                    height="400"></canvas>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-sm-12 col-12 col-md-12">
-                                                            <div class="bg-white1 dark-bg">
-                                                                <div class="row mb-4">
-                                                                    <div class="col-12">
-                                                                        <h2 class="light-text">POS Sales Value
-                                                                        </h2>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row">
-                                                                    <div class="col-12">
-                                                                        <div class="chart-box">
-                                                                            <div class="chart-area">
-                                                                                <canvas id="cposSalesValue1" width="600"
-                                                                                    height="400"></canvas>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-
-
                                                     </div>
-                                                </div>
-
-                                                <div id="merchant" class="tab-pane">
                                                     <div class="row">
 
                                                         <div class="col-sm-12 col-12 col-md-12">
                                                             <div class="bg-white1 dark-bg">
-                                                                <div class="row">
-                                                                    <div class="col-12 col-xl-3 col-md-3 col-sm-6">
-                                                                        <div class="white-input ux-input">
-                                                                            <label>Displayed POS on Map</label>
-                                                                            <select>
-                                                                                <option>select</option>
-                                                                                <option selected="">All</option>
-                                                                            </select>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-12 col-xl-3 col-md-3 col-sm-6">
-                                                                        <div class="white-input ux-input">
-                                                                            <label>Merchant Categories</label>
-                                                                            <select>
-                                                                                <option>select</option>
-                                                                                <option selected="">All</option>
-                                                                            </select>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-12 col-xl-3 col-md-3 col-sm-6">
-                                                                        <div class="white-input ux-input">
-                                                                            <label>From</label>
-                                                                            <input type="text" class="datepicker1"
-                                                                                placeholder="DD/MM/YYYY"
-                                                                                value="12/04/2015">
-                                                                            <em class=" calendar-ic cal-top "></em>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-12 col-xl-3 col-md-3 col-sm-6">
-                                                                        <div class="white-input ux-input">
-                                                                            <label>To</label>
-                                                                            <input type="text" class="datepicker1"
-                                                                                placeholder="DD/MM/YYYY"
-                                                                                value="03/10/2017">
-                                                                            <em class=" calendar-ic cal-top "></em>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row">
-                                                                    <div class="col-12 col-xl-3 col-md-3 col-sm-6">
-                                                                        <div class="white-input ux-input">
-                                                                            <label>Hours Selection</label>
-                                                                            <select>
-                                                                                <option>select</option>
-                                                                                <option selected="">All</option>
-                                                                            </select>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-12 col-xl-3 col-md-3 col-sm-6">
-                                                                        <div class="white-input ux-input">
-                                                                            <label>Transcation Type</label>
-                                                                            <select>
-                                                                                <option>select</option>
-                                                                                <option selected="">Multiple
-                                                                                    Values</option>
-                                                                            </select>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-12 col-xl-3 col-md-3 col-sm-6">
-                                                                        <div class="white-input ux-input">
-                                                                            <label>Date view By</label>
-                                                                            <select>
-                                                                                <option>select</option>
-                                                                                <option selected="">Month
-                                                                                </option>
-                                                                            </select>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-12 col-xl-3 col-md-3 col-sm-6">
-                                                                        <div class="white-input ux-input">
-                                                                            <label>Show By</label>
-                                                                            <select>
-                                                                                <option>select</option>
-                                                                                <option selected="">Operations
-                                                                                </option>
-                                                                            </select>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-sm-12 col-12 col-md-12">
-                                                            <div class="bg-white1 dark-bg">
-                                                                <div class="row mb-4">
-                                                                    <div class="col-12">
-                                                                        <!-- <h2 class="light-text">Transactions for selected POS Terminals</h2> -->
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row">
-                                                                    <div class="col-12">
-                                                                        Geo Map
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-sm-12 col-12 col-md-12">
-                                                            <div class="bg-white1 dark-bg">
                                                                 <div class="row mb-4">
                                                                     <div class="col-6">
-                                                                        <h2 class="light-text">Transactions for
-                                                                            selected POS Terminals</h2>
-                                                                    </div>
-                                                                    <div class="col-6 ">
-                                                                        <h2 class="light-text text-right">
-                                                                            Approval Rate - 93.06%</h2>
+                                                                        <h2 class="light-text">Failures By day For Selected POSs</h2>
                                                                     </div>
                                                                 </div>
                                                                 <div class="row">
                                                                     <div class="col-12">
                                                                         <div class="chart-box">
                                                                             <div class="chart-area">
-                                                                                <canvas id="cposTxnSelPOSTerminal2"
-                                                                                    width="600" height="300"></canvas>
+                                                                                <canvas
+                                                                                    id="cposTxnSelPOSTerminal1"
+                                                                                    width="600"
+                                                                                    height="300"></canvas>
                                                                             </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
-
-                                                        <div class="col-sm-12 col-12 col-md-12">
-                                                            <div class="bg-white1 dark-bg">
-                                                                <div class="row mb-4">
-                                                                    <div class="col-12">
-                                                                        <h2 class="light-text">Average
-                                                                            Transactions/POS</h2>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row">
-                                                                    <div class="col-12">
-                                                                        <div class="chart-box">
-                                                                            <div class="chart-area">
-                                                                                <canvas id="cposAvgTxnPOS2" width="600"
-                                                                                    height="400"></canvas>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-sm-12 col-12 col-md-12">
-                                                            <div class="bg-white1 dark-bg">
-                                                                <div class="row mb-4">
-                                                                    <div class="col-12">
-                                                                        <h2 class="light-text">POS Sales Value
-                                                                        </h2>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row">
-                                                                    <div class="col-12">
-                                                                        <div class="chart-box">
-                                                                            <div class="chart-area">
-                                                                                <canvas id="cposSalesValue2" width="600"
-                                                                                    height="400"></canvas>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-
-
                                                     </div>
-                                                </div>
-
-                                                <div id="custTrans" class="tab-pane">
                                                     <div class="row">
+                                                        <div class="col-12">
+                                                            <div class="bg-white1">
+                                                                
+                                                            <div class="chart-box">
+                                                                <div class="chart-area3">
+                                                                    <canvas id="catmATMMixTransactions01" width="493" height="287" style="display: block; box-sizing: border-box; height: 287px; width: 493px;"></canvas>
+                                                                    <p class="text-dark mt-2">Failure Percentage</p>
+                                                                    <div id="ctmtxnmixgradientbar" class="charttmgradientbar p-2" style="background: linear-gradient(90deg, rgb(108, 196, 161), rgb(18, 106, 71));"></div>
+                                                                </div>
+                                                                <!-- <div class="charttmgradientbar"></div> -->
+                                                            </div>
+                                                            <div class="legend">
+                                                                <ul class="">
+                                                                    <li>
+                                                                        W - Withdrawal
+                                                                    </li>
+                                                                    <li>
+                                                                        D - Deposit
+                                                                    </li>
+                                                                    <li>
+                                                                        I - Inquiry
+                                                                    </li>
+                                                                    <li>
+                                                                        T - Transfer
+                                                                    </li>
+                                                                    <li>
+                                                                        O - Other
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
 
-                                                        <div class="col-sm-12 col-12 col-md-12">
-                                                            <div class="bg-white1 dark-bg">
-                                                                <div class="row">
-                                                                    <div class="col-12 col-xl-3 col-md-3 col-sm-6">
-                                                                        <div class="white-input ux-input">
-                                                                            <label>Displayed POS on Map</label>
-                                                                            <select>
-                                                                                <option>select</option>
-                                                                                <option selected="">All</option>
-                                                                            </select>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-12 col-xl-3 col-md-3 col-sm-6">
-                                                                        <div class="white-input ux-input">
-                                                                            <label>Merchant Categories</label>
-                                                                            <select>
-                                                                                <option>select</option>
-                                                                                <option selected="">All</option>
-                                                                            </select>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-12 col-xl-3 col-md-3 col-sm-6">
-                                                                        <div class="white-input ux-input">
-                                                                            <label>From</label>
-                                                                            <input type="text" class="datepicker1"
-                                                                                placeholder="DD/MM/YYYY"
-                                                                                value="12/04/2015">
-                                                                            <em class=" calendar-ic cal-top "></em>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-12 col-xl-3 col-md-3 col-sm-6">
-                                                                        <div class="white-input ux-input">
-                                                                            <label>To</label>
-                                                                            <input type="text" class="datepicker1"
-                                                                                placeholder="DD/MM/YYYY"
-                                                                                value="03/10/2017">
-                                                                            <em class=" calendar-ic cal-top "></em>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row">
-                                                                    <div class="col-12 col-xl-3 col-md-3 col-sm-6">
-                                                                        <div class="white-input ux-input">
-                                                                            <label>Hours Selection</label>
-                                                                            <select>
-                                                                                <option>select</option>
-                                                                                <option selected="">All</option>
-                                                                            </select>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-12 col-xl-3 col-md-3 col-sm-6">
-                                                                        <div class="white-input ux-input">
-                                                                            <label>Transcation Type</label>
-                                                                            <select>
-                                                                                <option>select</option>
-                                                                                <option selected="">Multiple
-                                                                                    Values</option>
-                                                                            </select>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-12 col-xl-3 col-md-3 col-sm-6">
-                                                                        <div class="white-input ux-input">
-                                                                            <label>Date view By</label>
-                                                                            <select>
-                                                                                <option>select</option>
-                                                                                <option selected="">Month
-                                                                                </option>
-                                                                            </select>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-12 col-xl-3 col-md-3 col-sm-6">
-                                                                        <div class="white-input ux-input">
-                                                                            <label>Show By</label>
-                                                                            <select>
-                                                                                <option>select</option>
-                                                                                <option selected="">Operations
-                                                                                </option>
-                                                                            </select>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
                                                             </div>
                                                         </div>
-
-                                                        <div class="col-sm-12 col-12 col-md-12">
-                                                            <div class="bg-white1 dark-bg">
-                                                                <div class="row mb-4">
-                                                                    <div class="col-12">
-                                                                        <!-- <h2 class="light-text">Transactions for selected POS Terminals</h2> -->
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row">
-                                                                    <div class="col-12">
-                                                                        Geo Map
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-sm-12 col-12 col-md-12">
-                                                            <div class="bg-white1 dark-bg">
-                                                                <div class="row mb-4">
-                                                                    <div class="col-6">
-                                                                        <h2 class="light-text">Transactions for
-                                                                            selected POS Terminals</h2>
-                                                                    </div>
-                                                                    <div class="col-6 ">
-                                                                        <h2 class="light-text text-right">
-                                                                            Approval Rate - 93.06%</h2>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row">
-                                                                    <div class="col-12">
-                                                                        <div class="chart-box">
-                                                                            <div class="chart-area">
-                                                                                <canvas id="cposTxnSelPOSTerminal3"
-                                                                                    width="600" height="300"></canvas>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-sm-12 col-12 col-md-12">
-                                                            <div class="bg-white1 dark-bg">
-                                                                <div class="row mb-4">
-                                                                    <div class="col-12">
-                                                                        <h2 class="light-text">Average
-                                                                            Transactions/POS</h2>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row">
-                                                                    <div class="col-12">
-                                                                        <div class="chart-box">
-                                                                            <div class="chart-area">
-                                                                                <canvas id="cposAvgTxnPOS3" width="600"
-                                                                                    height="400"></canvas>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-sm-12 col-12 col-md-12">
-                                                            <div class="bg-white1 dark-bg">
-                                                                <div class="row mb-4">
-                                                                    <div class="col-12">
-                                                                        <h2 class="light-text">POS Sales Value
-                                                                        </h2>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row">
-                                                                    <div class="col-12">
-                                                                        <div class="chart-box">
-                                                                            <div class="chart-area">
-                                                                                <canvas id="cposSalesValue3" width="600"
-                                                                                    height="400"></canvas>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-
-
                                                     </div>
-                                                </div>
-
-                                                <div id="lost" class="tab-pane">
                                                     <div class="row">
-
-                                                        <div class="col-sm-12 col-12 col-md-12">
+                                                        <div class="col-12">
                                                             <div class="bg-white1 dark-bg">
-                                                                <div class="row">
-                                                                    <div class="col-12 col-xl-3 col-md-3 col-sm-6">
-                                                                        <div class="white-input ux-input">
-                                                                            <label>Displayed POS on Map</label>
-                                                                            <select>
-                                                                                <option>select</option>
-                                                                                <option selected="">All</option>
-                                                                            </select>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-12 col-xl-3 col-md-3 col-sm-6">
-                                                                        <div class="white-input ux-input">
-                                                                            <label>Merchant Categories</label>
-                                                                            <select>
-                                                                                <option>select</option>
-                                                                                <option selected="">All</option>
-                                                                            </select>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-12 col-xl-3 col-md-3 col-sm-6">
-                                                                        <div class="white-input ux-input">
-                                                                            <label>From</label>
-                                                                            <input type="text" class="datepicker1"
-                                                                                placeholder="DD/MM/YYYY"
-                                                                                value="12/04/2015">
-                                                                            <em class=" calendar-ic cal-top "></em>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-12 col-xl-3 col-md-3 col-sm-6">
-                                                                        <div class="white-input ux-input">
-                                                                            <label>To</label>
-                                                                            <input type="text" class="datepicker1"
-                                                                                placeholder="DD/MM/YYYY"
-                                                                                value="03/10/2017">
-                                                                            <em class=" calendar-ic cal-top "></em>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row">
-                                                                    <div class="col-12 col-xl-3 col-md-3 col-sm-6">
-                                                                        <div class="white-input ux-input">
-                                                                            <label>Hours Selection</label>
-                                                                            <select>
-                                                                                <option>select</option>
-                                                                                <option selected="">All</option>
-                                                                            </select>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-12 col-xl-3 col-md-3 col-sm-6">
-                                                                        <div class="white-input ux-input">
-                                                                            <label>Transcation Type</label>
-                                                                            <select>
-                                                                                <option>select</option>
-                                                                                <option selected="">Multiple
-                                                                                    Values</option>
-                                                                            </select>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-12 col-xl-3 col-md-3 col-sm-6">
-                                                                        <div class="white-input ux-input">
-                                                                            <label>Date view By</label>
-                                                                            <select>
-                                                                                <option>select</option>
-                                                                                <option selected="">Month
-                                                                                </option>
-                                                                            </select>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-12 col-xl-3 col-md-3 col-sm-6">
-                                                                        <div class="white-input ux-input">
-                                                                            <label>Show By</label>
-                                                                            <select>
-                                                                                <option>select</option>
-                                                                                <option selected="">Operations
-                                                                                </option>
-                                                                            </select>
-                                                                        </div>
-                                                                    </div>
+                                                                <h2 class="text-white">Highest failure POS Terminals</h2>
+                                                                <!-- <table class="table table-striped  mt-4">
+                                                                    <thead>
+                                                                      <tr>
+                                                                        <th scope="col">POS Terminals</th>
+                                                                        <th scope="col"># of failures</th>
+                                                                      </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                      <tr>
+                                                                        <th scope="row">PO23423</th>
+                                                                        <td>6,000</td>
+                                                                      </tr>
+                                                                      <tr>
+                                                                        <th scope="row">PO23434</th>
+                                                                        <td>4,000</td>
+                                                                      </tr>
+                                                                      <tr>
+                                                                        <th scope="row">PO23431</th>
+                                                                        <td>1,000</td>
+                                                                      </tr>
+                                                                      <tr>
+                                                                        <th scope="row">PO23431</th>
+                                                                        <td>1,000</td>
+                                                                      </tr>
+                                                                      <tr>
+                                                                        <th scope="row">PO22431</th>
+                                                                        <td>11,000</td>
+                                                                      </tr>
+                                                                      <tr>
+                                                                        <th scope="row">PO13431</th>
+                                                                        <td>2,000</td>
+                                                                      </tr>
+                                                                      <tr>
+                                                                        <th scope="row">PO23432</th>
+                                                                        <td>1,200</td>
+                                                                      </tr>
+                                                                      <tr>
+                                                                        <th scope="row">PO23231</th>
+                                                                        <td>9,000</td>
+                                                                      </tr>
+                                                                    </tbody>
+                                                                  </table> -->
+                                                                  <div class="cachartdatatable">
+                                                                    <table class=" data1">
+                                                                        <tbody><tr>
+                                                                            <th><em>POS Terminal</em></th>
+                                                                            <th><em># of failures
+                                                                            </em></th>
+                                                                         </tr>
+                                                                        <tr>
+                                                                            <td><em>PO23423</em></td>
+                                                                            <td><em>6,000
+                                                                            </em></td>
+                                                                         </tr>
+                                                                         <tr>
+                                                                             <td><em>PO23424</em></td>
+                                                                             <td><em>3,000
+                                                                             </em></td>
+                                                                          </tr>
+                                                                          <tr>
+                                                                              <td><em>PO23413</em></td>
+                                                                              <td><em>2,000
+                                                                              </em></td>
+                                                                           </tr>
+                                                                           <tr>
+                                                                               <td><em>PO23425</em></td>
+                                                                               <td><em>6,600
+                                                                               </em></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><em>PO23427</em></td>
+                                                                                <td><em>1,000
+                                                                                </em></td>
+                                                                             </tr>
+                                                                             <tr>
+                                                                                 <td><em>PO23420</em></td>
+                                                                                 <td><em>44,000
+                                                                                 </em></td>
+                                                                              </tr>
+                                                                              <tr>
+                                                                                  <td><em>PO23428</em></td>
+                                                                                  <td><em>4,000
+                                                                                  </em></td>
+                                                                               </tr>
+                                                                    </tbody></table>
                                                                 </div>
                                                             </div>
                                                         </div>
-
-                                                        <div class="col-sm-12 col-12 col-md-12">
-                                                            <div class="bg-white1 dark-bg">
-                                                                <div class="row mb-4">
-                                                                    <div class="col-12">
-                                                                        <!-- <h2 class="light-text">Transactions for selected POS Terminals</h2> -->
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row">
-                                                                    <div class="col-12">
-                                                                        Geo Map
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-sm-12 col-12 col-md-12">
-                                                            <div class="bg-white1 dark-bg">
-                                                                <div class="row mb-4">
-                                                                    <div class="col-6">
-                                                                        <h2 class="light-text">Transactions for
-                                                                            selected POS Terminals</h2>
-                                                                    </div>
-                                                                    <div class="col-6 ">
-                                                                        <h2 class="light-text text-right">
-                                                                            Approval Rate - 93.06%</h2>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row">
-                                                                    <div class="col-12">
-                                                                        <div class="chart-box">
-                                                                            <div class="chart-area">
-                                                                                <canvas id="cposTxnSelPOSTerminal4"
-                                                                                    width="600" height="300"></canvas>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-sm-12 col-12 col-md-12">
-                                                            <div class="bg-white1 dark-bg">
-                                                                <div class="row mb-4">
-                                                                    <div class="col-12">
-                                                                        <h2 class="light-text">Average
-                                                                            Transactions/POS</h2>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row">
-                                                                    <div class="col-12">
-                                                                        <div class="chart-box">
-                                                                            <div class="chart-area">
-                                                                                <canvas id="cposAvgTxnPOS4" width="600"
-                                                                                    height="400"></canvas>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-sm-12 col-12 col-md-12">
-                                                            <div class="bg-white1 dark-bg">
-                                                                <div class="row mb-4">
-                                                                    <div class="col-12">
-                                                                        <h2 class="light-text">POS Sales Value
-                                                                        </h2>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row">
-                                                                    <div class="col-12">
-                                                                        <div class="chart-box">
-                                                                            <div class="chart-area">
-                                                                                <canvas id="cposSalesValue4" width="600"
-                                                                                    height="400"></canvas>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-
-
                                                     </div>
                                                 </div>
 
-                                                <div id="config" class="tab-pane">
+                                                <div id="merchant" class="tab-pane active"  [hidden]="activeTabName != 'merchant'">
                                                     <div class="row">
-
-                                                        <div class="col-sm-12 col-12 col-md-12">
-                                                            <div class="bg-white1 dark-bg">
+                                                        <div class="whitecard no-bg">
+                                                            <div class="center-div">
                                                                 <div class="row">
-                                                                    <div class="col-12 col-xl-3 col-md-3 col-sm-6">
-                                                                        <div class="white-input ux-input">
-                                                                            <label>Displayed POS on Map</label>
-                                                                            <select>
-                                                                                <option>select</option>
-                                                                                <option selected="">All</option>
-                                                                            </select>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-12 col-xl-3 col-md-3 col-sm-6">
-                                                                        <div class="white-input ux-input">
-                                                                            <label>Merchant Categories</label>
-                                                                            <select>
-                                                                                <option>select</option>
-                                                                                <option selected="">All</option>
-                                                                            </select>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-12 col-xl-3 col-md-3 col-sm-6">
-                                                                        <div class="white-input ux-input">
-                                                                            <label>From</label>
-                                                                            <input type="text" class="datepicker1"
-                                                                                placeholder="DD/MM/YYYY"
-                                                                                value="12/04/2015">
-                                                                            <em class=" calendar-ic cal-top "></em>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-12 col-xl-3 col-md-3 col-sm-6">
-                                                                        <div class="white-input ux-input">
-                                                                            <label>To</label>
-                                                                            <input type="text" class="datepicker1"
-                                                                                placeholder="DD/MM/YYYY"
-                                                                                value="03/10/2017">
-                                                                            <em class=" calendar-ic cal-top "></em>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row">
-                                                                    <div class="col-12 col-xl-3 col-md-3 col-sm-6">
-                                                                        <div class="white-input ux-input">
-                                                                            <label>Hours Selection</label>
-                                                                            <select>
-                                                                                <option>select</option>
-                                                                                <option selected="">All</option>
-                                                                            </select>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-12 col-xl-3 col-md-3 col-sm-6">
-                                                                        <div class="white-input ux-input">
-                                                                            <label>Transcation Type</label>
-                                                                            <select>
-                                                                                <option>select</option>
-                                                                                <option selected="">Multiple
-                                                                                    Values</option>
-                                                                            </select>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-12 col-xl-3 col-md-3 col-sm-6">
-                                                                        <div class="white-input ux-input">
-                                                                            <label>Date view By</label>
-                                                                            <select>
-                                                                                <option>select</option>
-                                                                                <option selected="">Month
-                                                                                </option>
-                                                                            </select>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-12 col-xl-3 col-md-3 col-sm-6">
-                                                                        <div class="white-input ux-input">
-                                                                            <label>Show By</label>
-                                                                            <select>
-                                                                                <option>select</option>
-                                                                                <option selected="">Operations
-                                                                                </option>
-                                                                            </select>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-sm-12 col-12 col-md-12">
-                                                            <div class="bg-white1 dark-bg">
-                                                                <div class="row mb-4">
-                                                                    <div class="col-12">
-                                                                        <!-- <h2 class="light-text">Transactions for selected POS Terminals</h2> -->
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row">
-                                                                    <div class="col-12">
-                                                                        Geo Map
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-sm-12 col-12 col-md-12">
-                                                            <div class="bg-white1 dark-bg">
-                                                                <div class="row mb-4">
-                                                                    <div class="col-6">
-                                                                        <h2 class="light-text">Transactions for
-                                                                            selected POS Terminals</h2>
-                                                                    </div>
-                                                                    <div class="col-6 ">
-                                                                        <h2 class="light-text text-right">
-                                                                            Approval Rate - 93.06%</h2>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row">
-                                                                    <div class="col-12">
-                                                                        <div class="chart-box">
-                                                                            <div class="chart-area">
-                                                                                <canvas id="cposTxnSelPOSTerminal5"
-                                                                                    width="600" height="300"></canvas>
+                    
+                                                                    <div class="col-sm-6 col-12 col-md-6">
+                                                                        <div class="bg-white1 dark-bg">
+                                                                            <div class="row mb-4">
+                                                                                <div class="col-12">
+                                                                                    <h2 class="light-text">Customer Transaction Volume</h2>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="row">
+                                                                                <div class="col-12">
+                                                                                    <div class="chart-box">
+                                                                                        <div class="chart-area">
+                                                                                            <!-- <canvas id="cposCustTxnVolume" width="600" height="400"></canvas> -->
+                                                                                            <div id="cposCustTxnVolume" class="chart-bubble" style="height: 400px;"><div class="tbubble s4" style="width: 160px; height: 160px; left: 257px; top: 38px; background-color: rgb(202, 78, 121);"><span>15.20%</span><em>Hardware Store</em></div><div class="tbubble s4" style="width: 160px; height: 160px; left: 180px; top: 227px; background-color: rgb(161, 0, 53);"><span>13.50%</span><em>Sporting Goods</em></div><div class="tbubble s3" style="width: 100px; height: 100px; left: 340px; top: 190px; background-color: rgb(95, 111, 148);"><span>5.15%</span><em style="font-size:10px">Vehicle Retailers</em></div><div class="tbubble s3" style="width: 120px; height: 120px; left: 54px; top: 169px; background-color: rgb(39, 123, 192);"><span>20.28%</span><em style="font-size:10px">Departmental Store</em></div><div class="tbubble s1" style="width: 50px; height:50px; left: 397px; top: 109px; background-color: rgb(66, 133, 91);"><span>8%</span><em>Electronics</em></div><div class="tbubble s2" style="width: 180px; height: 180px; left: 106px; top: 0px; background-color: rgb(255, 149, 81);"><span>38.17%</span><em>Grocery</em></div></div>
+                                                                                        </div>
+                                                                                        
+                                                                                        <div class="legends-inline">
+                                                                                            <ul>
+                                                                                                <li>
+                                                                                                    <span class="save-acc"></span>
+                                                                                                    <em>Departmental Store</em>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <span class="cre-dep"></span>
+                                                                                                    <em>Hardware Store</em>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <span class="term-dep"></span>
+                                                                                                    <em>Grocery</em>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <span class="cash-cre "></span>
+                                                                                                    <em>Sporting Goods</em>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <span class="loans"></span>
+                                                                                                    <em>Vehical Retailers</em>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <span class="gold-loan"></span>
+                                                                                                    <em>Electronics</em>
+                                                                                                </li>
+                                                                                            </ul>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
                                                                             </div>
                                                                         </div>
                                                                     </div>
+                    
+                                                                    <div class="col-sm-6 col-12 col-md-6">
+                                                                        <div class="bg-white1 dark-bg">
+                                                                            <div class="row mb-4">
+                                                                                <div class="col-sm-12 col-12 col-md-12">
+                                                                                    <h2 class="light-text">Customer Transaction Value
+                                                                                    </h2>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="row">
+                                                                                <div class="col-12">
+                                                                                    <div class="chart-box">
+                                                                                        <div class="chart-area">
+                                                                                            <!-- <canvas id="cposCustTxnValue" width="600" height="400"></canvas> -->
+                                                                                            <div id="cposCustTxnValue" class="chart-bubble" style="height: 400px;"><div class="tbubble s4" style="width: 260px; height: 260px; left: 15px; top: 58px; background-color: rgb(202, 78, 121);"><span>25%</span><em>Vehical Retailers</em></div><div class="tbubble s4" style="width: 100px; height: 100px; left: 265px; top: 25px; background-color: rgb(161, 0, 53);"><span>10.15%</span><em style="font-size:10px">Sporting Goods</em></div><div class="tbubble s3" style="width: 120px; height: 120px; left: 80px; top: 21px; background-color: rgb(95, 111, 148);"><span>25%</span><em>Hardware Store</em></div><div class="tbubble s3" style="width: 120px; height: 120px; left: 248px; top: 108px; background-color: rgb(39, 123, 192);"><span>10%</span><em>Departmental</em></div><div class="tbubble s1" style="width: 80px; height: 80px; left: 110px; top:250px; background-color: rgb(66, 133, 91);"><span>11.00%</span><em>Electronics</em></div><div class="tbubble s2" style="width: 180px; height: 180px; left: 192px; bottom:0px; background-color: rgb(255, 149, 81);"><span>18.17%</span><em>Grocery</em></div></div>
+                                                                                        </div>
+                    
+                                                                                        <div class="legends-inline">
+                                                                                            <ul>
+                                                                                                <li>
+                                                                                                    <span class="save-acc"></span>
+                                                                                                    <em>Departmental Store</em>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <span class="cre-dep"></span>
+                                                                                                    <em>Hardware Store</em>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <span class="term-dep"></span>
+                                                                                                    <em>Grocery</em>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <span class="cash-cre "></span>
+                                                                                                    <em>Sporting Goods</em>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <span class="loans"></span>
+                                                                                                    <em>Vehical Retailers</em>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <span class="gold-loan"></span>
+                                                                                                    <em>Electronics</em>
+                                                                                                </li>
+                                                                                            </ul>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                    
                                                                 </div>
                                                             </div>
                                                         </div>
+                                                    </div>
+                                            </div>
 
-                                                        <div class="col-sm-12 col-12 col-md-12">
-                                                            <div class="bg-white1 dark-bg">
-                                                                <div class="row mb-4">
-                                                                    <div class="col-12">
-                                                                        <h2 class="light-text">Average
-                                                                            Transactions/POS</h2>
-                                                                    </div>
+                                            <div id="custTrans" class="tab-pane active" [hidden]="activeTabName != 'customer transactions'">
+                                                <div class="row">
+                                                    <div class="col-sm-12 col-12 col-md-12">
+                                                        <div class="bg-white1 dark-bg">
+                                                            <div class="row mb-4">
+                                                                <div class="col-6">
+                                                                    <h2 class="light-text">Debit Vs Credit Value (Last 13 Weeks)</h2>
                                                                 </div>
-                                                                <div class="row">
-                                                                    <div class="col-12">
-                                                                        <div class="chart-box">
-                                                                            <div class="chart-area">
-                                                                                <canvas id="cposAvgTxnPOS5" width="600"
-                                                                                    height="400"></canvas>
-                                                                            </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-12">
+                                                                    <div class="chart-box">
+                                                                        <div class="chart-area">
+                                                                            <canvas
+                                                                                id="cposSalesValue"
+                                                                                width="600"
+                                                                                height="300"></canvas>
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
-
-                                                        <div class="col-sm-12 col-12 col-md-12">
-                                                            <div class="bg-white1 dark-bg">
-                                                                <div class="row mb-4">
-                                                                    <div class="col-12">
-                                                                        <h2 class="light-text">POS Sales Value
-                                                                        </h2>
-                                                                    </div>
+                                                    </div>
+                                                    <div class="col-sm-12 col-12 col-md-12">
+                                                        <div class="bg-white1 dark-bg">
+                                                            <div class="row mb-4">
+                                                                <div class="col-6">
+                                                                    <h2 class="light-text">Debit Vs Credit Value (Last 13 Weeks)</h2>
                                                                 </div>
-                                                                <div class="row">
-                                                                    <div class="col-12">
-                                                                        <div class="chart-box">
-                                                                            <div class="chart-area">
-                                                                                <canvas id="cposSalesValue5" width="600"
-                                                                                    height="400"></canvas>
-                                                                            </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-12">
+                                                                    <div class="chart-box">
+                                                                        <div class="chart-area">
+                                                                            <canvas
+                                                                                id="cposSalesValue01"
+                                                                                width="600"
+                                                                                height="300"></canvas>
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
+                                                    </div>
+                                                    <div class="col-sm-12 col-12 col-md-12">
+                                                        <div class="bg-white1 dark-bg">
+                                                            <div class="row mb-4">
+                                                                <div class="col-6">
+                                                                    <h2 class="light-text">Transaction Volume	</h2>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-12">
+                                                                    <div class="chart-box">
+                                                                        <div class="chart-area">
+                                                                            <canvas
+                                                                                id="transVol"
+                                                                                width="600"
+                                                                                height="300"></canvas>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-sm-12 col-12 col-md-12">
+                                                        <div class="bg-white1 dark-bg">
+                                                            <div class="row mb-4">
+                                                                <div class="col-12">
+                                                                    <h2 class="light-text">Network Value</h2>
+
+                                                                    <!-- <h2 class="light-text">Network Value</h2>																					Transactions/POS</h2> -->
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-12">
+                                                                    <div class="chart-box">
+                                                                        <div class="chart-area">
+                                                                            <canvas id="netvalue"
+                                                                                width="600"
+                                                                                height="400"></canvas>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-sm-12 col-12 col-md-12">
+                                                        <div class="bg-white1 dark-bg">
+                                                            <div class="row mb-4">
+                                                                <div class="col-12">
+                                                                    <h2 class="light-text">Network Volume
+                                                                    </h2>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-12">
+                                                                    <div class="chart-box">
+                                                                        <div class="chart-area">
+                                                                            <canvas id="cposSalesValue3"
+                                                                                width="600"
+                                                                                height="400"></canvas>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
 
 
 
+                                                </div>
+                                            </div>
+
+                                            <div id="lost" class="tab-pane active" [hidden]="activeTabName != 'lost revenue'">
+                                                <div class="row">
+
+                                                    <div class="col-sm-12 col-12 col-md-12">
+                                                        <div class="bg-white1 dark-bg">
+                                                            <div class="row">
+                                                                <div
+                                                                    class="col-12 col-xl-4 col-md-3 col-sm-6">
+                                                                    <div class="white-input ux-input">
+                                                                        <label>From</label>
+                                                                        <input type="text"
+                                                                            class="datepicker1"
+                                                                            placeholder="DD/MM/YYYY"
+                                                                            value="12/04/2015">
+                                                                        <em
+                                                                            class=" calendar-ic cal-top "></em>
+                                                                    </div>
+                                                                </div>
+                                                                <div
+                                                                    class="col-12 col-xl-4 col-md-3 col-sm-6">
+                                                                    <div class="white-input ux-input">
+                                                                        <label>To</label>
+                                                                        <input type="text"
+                                                                            class="datepicker1"
+                                                                            placeholder="DD/MM/YYYY"
+                                                                            value="03/10/2017">
+                                                                        <em
+                                                                            class=" calendar-ic cal-top "></em>
+                                                                    </div>
+                                                                </div>
+                                                                <div
+                                                                    class="col-12 col-xl-4 col-md-3 col-sm-6">
+                                                                    <div class="white-input ux-input">
+                                                                        <label>Transcation Type</label>
+                                                                        <select>
+                                                                            <option>select</option>
+                                                                            <option selected="">Multiple
+                                                                                Values</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-sm-12 col-12 col-md-12">
+                                                        <div class="bg-white1 dark-bg">
+                                                            <div class="row mb-4">
+                                                                <div class="col-12">
+                                                                    <h2 class="light-text">Lost revenue type
+                                                                    </h2>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-12">
+                                                                    <div class="chart-box">
+                                                                        <div class="chart-area">
+                                                                            <!-- <canvas id="posLost" width="237" height="508" style="display: block; box-sizing: border-box; height: 508px; width: 237px;"></canvas> -->
+                                                                            <canvas id="cposSalesValue4"
+                                                                                width="600"
+                                                                                height="400"></canvas>
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-sm-12 col-12 col-md-12">
+                                                        <div class="bg-white1 dark-bg">
+                                                            <div class="row mb-4">
+                                                                <div class="col-6">
+                                                                    <h2 class="light-text">Lost Revenue Type (Revenue)</h2>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-12">
+                                                                    <div class="chart-box">
+                                                                        <div class="chart-area">
+                                                                            <canvas id="lrot3" width="600"
+                                                                                height="300"></canvas>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-sm-12 col-12 col-md-12">
+                                                        <div class="bg-white1 dark-bg">
+                                                            <div class="row mb-4">
+                                                                <div class="col-12">
+                                                                    <h2 class="light-text">Lost Revenue Type
+                                                                        (Number of Transaction)</h2>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-12">
+                                                                    <div class="chart-box">
+                                                                        <div class="chart-area">
+                                                                            <canvas id="lrot2" width="600"
+                                                                                height="400"></canvas>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+
+                                                </div>
+                                            </div>
+
+                                            <div id="config" class="tab-pane active" [hidden]="activeTabName != 'configuration'" >
+                                                <div class="row">
+
+                                                    <div class="col-sm-12 col-12 col-md-12">
+                                                        <div class="bg-white1 dark-bg">
+                                                            <div class="row ">
+                                                                <div class="col-12 mb-4">
+                                                                    <label class="text-white">Date Range</label>
+                                                                    <div class="row">
+                                                                        <div class="col-12 col-xl-4 col-md-3 col-sm-6">
+                                                                            <div class="white-input ux-input">
+                                                                                <label>From</label>
+                                                                                <input type="text" class="datepicker1" placeholder="DD/MM/YYYY" value="12/04/2015">
+                                                                                <em class=" calendar-ic cal-top "></em>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 col-xl-4 col-md-3 col-sm-6">
+                                                                            <div class="white-input ux-input">
+                                                                                <label>To</label>
+                                                                                <input type="text" class="datepicker1" placeholder="DD/MM/YYYY" value="03/10/2017">
+                                                                                <em class=" calendar-ic cal-top "></em>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <p class="text-white fs-12">Note:Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lp publishing
+                                                                        software like Aldus PageMaker including versions of Lorem Ipsum.
+                                                                
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-12 mb-4">
+                                                                    <label class="text-white">Peek Hours</label>
+                                                                    <div class="row">
+                                                                        <div class="col-12 col-xl-4 col-md-3 col-sm-6">
+                                                                            <div class="white-input ux-input">
+                                                                                <div class="ux-input bootstrap-timepicker timepicker">
+                                                                                    <label>From</label>
+                                                                                    <input id="timepicker1" type="text" placeholder="HH:MM">
+                                                                                    <span class="clock-ic  cal-top input-group-addon">
+                                                                                    </span>
+                                                                                    <p class="error-message">
+                                                                                    </p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 col-xl-4 col-md-3 col-sm-6">
+                                                                            <div class="white-input ux-input">
+                                                                                <div class="ux-input bootstrap-timepicker timepicker">
+                                                                                    <label>To</label>
+                                                                                    <input id="timepicker2" type="text" placeholder="HH:MM">
+                                                                                    <span class="clock-ic  cal-top input-group-addon">
+                                                                                    </span>
+                                                                                    <p class="error-message">
+                                                                                    </p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <p class="text-white fs-12">Note:Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lp publishing
+                                                                        software like Aldus PageMaker including versions of Lorem Ipsum.
+                                                                
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-12 mb-4">
+                                                                    <label class="text-white">Target Available Monthly Transaction</label>
+                                                                    <div class="row">
+                                                                        <div class="col-12 col-xl-4 col-md-3 col-sm-6">
+                                                                            <div class="white-input ux-input">
+                                                                                <div class="ux-input bootstrap-timepicker timepicker">
+                                                                                    <label>
+                                                                                        Min
+                                                                                    </label>
+                                                                                    <input type="text">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 col-xl-4 col-md-3 col-sm-6">
+                                                                            <div class="white-input ux-input">
+                                                                                <div class="ux-input bootstrap-timepicker timepicker">
+                                                                                    <label>
+                                                                                        Max
+                                                                                    </label>
+                                                                                    <input type="text">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-12 mb-4">
+                                                                    <label class="text-white">Target Cash Utilization (%)</label>
+                                                                    <div class="row">
+                                                                        <div class="col-12 col-xl-4 col-md-3 col-sm-6">
+                                                                            <div class="white-input ux-input">
+                                                                                <div class="ux-input bootstrap-timepicker timepicker">
+                                                                                    <label>
+                                                                                        Min
+                                                                                    </label>
+                                                                                    <input type="text">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 col-xl-4 col-md-3 col-sm-6">
+                                                                            <div class="white-input ux-input">
+                                                                                <div class="ux-input bootstrap-timepicker timepicker">
+                                                                                    <label>
+                                                                                        Max
+                                                                                    </label>
+                                                                                    <input type="text">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-12 mb-4">
+                                                                    <label class="text-white">Revenue Calculation</label>
+                                                                    <div class="row">
+                                                                        <div class="col-12 col-xl-3 col-md-3 col-sm-6">
+                                                                            <div class="white-input ux-input">
+                                                                                <div class="ux-input bootstrap-timepicker timepicker">
+                                                                                    <label>
+                                                                                        On us credits
+                                                                                    </label>
+                                                                                    <input type="text">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 col-xl-3 col-md-3 col-sm-6">
+                                                                            <div class="white-input ux-input">
+                                                                                <div class="ux-input bootstrap-timepicker timepicker">
+                                                                                    <label>
+                                                                                        Surcharge revenue
+                                                                                    </label>
+                                                                                    <input type="text">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 col-xl-3 col-md-3 col-sm-6">
+                                                                            <div class="white-input ux-input">
+                                                                                <div class="ux-input bootstrap-timepicker timepicker">
+                                                                                    <label>
+                                                                                        Weight interchange revenue
+                                                                                    </label>
+                                                                                    <input type="text">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12 col-xl-3 col-md-3 col-sm-6">
+                                                                            <div class="white-input ux-input">
+                                                                                <div class="ux-input bootstrap-timepicker timepicker">
+                                                                                    <label>
+                                                                                        Weightage interchange revenue
+                                                                                    </label>	
+                                                                                        <select>
+                                                                                        <option>select</option>
+                                                                                        <option selected="">Month
+                                                                                        </option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div
+                                                                    class="col-12 col-xl-3 col-md-3 col-sm-6">
+                                                                    <div class="white-input ux-input">
+                                                                        <label>Hours Selection</label>
+                                                                        <select>
+                                                                            <option>select</option>
+                                                                            <option selected="">All</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div
+                                                                    class="col-12 col-xl-3 col-md-3 col-sm-6">
+                                                                    <div class="white-input ux-input">
+                                                                        <label>Transcation Type</label>
+                                                                        <select>
+                                                                            <option>select</option>
+                                                                            <option selected="">Multiple
+                                                                                Values</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div
+                                                                    class="col-12 col-xl-3 col-md-3 col-sm-6">
+                                                                    <div class="white-input ux-input">
+                                                                        <label>Date view By</label>
+                                                                        <select>
+                                                                            <option>select</option>
+                                                                            <option selected="">Month
+                                                                            </option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div
+                                                                    class="col-12 col-xl-3 col-md-3 col-sm-6">
+                                                                    <div class="white-input ux-input">
+                                                                        <label>Show By</label>
+                                                                        <select>
+                                                                            <option>select</option>
+                                                                            <option selected="">Operations
+                                                                            </option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
+                                            </div>
+
+                                            
+
+                                          
+
+
 
                                             </div>
                                         </div>

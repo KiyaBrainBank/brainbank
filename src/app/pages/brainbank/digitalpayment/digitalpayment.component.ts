@@ -8,6 +8,7 @@ import ChartDataLabels from 'chartjs-plugin-datalabels';
   styleUrls: ['./digitalpayment.component.sass']
 })
 export class DigitalpaymentComponent implements OnInit {
+  
 
   tablist = ['upi', 'imps', 'rtgs', 'neft'];
   activeTabName: string = 'upi';
@@ -29,8 +30,6 @@ export class DigitalpaymentComponent implements OnInit {
 
   ytick_color = "#aaa";
   xtick_color = "#aaa";
-
-
   cdptechd: any;
   ctxcdptechd: any;
   cdpbusid: any;
@@ -49,10 +48,6 @@ export class DigitalpaymentComponent implements OnInit {
   cdxLabeldptxno = [];
   cdyDatadptxno = [];
   ctxctvh: any;
-
-
-
-
   constructor() { }
 
   ngOnInit(): void {
@@ -92,12 +87,6 @@ export class DigitalpaymentComponent implements OnInit {
 
     // for imps
 
-
-
-
-
-    // this.onLastYear('lastyear');
-    //this.createChartdpBusiDecline();
   }
 
   activetab(tab) {
@@ -124,18 +113,9 @@ export class DigitalpaymentComponent implements OnInit {
         this.generateLineCharts(this.ctxctvh, this.cdxLabeldptxno, this.cdyDatadptxno);
         // this.createChartdpTxnOverview();  
         break;
-
-
       case 'imps':
-
-
-
         this.cdpbusid = document.getElementById('dpTransOverview4');
         this.ctxcdpbusid = this.cdpbusid.getContext('2d');
-
-
-
-
         var cdxLabeldpbusid = [
 
           "1-AUG", "2-AUG", "3-AUG", "4-AUG", "5-AUG", "5-AUG", "6-AUG", "7-AUG", "8-AUG", "9-AUG", "10-AUG", "11-AUG", "12-AUG", "13-AUG", "14-AUG", "15-AUG", "16-AUG", "17-AUG", "18-AUG", "19-AUG", "20-AUG", "22-AUG", "22-AUG", "23-AUG",
@@ -158,9 +138,6 @@ export class DigitalpaymentComponent implements OnInit {
         var yaxisTitle = "Count"
 
         this.generateBarCharts(this.ctxcdpbusid, cdxLabeldpbusid, cdyDatadpbusid, xaxisTitle, yaxisTitle);
-
-
-
         var ctx: any = document.getElementById('dpTransOverview9') as HTMLElement;
         var data = {
           labels: ["1-AUG", "2-AUG", "3-AUG", "4-AUG", "5-AUG", "5-AUG", "6-AUG", "7-AUG", "8-AUG", "9-AUG", "10-AUG", "11-AUG", "12-AUG", "13-AUG", "14-AUG", "15-AUG", "16-AUG", "17-AUG", "18-AUG", "19-AUG", "20-AUG", "22-AUG", "22-AUG", "23-AUG",
@@ -181,12 +158,8 @@ export class DigitalpaymentComponent implements OnInit {
 
           ],
         };
-        var yaxisTitle="Count"
-
-
-        this.generateLineCharts55(ctx, data,yaxisTitle);
-
-
+        var yaxisTitle = "Count"
+        this.generateLineCharts55(ctx, data, yaxisTitle);
         var ctx: any = document.getElementById('impsBusiDec') as HTMLElement;
         var data = {
           labels: ["1-AUG", "2-AUG", "3-AUG", "4-AUG", "5-AUG", "5-AUG", "6-AUG", "7-AUG", "8-AUG", "9-AUG", "10-AUG", "11-AUG", "12-AUG", "13-AUG", "14-AUG", "15-AUG", "16-AUG", "17-AUG", "18-AUG", "19-AUG", "20-AUG", "22-AUG", "22-AUG", "23-AUG",
@@ -209,28 +182,18 @@ export class DigitalpaymentComponent implements OnInit {
 
           ],
         };
-        var yaxisTitle="Count"
-
-
-        this.generateLineCharts55(ctx, data,yaxisTitle);
-
-
-
+        var yaxisTitle = "Count"
+        this.generateLineCharts55(ctx, data, yaxisTitle);
         break;
       case 'rtgs':
         console.log("RTGS");
 
         this.cdpbusid = document.getElementById('rtgsVolume');
         this.ctxcdpbusid = this.cdpbusid.getContext('2d');
-
-
-
-
         var cdxLabeldpbusid = [
           "Jun_21", "Jul_21", "Aug_21", "Sep_21", "Oct_21", "Nov_21", "Dec_21", "Jan_22", "Feb_22", "Mar_22", "Apr_22", "May_22", "Jun_22"
 
         ];
-
         var cdyDatadpbusid = [
           {
             label: "RTGS volume Trend",
@@ -239,23 +202,15 @@ export class DigitalpaymentComponent implements OnInit {
               15.41, 16.77, 16.65, 17.46, 18.41, 17.21, 19.28, 18.13, 18.03, 23, 19.53, 19.57, 19.44
 
             ],
-
             maxBarThickness: 50,
           }
 
         ];
         var xaxisTitle = "Date"
         var yaxisTitle = "Volume in million"
-
         this.generateBarCharts(this.ctxcdpbusid, cdxLabeldpbusid, cdyDatadpbusid, xaxisTitle, yaxisTitle);
-
-
         this.cdpbusid = document.getElementById('rtgsAvgVol2');
         this.ctxcdpbusid = this.cdpbusid.getContext('2d');
-
-
-
-
         var cdxLabeldpbusid = [
           "Jun 21", "Jul 21", "Aug 21", "Sep 21", "Oct 21", "Nov 21", "Dec 21", "Jan 22", "Feb 22", "Mar 22", "Apr 22", "May 22", "Jun 22"
 
@@ -278,8 +233,6 @@ export class DigitalpaymentComponent implements OnInit {
         var yaxisTitle = "Avg volume in million"
 
         this.generateBarCharts(this.ctxcdpbusid, cdxLabeldpbusid, cdyDatadpbusid, xaxisTitle, yaxisTitle);
-
-
         break;
       case 'neft':
         console.log("NEFT")
@@ -306,11 +259,11 @@ export class DigitalpaymentComponent implements OnInit {
         var xaxisTitle = "Date"
         var yaxisTitle = " Volume in million"
         this.generateBarCharts(this.ctxcdpbusid, cdxLabeldpbusid, cdyDatadpbusid, xaxisTitle, yaxisTitle);
-        
+
         this.cdpbusid = document.getElementById('neftAvgPerDayVol');
         this.ctxcdpbusid = this.cdpbusid.getContext('2d');
         var cdxLabeldpbusid = [
-				"Jun 21", "Jul 21", "Aug 21", "Sep 21", "Oct 21", "Nov 21", "Dec 21", "Jan 22", "Feb 22", "Mar 22", "Apr 22", "May 22", "Jun 22"
+          "Jun 21", "Jul 21", "Aug 21", "Sep 21", "Oct 21", "Nov 21", "Dec 21", "Jan 22", "Feb 22", "Mar 22", "Apr 22", "May 22", "Jun 22"
 
         ];
 
@@ -319,7 +272,7 @@ export class DigitalpaymentComponent implements OnInit {
             label: "Average Per Day Volume",
             backgroundColor: "#277bc0",
             data: [
-				292.3, 317, 321.9, 336, 357.4, 339.4, 376.3, 362.9, 363.3, 431.4, 373.8, 381.3, 402.2
+              292.3, 317, 321.9, 336, 357.4, 339.4, 376.3, 362.9, 363.3, 431.4, 373.8, 381.3, 402.2
 
             ],
 
@@ -331,10 +284,10 @@ export class DigitalpaymentComponent implements OnInit {
         var yaxisTitle = " Volume in million"
         this.generateBarCharts(this.ctxcdpbusid, cdxLabeldpbusid, cdyDatadpbusid, xaxisTitle, yaxisTitle);
 
-        
+
         var ctx: any = document.getElementById('neftGrwper') as HTMLElement;
         var data = {
-				labels: ["Jun 21", "Jul 21", "Aug 21", "Sep 21", "Oct 21", "Nov 21", "Dec 21", "Jan 22", "Feb 22", "Mar 22", "Apr 22", "May 22", "Jun 22"],
+          labels: ["Jun 21", "Jul 21", "Aug 21", "Sep 21", "Oct 21", "Nov 21", "Dec 21", "Jan 22", "Feb 22", "Mar 22", "Apr 22", "May 22", "Jun 22"],
 
           datasets: [
             {
@@ -354,9 +307,9 @@ export class DigitalpaymentComponent implements OnInit {
 
           ],
         };
-        var yaxisTitle="Percentage Change"
+        var yaxisTitle = "Percentage Change"
 
-        this.generateLineCharts55(ctx, data,yaxisTitle);
+        this.generateLineCharts55(ctx, data, yaxisTitle);
         break;
     }
 
@@ -392,6 +345,7 @@ export class DigitalpaymentComponent implements OnInit {
           legend: {
             display: false,
           },
+          
           title: {
             display: false,
             text: "Transaction Overview",
@@ -688,7 +642,7 @@ export class DigitalpaymentComponent implements OnInit {
 
 
 
-  generateLineCharts55(ctx, data,yaxisTitle) {
+  generateLineCharts55(ctx, data, yaxisTitle) {
     console.log("UPI G1");
 
     var chart = new Chart(ctx, {
@@ -920,7 +874,7 @@ export class DigitalpaymentComponent implements OnInit {
     }
   }
 
-  
+
 
 
 

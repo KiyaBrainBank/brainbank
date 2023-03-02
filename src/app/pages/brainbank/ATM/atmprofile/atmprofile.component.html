@@ -10,13 +10,162 @@
                         <div class="row">
                             <div class="whitecard no-bg">
                                 <div class="center-div">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <div class="bg-white1">
-                                                <div class="row">
-                                                    
+                                    <div class="bg-white1 dark-bg mt-4">
+                                        <div class="row">
+                                            <div class="col-12 col-xl-3 col-md-3 col-sm-6">
+                                                <div class="ux-selection">
+                                                    <label class="text-white p-0">Show by</label><br>
+                                                    <label class="ux-selection2 text-white">By ATM group
+                                                        <input type="radio" checked="checked" name="radioboxdemo">
+                                                        <span class="checkmark"></span>
+                                                    </label> <label class="ux-selection2  text-white">By Owner
+                                                        <input type="radio" checked="checked" name="radioboxdemo">
+                                                        <span class="checkmark"></span>
+                                                    </label>
                                                 </div>
                                             </div>
+                                            <div class="col-12 col-xl-3 col-md-3 col-sm-6">
+                                                <div class="white-input ux-input">
+                                                    <label>From</label>
+                                                    <input type="text" class="datepicker1 hasDatepicker" placeholder="DD/MM/YYYY" value="12/04/2015" id="dp1667207136252">
+                                                    <em class=" calendar-ic cal-top "></em>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-xl-3 col-md-3 col-sm-6">
+                                                <div class="white-input ux-input">
+                                                    <label>To</label>
+                                                    <input type="text" class="datepicker1 hasDatepicker" placeholder="DD/MM/YYYY" value="03/10/2017" id="dp1667207136253">
+                                                    <em class=" calendar-ic cal-top "></em>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12 mt-3">
+                                            <div class="bg-white1">
+                                                
+                                            <div class="chart-box">
+                                                <div class="chart-area3">
+                                                    <canvas id="catmATMMixTransactions02" width="757" height="440" style="display: block; box-sizing: border-box; height: 440px; width: 757px;"></canvas>
+                                                    <p class="text-dark mt-2">ATM Positioning</p>
+                                                    <div id="ctmtxnmixgradientbar" class="charttmgradientbar p-2" style="background: linear-gradient(90deg,#d8ffff, #6da2b3);"></div>
+                                                </div>
+                                                <!-- <div class="charttmgradientbar"></div> -->
+                                            </div>
+                                            <div class="legend">
+                                                <ul class="">
+                                                    <li>
+                                                        W - Withdrawal
+                                                    </li>
+                                                    <li>
+                                                        D - Deposit
+                                                    </li>
+                                                    <li>
+                                                        I - Inquiry
+                                                    </li>
+                                                    <li>
+                                                        T - Transfer
+                                                    </li>
+                                                    <li>
+                                                        O - Other
+                                                    </li>
+                                                </ul>
+                                            </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="whitecard no-bg">
+                                            <div class="center-div">
+                                                <div class="bg-white1 dark-bg">
+                                                    <div class="row mb-4">
+                                                        <div class="col-6">
+                                                            <h2 class="light-text">Transaction Volume</h2>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-12">
+                                                            <div class="chart-box">
+                                                                <div class="chart-area">
+                                                                    <canvas id="atmProfileTransactionVol" width="757" height="378" style="display: block; box-sizing: border-box; height: 378px; width: 757px;"></canvas>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div> 
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="whitecard no-bg">
+                                            <div class="center-div mt-4">
+                                                <div class="bg-white1 dark-bg">
+                                                    <div class="row mb-4">
+                                                        <div class="col-12">
+                                                            <h2 class="light-text">Number of Transaction exceeding specified ₹ Amount</h2>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-12">
+                                                            <div class="chart-box">
+                                                                <div class="chart-area">
+                                                                    <canvas id="noOfTrans" width="757" height="378" style="display: block; box-sizing: border-box; height: 378px; width: 757px;"></canvas>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div> 
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="whitecard no-bg">
+                                            <div class="center-div mt-4">
+                                                <div class="bg-white1 dark-bg">
+                                                    <div class="row mb-4">
+                                                        <div class="col-12">
+                                                            <h2 class="light-text">Transaction Revenue composition</h2>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-12">
+                                                            <div class="chart-box">
+                                                                <div class="chart-area">
+                                                                    <canvas id="trc" width="757" height="378" style="display: block; box-sizing: border-box; height: 378px; width: 757px;"></canvas>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div> 
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="whitecard no-bg">
+                                            <div class="center-div mt-4">
+                                                <div class="bg-white1 dark-bg">
+                                                    <div class="row mb-4">
+                                                        <div class="col-12">
+                                                            <h2 class="light-text">Number of Queues with Specified Queue Length</h2>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-12">
+                                                            <div class="chart-box">
+                                                                <div class="chart-area">
+                                                                    <canvas id="Noq" width="757" height="378" style="display: block; box-sizing: border-box; height: 378px; width: 757px;"></canvas>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12">  <p class="text-white">Avg Queues length</p>
+                                                     
+                                                            <div id="ctmtxnmixgradientbar01" class="charttmgradientbar p-2" style="background:linear-gradient(90deg, #dc3545, #f5b0b7);"></div>
+                                            
+                                                        </div>
+                                                    </div>
+                                                      </div>
+                                            </div> 
                                         </div>
                                     </div>
                                 </div>

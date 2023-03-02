@@ -28,6 +28,7 @@ import { CorrelationofproductComponent } from './pages/brainbank/analytics/whati
 // import { AddgroupusersComponent } from './pages/brainbank/admininstration/addgroupusers/addgroupusers.component';
 // import { HierarchymaintenanceComponent } from './hierarchymaintenance/hierarchymaintenance.component';
 // import { UsermaintenanceComponent } from './administration/usermaintenance/usermaintenance.component';
+import 'chartjs-plugin-annotation';
 @NgModule({
   declarations: [
     AppComponent,
