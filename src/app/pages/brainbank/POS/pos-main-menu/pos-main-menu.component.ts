@@ -51,7 +51,7 @@ export class PosMainMenuComponent implements OnInit {
   cdxLabeldptxno = [];
   cdyDatadptxno = [];
   ctxctvh: any;
-  cdxyDataatmmixtxn: any
+  cdxyDataatmmixtxn: any;
 
   // public barChartPlugins = [pluginAnnotation];
 
@@ -62,19 +62,46 @@ export class PosMainMenuComponent implements OnInit {
 
   ngAfterViewInit() {
     this.activetab(this.activeTabName);
-
-    const canvas1 = document.getElementById('catmATMMixTransactions01') as HTMLCanvasElement;
-    const ctx1 = canvas1.getContext('2d');
-    // let data1  = document.getElementById('catmATMMixTransactions01') as HTMLElement;
-
+    var canvas1:any = '';
+    canvas1 = document.getElementById('catmATMMixTransactions01') as HTMLCanvasElement;
+    var ctx1 = canvas1.getContext('2d');
+    let data:any = {};
+    data = {
+      datasets: [{
+          tree: [
+            { category: 'A', value: 20 },
+            { category: 'B', value: 18 },
+            { category: 'C', value: 10 },
+            { category: 'D', value: 10 },
+            { category: 'E', value: 10 },
+            { category: 'F', value: 5 },
+            { category: 'G', value: 5 },
+            { category: 'H', value: 5 },
+            { category: 'I', value: 4 },
+            { category: 'J', value: 3 },
+        ],
+          key: 'value',
+          backgroundColor: function(ctx1) {
+            return colorFromRaw()[ctx1.index];
+          },
+          labels: {
+              display: true,
+              color: "white",
+              font: {
+                  size: 18,
+                  family: "Avenir, Segoe UI, arial, sans-serif",
+              },
+              formatter: function(ctx1) {
+                  var tlb = ctx1.raw._data.category;
+                  //var tvl = ctx1.raw.v;
+                  return tlb;
+              },
+          }
+      }]
+  }
     const config =  new Chart( ctx1,{
       type: 'treemap',
-      data: {
-        datasets: [
-          
-          
-        ],
-      },
+      data: data,
       options: {
         plugins: {
           title: {
@@ -90,8 +117,6 @@ export class PosMainMenuComponent implements OnInit {
 
 
   }
-
-
 
   activetab(tab) {
     this.activeTabName = tab;
@@ -1164,4 +1189,16 @@ function thousands_separators(num) {
 }
 
 
+
+function colorFromRaw() {
+  var newArrayGotIt = [];
+    for (var zi = 0; zi < 10; zi++) {
+        newArrayGotIt.push(adjustcolorme("#6CC4A1", -10 * zi));
+    }
+    return newArrayGotIt;
+}
+
+function adjustcolorme(color, amount) {
+  return '#' + color.replace(/^#/, '').replace(/../g, color => ('0'+Math.min(255, Math.max(0, parseInt(color, 16) + amount)).toString(16)).substr(-2));
+}
 
