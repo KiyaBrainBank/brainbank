@@ -5,8 +5,11 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Chart, registerables, ChartData, ChartOptions, ChartEvent, ChartType, ChartConfiguration, } from 'chart.js';
 import { TreemapController, TreemapElement } from 'chartjs-chart-treemap';
 import annotationPlugin from 'chartjs-plugin-annotation';
+import { color as Color } from 'chart.js/helpers';
 
-Chart.register(TreemapController, TreemapElement,annotationPlugin);
+import { config } from 'rxjs';
+
+Chart.register(TreemapController, TreemapElement, annotationPlugin);
 
 @Component({
   selector: 'app-pos-main-menu',
@@ -18,14 +21,15 @@ export class PosMainMenuComponent implements OnInit {
   vrchartfont = "Avenir, Segoe UI, arial, sans-serif";
   tablist = ['posperformance', 'posfailures', 'merchant', 'customer transactions', 'lost revenue', 'configuration'];
   activeTabName: string = 'posperformance';
-
+//helpers:any
   dlbls_barvalue = "#dddddd";
   title_charttitle = "white";
   title_charttitle2 = "#666666";
   title_ylabel = "white";
   title_xlabel = "white";
   legend_textcolor = "#dddddd";
-
+  data4: any
+  config2: any
   ygrid_bordercolor = "#444444";
   ygrid_color = "#444444";
   xgrid_bordercolor = "#444444";
@@ -52,57 +56,63 @@ export class PosMainMenuComponent implements OnInit {
   cdyDatadptxno = [];
   ctxctvh: any;
   cdxyDataatmmixtxn: any;
-
-  // public barChartPlugins = [pluginAnnotation];
-
-  constructor() { }
-  // Chart.pluginService: any.register(annotation: any);
+  scalesx1: any
+  canvas1:any
+  constructor( ) { }
   ngOnInit(): void {
-  }
+    console.log("reintialize")
 
-  ngAfterViewInit() {
-    this.activetab(this.activeTabName);
-    var canvas1:any = '';
-    canvas1 = document.getElementById('catmATMMixTransactions01') as HTMLCanvasElement;
-    var ctx1 = canvas1.getContext('2d');
-    let data:any = {};
-    data = {
+
+    this.canvas1 = document.getElementById('catmATMMixTransactions01234') as HTMLCanvasElement;
+
+    this.data4 = {
       datasets: [{
-          tree: [
-            { category: 'A', value: 20 },
-            { category: 'B', value: 18 },
-            { category: 'C', value: 10 },
-            { category: 'D', value: 10 },
-            { category: 'E', value: 10 },
-            { category: 'F', value: 5 },
-            { category: 'G', value: 5 },
-            { category: 'H', value: 5 },
-            { category: 'I', value: 4 },
-            { category: 'J', value: 3 },
+        tree: [
+          { category: 'A', value: 20 },
+          { category: 'B', value: 18 },
+          { category: 'C', value: 10 },
+          { category: 'D', value: 10 },
+          { category: 'E', value: 10 },
+          { category: 'F', value: 5 },
+          { category: 'G', value: 5 },
+          { category: 'H', value: 5 },
+          { category: 'I', value: 4 },
+          { category: 'J', value: 3 },
         ],
-          key: 'value',
-          backgroundColor: function(ctx1) {
-            return colorFromRaw()[ctx1.index];
+        key: 'value',
+        groups: ['category'],
+        backgroundColor: function (ctx1) {
+          return colorFromRaw()[ctx1.index];
+        },
+        borderWidth: 0,
+        padding: 50,
+        labels: {
+          display: true,
+          color: "white",
+          font: {
+            size: 18,
+            family: "Avenir, Segoe UI, arial, sans-serif",
           },
-          labels: {
-              display: true,
-              color: "white",
-              font: {
-                  size: 18,
-                  family: "Avenir, Segoe UI, arial, sans-serif",
-              },
-              formatter: function(ctx1) {
-                  var tlb = ctx1.raw._data.category;
-                  //var tvl = ctx1.raw.v;
-                  return tlb;
-              },
-          }
+          formatter: function (ctx1) {
+            var tlb = ctx1.raw._data.value;
+            console.log(tlb, "insikde stgsg")
+            //  var tvl = ctx1.raw.v;
+            return tlb;
+          },
+
+        }
       }]
-  }
-    const config =  new Chart( ctx1,{
+    }
+
+
+
+    this.config2 = new Chart(this.canvas1, {
       type: 'treemap',
-      data: data,
+      data: this.data4,
       options: {
+        layout: {
+          padding: 0
+        },
         plugins: {
           title: {
             display: true,
@@ -110,10 +120,103 @@ export class PosMainMenuComponent implements OnInit {
           },
           legend: {
             display: false
-          }
+          },
+
+
         }
       }
     });
+
+    console.log(this.config2, "treemap reintialie")
+    console.log(this.data4, "dataset")
+    // var ctx1 = canvas1.getContext('2d');
+    // const chart = Chart.registry.elements.get('arc');
+   
+
+
+    // this.config2.destroy()
+
+
+
+  }
+
+
+
+  ngOnDestroy() {
+    console.log("destroy")
+    this.config2.destroy();
+  }
+
+ 
+  ngAfterViewInit() {
+
+    this.activetab(this.activeTabName);
+    // var canvas1 = document.getElementById('catmATMMixTransactions01234') as HTMLCanvasElement;
+
+    // this.data4 = {
+    //   datasets: [{
+    //     tree: [
+    //       { category: 'A', value: 20 },
+    //       { category: 'B', value: 18 },
+    //       { category: 'C', value: 10 },
+    //       { category: 'D', value: 10 },
+    //       { category: 'E', value: 10 },
+    //       { category: 'F', value: 5 },
+    //       { category: 'G', value: 5 },
+    //       { category: 'H', value: 5 },
+    //       { category: 'I', value: 4 },
+    //       { category: 'J', value: 3 },
+    //     ],
+    //     key: 'value',
+    //     groups: ['category'],
+    //     backgroundColor: function (ctx1) {
+    //       return colorFromRaw()[ctx1.index];
+    //     },
+    //     borderWidth: 0,
+    //     padding: 50,
+    //     labels: {
+    //       display: true,
+    //       color: "white",
+    //       font: {
+    //         size: 18,
+    //         family: "Avenir, Segoe UI, arial, sans-serif",
+    //       },
+    //       formatter: function (ctx1) {
+    //         var tlb = ctx1.raw._data.value;
+    //         console.log(tlb, "insikde stgsg")
+    //         //  var tvl = ctx1.raw.v;
+    //         return tlb;
+    //       },
+
+    //     }
+    //   }]
+    // }
+
+
+
+    // this.config2 = new Chart(canvas1, {
+    //   type: 'treemap',
+    //   data: this.data4,
+    //   options: {
+    //     layout: {
+    //       padding: 0
+    //     },
+    //     plugins: {
+    //       title: {
+    //         display: true,
+    //         text: 'My treemap chart'
+    //       },
+    //       legend: {
+    //         display: false
+    //       },
+
+
+    //     }
+    //   }
+    // });
+
+    // console.log(this.config2, "treemap reintialie")
+    // console.log(this.data4, "dataset")
 
 
   }
@@ -169,7 +272,7 @@ export class PosMainMenuComponent implements OnInit {
         };
         var annotation1 = {
           annotations: {
-        
+
             line1: {
               type: "line",
               xMin: 3,
@@ -180,9 +283,12 @@ export class PosMainMenuComponent implements OnInit {
               borderWidth: 2,
               borderDash: [2, 4],
             },
-            
+
           }, //annotations
         } //annotation
+
+
+        console.log(data, "performance dta")
 
         var yaxisTitle = "Transactions Volume"
         this.generateLineCharts(ctx, data, yaxisTitle, annotation1)
@@ -242,7 +348,7 @@ export class PosMainMenuComponent implements OnInit {
                 x: "start",
                 y: "center",
               },
-              
+
             }, // label1
             line3: {
               type: "line",
@@ -268,7 +374,7 @@ export class PosMainMenuComponent implements OnInit {
                 x: "start",
                 y: "center",
               },
-              
+
             }, // label2
             box1: {
               type: "box",
@@ -288,7 +394,7 @@ export class PosMainMenuComponent implements OnInit {
                 x: "start",
                 y: "center",
               },
-              
+
             }, // label3
             label4: {
               type: "label",
@@ -300,7 +406,7 @@ export class PosMainMenuComponent implements OnInit {
                 x: "start",
                 y: "center",
               },
-              
+
             }, // label4
 
 
@@ -312,7 +418,7 @@ export class PosMainMenuComponent implements OnInit {
 
         break;
       case 'posfailures':
-        var ctx: any = document.getElementById('cposTxnSelPOSTerminal1') as HTMLElement;
+        var ctx: any = document.getElementById('cposTxnSelPOSTerminalTest') as HTMLElement;
         var data = {
           labels: [
             "May_2018", "May_2019", "May_2020", "May_2021", "May_2022", "May_2023", "May_2024", "May_2025", "May_2026", "May_2027", "May_2028", "May_2029"
@@ -388,26 +494,16 @@ export class PosMainMenuComponent implements OnInit {
         };
         var annotation3 = {
           annotations3: {
-        
+
           }, //annotations
         } //annotation
         var yaxisTitle = "Transactions"
         this.generateLineCharts(ctx, data, yaxisTitle, annotation3)
 
-        // var ctx: any = document.getElementById('catmATMMixTransactions01') as HTMLElement;
-        var cdxyDataatmmixtxn = [
-          { category: 'A', value: 20 },
-          { category: 'B', value: 18 },
-          { category: 'C', value: 10 },
-          { category: 'D', value: 10 },
-          { category: 'E', value: 10 },
-          { category: 'F', value: 5 },
-          { category: 'G', value: 5 },
-          { category: 'H', value: 5 },
-          { category: 'I', value: 4 },
-          { category: 'J', value: 3 },
-        ];
-        //  this.generatehitmap(ctx,cdxyDataatmmixtxn)
+
+
+        // this.generatetreemap(canvas1,this.data4)
+
 
 
         break;
@@ -492,7 +588,7 @@ export class PosMainMenuComponent implements OnInit {
         };
         var annotation4 = {
           annotations: {
-           
+
           }, //annotations
         } //annotation
         var yaxisTitle = "Amount"
@@ -669,7 +765,7 @@ export class PosMainMenuComponent implements OnInit {
         var yaxisTitle = "Amount"
         var annotation5 = {
           annotations: {
-           
+
           }, //annotations
         } //annotation
         this.generateLineCharts(ctx, data, yaxisTitle, annotation5)
@@ -761,7 +857,7 @@ export class PosMainMenuComponent implements OnInit {
         var yaxisTitle = "Amount"
         var annotation6 = {
           annotations: {
-          
+
           }, //annotations
         } //annotation
         this.generateLineCharts(ctx, data, yaxisTitle, annotation6)
@@ -771,6 +867,7 @@ export class PosMainMenuComponent implements OnInit {
     }
 
   }
+
 
 
 
@@ -799,53 +896,6 @@ export class PosMainMenuComponent implements OnInit {
 
           annotation: annotation
 
-          // annotation: {
-          //   annotations: {
-          //     line1: {
-          //       type: "line",
-          //       xMin: 3,
-          //       xMax: 4,
-          //       yMin: 92964,
-          //       yMax: 46234,
-          //       borderColor: "yellow", //e51529 - 2a5ff5
-          //       borderWidth: 2,
-          //       borderDash: [2, 4],
-          //     }, //line1
-          //   }, //annotations
-          // }, //annotation
-
-          // title: {
-          //   display: false,
-          //   text: "Transaction Overview",
-          //   color: this.title_charttitle,
-          //   align: "start",
-          //   padding: {
-          //     bottom: 5,
-          //   },
-          //   font: {
-          //     family: this.vrchartfont,
-          //     size: 20,
-          //     weight: "500",
-          //   },
-          // }, // title
-          // subtitle: {
-          //   display: false,
-          //   text: "Number of Transactions",
-          //   color: this.title_charttitle,
-          //   align: "start",
-          //   padding: {
-          //     bottom: 15,
-          //   },
-          //   font: {
-          //     family: this.vrchartfont,
-          //     size: 14,
-          //     // weight: "500",
-          //   },
-          // }, // subtitle
-
-          // datalabels: {
-          //   display: false,
-          // }, // datalabels 
 
         }, // plugins
 
@@ -896,39 +946,6 @@ export class PosMainMenuComponent implements OnInit {
 
   }
 
-  generatehitmap(ctx, cdxyDataatmmixtxn) {
-
-
-    // let chart1 = new Chart(ctx, {
-    //   type:"treemap",
-    //   data:{
-    //     datasets:[{
-    //       tree:cdxyDataatmmixtxn
-    //     }
-
-
-    //     ]
-
-    //   },
-    //   options: {
-    //     plugins: {
-    //       title: {
-    //         display: true,
-    //         text: 'My treemap chart',
-    //       },
-    //       legend: {
-    //         display: false,
-    //       },
-
-    //     },
-    //   },
-    // });
-
-
-
-
-
-  }
 
   generateBarCharts(ctxctvh, cdxLabeldptxno, cdyDatadptxno, xaxisTitle, yaxisTitle) {
     var cadphd = new Chart(ctxctvh, {
@@ -1181,6 +1198,12 @@ export class PosMainMenuComponent implements OnInit {
   }
 
 
+
+
+
+
+
+
 }
 function thousands_separators(num) {
   var num_parts = num.toString().split(".");
@@ -1192,13 +1215,13 @@ function thousands_separators(num) {
 
 function colorFromRaw() {
   var newArrayGotIt = [];
-    for (var zi = 0; zi < 10; zi++) {
-        newArrayGotIt.push(adjustcolorme("#6CC4A1", -10 * zi));
-    }
-    return newArrayGotIt;
+  for (var zi = 0; zi < 10; zi++) {
+    newArrayGotIt.push(adjustcolorme("#6CC4A1", -10 * zi));
+  }
+  return newArrayGotIt;
 }
 
 function adjustcolorme(color, amount) {
-  return '#' + color.replace(/^#/, '').replace(/../g, color => ('0'+Math.min(255, Math.max(0, parseInt(color, 16) + amount)).toString(16)).substr(-2));
+  return '#' + color.replace(/^#/, '').replace(/../g, color => ('0' + Math.min(255, Math.max(0, parseInt(color, 16) + amount)).toString(16)).substr(-2));
 }
 

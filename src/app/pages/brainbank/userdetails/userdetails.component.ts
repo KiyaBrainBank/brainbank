@@ -1,15 +1,21 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { ThemesettingsComponent } from '../../common-ui/themesettings/themesettings.component';
+import { AtmdetailsComponent } from '../atmdetails/atmdetails.component';
+import { PosMainMenuComponent } from '../POS/pos-main-menu/pos-main-menu.component';
+
 @Component({
   selector: 'app-userdetails',
   templateUrl: './userdetails.component.html',
   styleUrls: ['./userdetails.component.sass']
 })
 export class UserdetailsComponent implements OnInit {
+  @ViewChild(PosMainMenuComponent) private pollComponent: PosMainMenuComponent;
+  @ViewChild(AtmdetailsComponent) private surveyComponent: AtmdetailsComponent;
  @Input() item:string;
   mainMenuList: any;
   selectedMenuName: string;
+  PosMainMenuComponent: any;
   constructor(private route: Router) { }
 
   ngOnInit(): void {
@@ -67,7 +73,9 @@ export class UserdetailsComponent implements OnInit {
     ]
   }
   goToPage(route) {
+   
     // this.selectedMenuName=route;
     this.route.navigate(['/' + route])
+    
   }
 }

@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { AtmtransactionAnalysisRoutingModule } from './atmtransaction-analysis-routing.module';
 import { AtmtransactionAnalysisComponent } from './atmtransaction-analysis.component';
 import { UserdetailsModule } from '../../userdetails/userdetails.module';
+import 'chartjs-chart-treemap';
 
 
 @NgModule({

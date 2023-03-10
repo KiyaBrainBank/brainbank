@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Chart } from 'chart.js';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
+import { color as Color } from 'chart.js/helpers';
+import { TreemapController, TreemapElement } from 'chartjs-chart-treemap';
+
+
+Chart.register(TreemapController, TreemapElement);
 @Component({
   selector: 'app-atmprofile',
   templateUrl: './atmprofile.component.html',
@@ -49,9 +54,56 @@ export class AtmprofileComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
+    
+
+
   }
 
   ngAfterViewInit() {
+
+
+    var canvas2:any = '';
+    canvas2 = document.getElementById('catmATMMixTransactions02') as HTMLCanvasElement;
+    // var ctx1 = canvas1.getContext('2d');
+    let data5:any = {};
+    data5 = {
+      datasets: [{
+          tree: [
+            { category: 'A', value: 20 },
+            { category: 'B', value: 18 },
+            { category: 'C', value: 10 },
+            { category: 'D', value: 10 },
+            { category: 'E', value: 10 },
+            { category: 'F', value: 5 },
+            { category: 'G', value: 5 },
+            { category: 'H', value: 5 },
+            { category: 'I', value: 4 },
+            { category: 'J', value: 3 },
+        ],
+          key: 'value',
+
+          backgroundColor: function(ctx1) {
+            return colorFromRaw()[ctx1.index];
+          },
+          labels: {
+              display: true,
+              color: "white",
+              font: {
+                  size: 18,
+                  family: "Avenir, Segoe UI, arial, sans-serif",
+              },
+              // formatter: function(ctx1) {
+              //     var tlb = ctx1.raw._data.category;
+              //   var tvl = ctx1.raw.v;
+              //     return tlb;
+              // },
+          }
+      }]
+  }
+
+  this.generatetreemap(canvas2,data5)
+   
 
 
 
@@ -289,6 +341,26 @@ export class AtmprofileComponent implements OnInit {
     });
   }
 
+
+  generatetreemap(canvas2,data5){
+    const config =  new Chart( canvas2,{
+      type: 'treemap',
+      data: data5,
+      options: {
+        plugins: {
+          title: {
+            display: true,
+            text: 'My treemap chart'
+          },
+          legend: {
+            display: false
+          },
+          
+        }
+      }
+    });
+  }
+
   
   generateBarCharts55(ctxctvh, cdxLabeldptxno, cdyDatadptxno, xaxisTitle, yaxisTitle) {
     var cadphd = new Chart(ctxctvh, {
@@ -425,4 +497,17 @@ function thousands_separators(num) {
   num_parts[0] = num_parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   return num_parts.join(".");
 
+}
+
+
+function colorFromRaw() {
+  var newArrayGotIt = [];
+    for (var zi = 0; zi < 10; zi++) {
+        newArrayGotIt.push(adjustcolorme("#6CC4A1", -10 * zi));
+    }
+    return newArrayGotIt;
+}
+
+function adjustcolorme(color, amount) {
+  return '#' + color.replace(/^#/, '').replace(/../g, color => ('0'+Math.min(255, Math.max(0, parseInt(color, 16) + amount)).toString(16)).substr(-2));
 }
